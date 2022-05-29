@@ -1,0 +1,1 @@
+# New Type Idiom

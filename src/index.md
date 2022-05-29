@@ -1,4 +1,4 @@
-# Rust by Example
+# Học Rust bằng ví dụ
 
 [Rust][rust] là một ngôn ngữ lập trình hệ thống hiện đại tập trung vào tính an toàn, tốc độ và tính đồng thời. 
 Nó đạt đươc các tiêu chí này bằng cách làm bộ nhớ trở nên an toàn mà không sử dụng đến garbage collection (bộ thu gom rác).
