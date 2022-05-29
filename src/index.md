@@ -1,10 +1,11 @@
 # Rust by Example
 
-[Rust][rust] là một ngôn ngữ lập trình hệ thống hiện đại tập trung vào tính an toàn, tốc độ và đồng thời. 
+[Rust][rust] là một ngôn ngữ lập trình hệ thống hiện đại tập trung vào tính an toàn, tốc độ và tính đồng thời. 
 Nó đạt đươc các tiêu chí này bằng cách làm bộ nhớ trở nên an toàn mà không sử dụng đến garbage collection (bộ thu gom rác).
 
-Rust by Example (RBE) là một tập các ví dụ minh họa cho các khái niệm và thư viện tiêu chuẩn của Rust. Để hiểu thêm về
-những ví dụ này, đừng quên [cài đặt ngôn ngữ Rust][install] và xem [tài liệu chính thức][std].
+Đây là bản dịch tiếng Việt của Rust by Example (RBE), một tập các ví dụ minh họa cho các khái niệm và thư viện tiêu chuẩn của Rust. Để giữ được tính
+đúng đắn về mặt thuật ngữ, xuyên suốt nội dung của toàn bộ bản dịch này, sẽ có nhiều thuật ngữ được giữ nguyên dưới dạng tiếng Anh (có kèm theo diễn giải bằng tiếng Việt). 
+Để hiểu thêm về những ví dụ này, đừng quên [cài đặt ngôn ngữ Rust][install] và xem [tài liệu chính thức][std].
 Thêm vào đó, nếu bạn tò mò, bạn cũng có thể [kiểm tra mã nguồn của trang web này][home-vn] hoặc [mã nguồn của bản gốc tiếng Anh][home-en].
 
 Nào, chúng ta cùng bắt đầu!
