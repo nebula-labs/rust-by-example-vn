@@ -7,8 +7,8 @@ Nếu bạn muốn đọc online cuốn sách này, hãy ghé thăm [bản gốc
 Tạm thời phiên bản tiếng Việt này chưa có website cho bạn ghé thăm, nên bạn có thể đọc bản tiếng Việt bằng cách [cài đặt Rust], rồi sau đó chạy các lệnh sau trong Terminal:
 
 ```bash
-$ git clone https://github.com/rust-lang/rust-by-example
-$ cd rust-by-example
+$ git clone https://github.com/EyesCrypto-Insights/rust-by-example-vn.git
+$ cd rust-by-example-vn
 $ cargo install mdbook
 $ mdbook build
 $ mdbook serve
