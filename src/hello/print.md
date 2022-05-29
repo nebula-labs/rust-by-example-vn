@@ -1,4 +1,4 @@
-# Formatted print
+# Formatted print (Định dạng in dữ lỉệu) trong Rust
 
 Printing (In văn bản) được xử lý bởi một loạt [`macros`][macros] được xác định trong [`std::fmt`][fmt],
 một số trong số macro đó bao gồm:
