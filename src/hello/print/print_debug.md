@@ -6,7 +6,7 @@ cho các kiểu có sẵn trong thư viện `std`. Tất cả những kiểu kh�
 thủ công bằng cách nào đó.
 
  `Trait` `fmt::Debug` làm cho việc này trở nên rất đơn giản. *Tất cả* các kiểu đều có thể
-`derive` (tự động tạo) một `fmt::Debug` implementation. Điều này không áp dụng cho `fmt::Display`,
+`derive` (dẫn xuất) tự động tạo một `fmt::Debug` implementation. Điều này không áp dụng cho `fmt::Display`,
 thứ mà bắt buộc phải được triển khai một cách thủ công.
 
 ```rust
