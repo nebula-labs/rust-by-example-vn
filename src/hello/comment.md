@@ -1,4 +1,4 @@
-# Comments trong Rust
+# Comments (Giải thích) trong Rust
 
 Bất kỳ chương trình nào cũng yêu cầu có comments (nhận xét, giải thích) và Rust hỗ trợ
 một số loại comments khác nhau:
