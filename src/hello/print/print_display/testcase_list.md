@@ -30,7 +30,7 @@ impl fmt::Display for List {
         write!(f, "[")?;
 
         // Lặp qua từng phần tử `v` trong `vec`, đồng thời gán index (chỉ mục) 
-        // của `v` trong `count`.
+        // của `v` cho biến `count`.
         for (count, v) in vec.iter().enumerate() {
             // Với mỗi phần tử trừ phần tử đầu tiên, đều thêm một dấu phẩy ở phía sau.
             // Sử dụng toán tử ? để trả về nếu có lỗi.
