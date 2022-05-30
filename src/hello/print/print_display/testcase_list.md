@@ -3,7 +3,7 @@
 Việc triển khai `fmt::Display` cho một cấu trúc mà trong đó mỗi phần tử phải 
 được xử lý tuần tự là một công việc khó. Vấn đề đó là mỗi một `write!` macro 
 sẽ tạo ra một `fmt::Result`. Để giải quyết điều này đòi hỏi phải xử lý *tất cả* các kết quả. 
-Rust cung cấp toán tử `?' cho mục đích này.
+Rust cung cấp toán tử `?` cho mục đích này.
 
 Sử dụng `?` với `write!` sẽ như sau:
 
