@@ -2,7 +2,7 @@
 
 Một tuple là một tập các phần tử có thứ tự mà chúng có thể có kiểu dữ liệu khác nhau. Tuples được tạo bằng cách
 sử dụng cặp dấu ngoặc đơn `()` bên ngoài, và tất cả những gì nằm trong đó là những phần tử của tuple. 
-Bản thân mỗi tuple là một giá trị có chữ ký kiểu dữ liệu (type signature) là `(T1, T2, ...)`, 
+Bản thân mỗi tuple là một giá trị có type signature (chữ ký kiểu dữ liệu) là `(T1, T2, ...)`, 
 trong đó `T1`,` T2` là các kiểu dữ liệu của các phần tử trong tuple. Các hàm có thể
 sử dụng tuples cho mục đích trả về nhiều giá trị, vì các tuple có thể chứa một số lượng phần tử bất kỳ.
 
