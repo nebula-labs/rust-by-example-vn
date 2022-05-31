@@ -51,7 +51,7 @@ fn main() {
     println!("one element tuple: {:?}", (5u32,));
     println!("just an integer: {:?}", (5u32));
 
-    // Có thể phá cấu trúc (destructured) của tuple thành các phần tử bên trong nó bằng cách 
+    // Có thể hủy cấu trúc (destructured) của tuple thành các phần tử bên trong nó bằng cách 
     // dùng binding (đã nói ở trên).
     let tuple = (1, "hello", 4.5, true);
 
