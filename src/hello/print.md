@@ -93,7 +93,7 @@ Việc triển khai `fmt::Display` trait sẽ tự động triển khai
 ### Xem thêm tại:
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
-and [`traits`][traits]
+và [`traits`][traits]
 
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: ../macros.md
