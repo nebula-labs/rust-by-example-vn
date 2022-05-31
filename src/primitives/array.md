@@ -59,6 +59,6 @@ fn main() {
 ```
 Xem thêm tại đây:
 
-[`borrow`][borrow_ownership]
+[Borrowing][borrow_ownership]
 
 [borrow_ownership]: ../scope/borrow.md
