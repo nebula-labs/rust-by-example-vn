@@ -79,7 +79,7 @@ Dưới đây là hai dạng cơ bản:
 cho những kiểu này. Để in văn bản cho các kiểu dữ liệu tùy chỉnh, cần nhiều bước hơn.
 
 Việc triển khai `fmt::Display` trait sẽ tự động triển khai
-[`ToString`] trait cho phép chúng ta [chuyển đổi] kiểu thành [`String`] [string].
+[`ToString`] trait cho phép chúng ta [chuyển đổi] kiểu thành [`String`][string].
 
 ### Thực hành
 
