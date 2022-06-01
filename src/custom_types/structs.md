@@ -58,7 +58,7 @@ fn main() {
     // lấy trường này từ point.
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
-    // Hủy cấu trúc của điểm bằng `let` binding
+    // Destructure point bằng `let` binding
     let Point { x: left_edge, y: top_edge } = point;
 
     let _rectangle = Rectangle {
@@ -76,7 +76,7 @@ fn main() {
     // Truy cập các trường của một tuple struct
     println!("pair contains {:?} and {:?}", pair.0, pair.1);
 
-    // Hủy cấu trúc một tuple struct
+    // Destructure một tuple struct
     let Pair(integer, decimal) = pair;
 
     println!("pair contains {:?} and {:?}", integer, decimal);
