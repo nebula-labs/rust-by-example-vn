@@ -1,9 +1,4 @@
-# Variable Bindings (Gán giá trị và xác định kiểu cho biến trong Rust)
-
-Rust provides type safety via static typing. Variable bindings can be type
-annotated when declared. However, in most cases, the compiler will be able
-to infer the type of the variable from the context, heavily reducing the
-annotation burden.
+# Variable Bindings (Ràng buộc giữa kiểu và giá trị với biến trong Rust)
 
 Rust cung cấp sự an toàn cho kiểu (type safety) bằng các kiểu tĩnh. Các ràng buộc biến có thể được
 chú thích kiểu khi khai báo. Tuy nhiên, trong hầu hết các trường hợp, trình biên dịch sẽ có thể
