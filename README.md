@@ -1,6 +1,8 @@
 # Rust By Example
 Phiên bản tiếng Việt của https://doc.rust-lang.org/stable/rust-by-example - Học lập trình Rust thông qua các ví dụ (Có Live code editor)
 
+Dịch giả: Nguyễn Đức Chính <eyescryptoinsights@gmail.com>
+
 ## Cách sử dụng 
 Nếu bạn muốn đọc online cuốn sách này, hãy ghé thăm [bản gốc tiếng Anh của nó tại đây][site-en].
 
