@@ -1,4 +1,4 @@
-# Nesting and labels (Vòng lặp lồng nhau và nhãn)
+# Nesting và labels (Vòng lặp lồng nhau và nhãn)
 
 Có thể dùng `break` và `continue` ở các vòng lặp bên ngoài (outer loops) trong khi 
 xử lý vòng lặp bên trong (inner loops). Trong những trường hợp này, các vòng lặp phải được 
