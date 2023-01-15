@@ -1,4 +1,4 @@
-# Custom Types
+# Custom Types (Kiểu dữ liệu tuỳ chỉnh)
 
 Các kiểu dữ liệu tùy chỉnh của Rust được tạo chủ yếu thông qua hai từ khóa sau:
 

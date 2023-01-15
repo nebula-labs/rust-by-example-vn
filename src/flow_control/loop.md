@@ -11,14 +11,14 @@ fn main() {
 
     println!("Let's count until infinity!");
 
-    // Infinite loop
+    // Vòng lặp vô hạn
     loop {
         count += 1;
 
         if count == 3 {
             println!("three");
 
-            // Skip the rest of this iteration
+            // Bỏ qua phần còn lại của lần lặp hiện tại
             continue;
         }
 
@@ -27,7 +27,7 @@ fn main() {
         if count == 5 {
             println!("OK, that's enough");
 
-            // Exit this loop
+            // Thoát khỏi vòng lặp
             break;
         }
     }
