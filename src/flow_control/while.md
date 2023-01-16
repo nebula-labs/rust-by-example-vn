@@ -1,15 +1,16 @@
 # while
 
-Từ khóa `while` có thể được sử dụng để chạy một vòng lặp trong khi điều kiện còn đúng.
+Từ khóa `while` có thể được sử dụng để chạy một vòng lặp với một điều kiện, 
+vòng lặp sẽ không kết thúc cho đến khi điều kiện trở thành sai.
 
 Hãy thử viết trò chơi [FizzBuzz][fizzbuzz] nổi tiếng bằng cách sử dụng vòng lặp `while`.
 
 ```rust,editable
 fn main() {
-    // A counter variable
+    // Biến đếm
     let mut n = 1;
 
-    // Loop while `n` is less than 101
+    // Vòng lặp white với điều kiện `n` nhỏ hơn 101
     while n < 101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -21,7 +22,7 @@ fn main() {
             println!("{}", n);
         }
 
-        // Increment counter
+        // Tăng biến đếm lên 1 
         n += 1;
     }
 }

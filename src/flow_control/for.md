@@ -8,7 +8,7 @@ Hãy thử viết FizzBuzz bằng `for` thay cho `while`.
 
 ```rust,editable
 fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    // `n` sẽ lấy các giá trị: 1, 2, ..., 100 tại mỗi lần lặp
     for n in 1..101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -27,7 +27,7 @@ Ngoài ra, `a..=b` có thể được sử dụng cho một phạm vi mà nó ba
 
 ```rust,editable
 fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    // `n` sẽ lấy các giá trị: 1, 2, ..., 100 tại mỗi lần lặp
     for n in 1..=100 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -59,7 +59,7 @@ fn main() {
     for name in names.iter() {
         match name {
             &"Ferris" => println!("There is a rustacean among us!"),
-            // TODO ^ Try deleting the & and matching just "Ferris"
+            // TODO ^ Hãy thử xoá & và chỉ matching với "Ferris"
             _ => println!("Hello {}", name),
         }
     }
@@ -82,7 +82,7 @@ fn main() {
     }
     
     println!("names: {:?}", names);
-    // FIXME ^ Comment out this line
+    // FIXME ^ Comment dòng trên lại
 }
 ```
 
