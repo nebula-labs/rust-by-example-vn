@@ -1,6 +1,6 @@
 # Destructuring (Tách dữ liệu)
 
-Một khối `match` có thể được tách thành các phần tử theo nhiều cách khác nhau.
+Một khối `match` có thể tách các kiểu cấu trúc trong Rust thành các phần tử theo nhiều cách khác nhau.
 
 * [Destructuring Tuples][tuple]
 * [Destructuring Arrays and Slices][slice]
