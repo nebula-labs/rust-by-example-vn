@@ -60,6 +60,6 @@ fn main() {
 }
 ```
 
-### See also:
+### Xem thêm tại đây:
 
 [The ref pattern](../../../scope/borrow/ref.md)
