@@ -9,7 +9,7 @@ let optional = Some(7);
 match optional {
     Some(i) => {
         println!("This is a really long string and `{:?}`", i);
-        // ^ Thụt đầu dòng ở đây để nhận biết việc 
+        // ^ Thụt đầu dòng ở đây 2 lần để nhận biết việc 
         // tách `i` khỏi option.
     },
     _ => {},
@@ -121,7 +121,7 @@ fn main() {
 
 ### Xem thêm tại đây:
 
-[`enum`][enum], [`Option`][option], và [RFC][if_let_rfc]
+[`enum`][enum], [`Option`][option], và [if let RFC][if_let_rfc]
 
 [enum]: ../custom_types/enum.md
 [if_let_rfc]: https://github.com/rust-lang/rfcs/pull/160
