@@ -16,4 +16,4 @@ fn main() {
     used_function();
 }
 ```
-Lưu ý rằng trong các chương trình thực tế, bạn nên loại bỏ dead code. Trong những ví dụ trên chúng tôi sẽ cho phép dead code ở một số nơi bởi do tính chất tương tác của các ví dụ.
+Lưu ý rằng trong các chương trình thực tế, bạn nên loại bỏ dead code. Trong những ví dụ trên chúng tôi sẽ cho phép dead code ở một số nơi để làm nổi bật nó trong các ví dụ.
