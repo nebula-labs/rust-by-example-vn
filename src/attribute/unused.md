@@ -10,7 +10,7 @@ fn used_function() {}
 fn unused_function() {}
 
 fn noisy_unused_function() {}
-// FIXME ^ Thêm một thuộc tính để  vô hiệu hóa cảnh báo
+// FIXME ^ Thêm một thuộc tính để vô hiệu hóa cảnh báo
 
 fn main() {
     used_function();
