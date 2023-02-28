@@ -9,13 +9,13 @@ Một thuộc tính là metadata(siêu dữ liệu) áp dụng cho 1 số module
 * vô hiệu hóa [lints][lint] (những cảnh báo)
 * bật các tính năng của trình biên dịch (macros, glob imports, etc.)
 * liên kết đến một thư viện ngoài
-* đánh dấu những hàm như là unit tests
+* đánh dấu các chức năng như là unit tests
 * đánh dấu các chức năng sẽ là một phần của benchmark
 * [thuộc tính như macro][macros]
 
 Khi các thuộc tính áp dụng cho toàn bộ crate, cú pháp của nó là `#![crate_attribute]`, và khi chúng áp dụng cho một module hoặc mục, cú pháp là `#[item_attribute]`(bỏ đi `!`).
 
-Các thuộc tính có thể nhận các đối số với các cú pháp khác nhau:
+Các thuộc tính có thể nhận các đối số với những cú pháp khác nhau:
 
 * `#[attribute = "value"]`
 * `#[attribute(key = "value")]`
