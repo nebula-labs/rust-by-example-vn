@@ -24,8 +24,7 @@ foo
 
 Để yêu cầu `cargo` chỉ biên dịch hay chạy tệp nhị phân này, chúng ta chỉ cần chạy `cargo` với cờ `--bin my_other_bin`, trong đó `my_other_bin` là tên của tệp nhị phân mà chúng ta muốn làm việc.
 
-Ngoài các tệp nhị phân bổ sung, `cargo` hỗ trợ [nhiều tính năng hơn
-] như benchmarks, tests, và các ví dụ.
+Ngoài các tệp nhị phân bổ sung, `cargo` hỗ trợ [nhiều tính năng hơn] như benchmarks, tests, và các ví dụ.
 
 Trong chương tiếp theo, chúng ta sẽ xem xét kỹ hơn các bài kiểm tra
 
