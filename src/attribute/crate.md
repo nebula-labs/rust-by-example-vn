@@ -25,7 +25,7 @@ pub fn indirect_access() {
     private_function();
 } 
 ```
-Khi thuộc tính crate_type này được sử dụng, chúng ta không còn cần truyền cờ --crate-type cho trình biên dịch rustc nữa.
+Khi thuộc tính `crate_type` này được sử dụng, chúng ta không còn cần truyền cờ `--crate-type` cho trình biên dịch `rustc` nữa.
 
 ```shell
 $ rustc lib.rs
