@@ -1,6 +1,6 @@
 # Tạo một thư viện
 
-Let's create a library, and then see how to link it to another crate.
+Hãy tạo một thư viện, và sau đó xem cách liên kết nó với một crate khác.
 
 ```rust,ignore
 pub fn public_function() {
@@ -24,9 +24,6 @@ $ ls lib*
 library.rlib
 ```
 
-Libraries get prefixed with "lib", and by default they get named after their
-crate file, but this default name can be overridden by passing
-the `--crate-name` option to `rustc` or by using the [`crate_name`
-attribute][crate-name].
+Các thư viện có tiền tố là `lib`, và mặc định chúng có cùng tên với tập tin crate, nhưng cái tên mặc định này có thể được ghi đè bằng cách truyền tùy chọn `--crate-name` đến trình biên dịch `rustc` hoặc bằng cách sử dụng [ thuộc tính `crate_name`][crate-name].
 
 [crate-name]: ../attribute/crate.md
