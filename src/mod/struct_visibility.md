@@ -1,24 +1,21 @@
 # Struct visibility
 
-Structs have an extra level of visibility with their fields. The visibility
-defaults to private, and can be overridden with the `pub` modifier. This
-visibility only matters when a struct is accessed from outside the module
-where it is defined, and has the goal of hiding information (encapsulation).
+Các cấu trúc (struct) có một mức độ phạm vi truy cập được thêm vào đối với các trường của chúng. Phạm vi mặc định là riêng tư (private), và có thể được ghi đè bằng từ khóa `pub`. Phạm vi này chỉ được xem xét khi một cấu trúc được truy cập từ bên ngoài module mà nó được định nghĩa, và mục đích của nó là che thông tin (đóng gói) (encapsulation).
 
 ```rust,editable
 mod my {
-    // A public struct with a public field of generic type `T`
+    // Một cấu trúc công khai với một trường công khai của kiểu chung (generic) `T`
     pub struct OpenBox<T> {
         pub contents: T,
     }
 
-    // A public struct with a private field of generic type `T`
+    // Một cấu trúc công khai với một trường riêng tư của kiểu chung (generic) `T`
     pub struct ClosedBox<T> {
         contents: T,
     }
 
     impl<T> ClosedBox<T> {
-        // A public constructor method
+        // Một phương thức khởi tạo công khai
         pub fn new(contents: T) -> ClosedBox<T> {
             ClosedBox {
                 contents: contents,
@@ -28,31 +25,31 @@ mod my {
 }
 
 fn main() {
-    // Public structs with public fields can be constructed as usual
+    // Các cấu trúc công khai với các trường công khai có thể được khởi tạo một cách tự nhiên như sau
     let open_box = my::OpenBox { contents: "public information" };
 
-    // and their fields can be normally accessed.
+    // và các trường của chúng có thể được truy cập một cách bình thường.
     println!("The open box contains: {}", open_box.contents);
 
-    // Public structs with private fields cannot be constructed using field names.
-    // Error! `ClosedBox` has private fields
+    // Các cấu trúc công khai với các trường riêng tư không thể được khởi tạo bằng cách sử dụng tên trường.
+    // Lỗi! `ClosedBox` có các trường riêng tư
     //let closed_box = my::ClosedBox { contents: "classified information" };
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú của dòng trên này
 
-    // However, structs with private fields can be created using
-    // public constructors
+    // Tuy nhiên, các cấu trúc với các trường riêng tư có thể được tạo bằng cách sử dụng
+    // phương thức khởi tạo công khai
     let _closed_box = my::ClosedBox::new("classified information");
 
-    // and the private fields of a public struct cannot be accessed.
-    // Error! The `contents` field is private
+    // và các trường riêng tư của một cấu trúc dù có phạm vi công khai thì cũng không thể được truy cập.
+    // Lỗi! Trường `contents` là riêng tư
     //println!("The closed box contains: {}", _closed_box.contents);
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú của dòng trên này
 }
 ```
 
-### See also:
+### Xem thêm:
 
-[generics][generics] and [methods][methods]
+[generics][generics] và [methods][methods]
 
 [generics]: ../generics.md
 [methods]: ../fn/methods.md
