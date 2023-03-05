@@ -1,7 +1,6 @@
-# The `use` declaration
+# Khai báo `use`
 
-The `use` declaration can be used to bind a full path to a new name, for easier
-access. It is often used like this:
+Khai báo `use` có thể được sử dụng để ánh xạ một đường dẫn đầy đủ với một cái tên mới, để truy cập dễ dàng hơn. Nó thường được sử dụng như sau:
 
 ```rust,editable,ignore
 use crate::deeply::nested::{
@@ -15,10 +14,10 @@ fn main() {
 }
 ```
 
-You can use the `as` keyword to bind imports to a different name:
+Bạn có thể sử dụng từ khóa `as` để ánh xạ những thứ được dẫn xuất vào module hiện tại với một cái tên khác:
 
 ```rust,editable
-// Bind the `deeply::nested::function` path to `other_function`.
+// Ánh xạ đường dẫn `deeply::nested::function` đến `other_function`.
 use deeply::nested::function as other_function;
 
 fn function() {
@@ -34,17 +33,17 @@ mod deeply {
 }
 
 fn main() {
-    // Easier access to `deeply::nested::function`
+    // Truy cập `deeply::nested::function` một cách dễ dàng.
     other_function();
 
     println!("Entering block");
     {
-        // This is equivalent to `use deeply::nested::function as function`.
-        // This `function()` will shadow the outer one.
+        // Cách này tương đương với `use deeply::nested::function as function`.
+        // `function()` này sẽ che đi cái bên ngoài.
         use crate::deeply::nested::function;
 
-        // `use` bindings have a local scope. In this case, the
-        // shadowing of `function()` is only in this block.
+        // các khai báo `use` có phạm vi cục bộ. Trong trường hợp này,
+        // việc che đạy của `function()` chỉ áp dụng trong khối này.
         function();
 
         println!("Leaving block");
