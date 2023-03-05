@@ -1,30 +1,28 @@
-# Visibility
+# Phạm vi
 
-By default, the items in a module have private visibility, but this can be
-overridden with the `pub` modifier. Only the public items of a module can be
-accessed from outside the module scope.
+Mặc định, các mục trong một module có phạm vi là riêng tư, nhưng điều này có thể được ghi đè bằng từ khóa `pub`. Chỉ những mục công khai của một module có thể được truy cập từ bên ngoài phạm vi của nó.
 
 ```rust,editable
-// A module named `my_mod`
+// Một module tên là `my_mod`
 mod my_mod {
-    // Items in modules default to private visibility.
+    // Các mục trong module có phạm vi mặc định là riêng tư.
     fn private_function() {
         println!("called `my_mod::private_function()`");
     }
 
-    // Use the `pub` modifier to override default visibility.
+    // Sử dụng từ khóa `pub` để ghi đè phạm vi mặc định.
     pub fn function() {
         println!("called `my_mod::function()`");
     }
 
-    // Items can access other items in the same module,
-    // even when private.
+    // Các mục có thể truy cập lẫn nhau trong cùng một module,
+    // thậm chí phạm vi của nó là riêng tư.
     pub fn indirect_access() {
         print!("called `my_mod::indirect_access()`, that\n> ");
         private_function();
     }
 
-    // Modules can also be nested
+    // Các module có thể lồng nhau.
     pub mod nested {
         pub fn function() {
             println!("called `my_mod::nested::function()`");
@@ -35,21 +33,21 @@ mod my_mod {
             println!("called `my_mod::nested::private_function()`");
         }
 
-        // Functions declared using `pub(in path)` syntax are only visible
-        // within the given path. `path` must be a parent or ancestor module
+        // Các hàm được khai báo bằng cách sử dụng cú pháp `pub(in path)` chỉ hiện diện
+        // trong đường dẫn được chỉ định. `path` phải là một module cha hoặc tổ tiên (ancestor).
         pub(in crate::my_mod) fn public_function_in_my_mod() {
             print!("called `my_mod::nested::public_function_in_my_mod()`, that\n> ");
             public_function_in_nested();
         }
 
-        // Functions declared using `pub(self)` syntax are only visible within
-        // the current module, which is the same as leaving them private
+        // Các hàm được khai báo bằng cách sử dụng cú pháp `pub(self)` chỉ hiện diện
+        // trong module hiện tại, tương tự như khi ta để phạm vi của chúng là riêng tư.
         pub(self) fn public_function_in_nested() {
             println!("called `my_mod::nested::public_function_in_nested()`");
         }
 
-        // Functions declared using `pub(super)` syntax are only visible within
-        // the parent module
+        // Các hàm được khai báo bằng cách sử dụng cú pháp `pub(super)` chỉ hiện diện
+        // trong module cha.
         pub(super) fn public_function_in_super_mod() {
             println!("called `my_mod::nested::public_function_in_super_mod()`");
         }
@@ -62,20 +60,20 @@ mod my_mod {
         nested::public_function_in_super_mod();
     }
 
-    // pub(crate) makes functions visible only within the current crate
+    // pub(crate) khiến cho các hàm có thể hiện diện chỉ trong crate hiện tại.
     pub(crate) fn public_function_in_crate() {
         println!("called `my_mod::public_function_in_crate()`");
     }
 
-    // Nested modules follow the same rules for visibility
+    // Các module lồng nhau sẽ theo cùng một quy tắc về phạm vi.
     mod private_nested {
         #[allow(dead_code)]
         pub fn function() {
             println!("called `my_mod::private_nested::function()`");
         }
 
-        // Private parent items will still restrict the visibility of a child item,
-        // even if it is declared as visible within a bigger scope.
+        // Các mục cha có phạm vi riêng tư sẽ giới hạn phạm vi của một mục con,
+        // ngay cả khi nó được khai báo là công khai trong một phạm vi lớn hơn.
         #[allow(dead_code)]
         pub(crate) fn restricted_function() {
             println!("called `my_mod::private_nested::restricted_function()`");
@@ -88,41 +86,42 @@ fn function() {
 }
 
 fn main() {
-    // Modules allow disambiguation between items that have the same name.
+    // Các module cho phép phân biệt giữa các mục có cùng tên.
     function();
     my_mod::function();
 
-    // Public items, including those inside nested modules, can be
-    // accessed from outside the parent module.
+    // Các mục công khai, bao gồm các mục trong các module lồng nhau, có thể được
+    // truy cập từ bên ngoài module cha.
+
     my_mod::indirect_access();
     my_mod::nested::function();
     my_mod::call_public_function_in_my_mod();
 
-    // pub(crate) items can be called from anywhere in the same crate
+    // Các mục khai báo pub(crate) có thể được truy cập từ bất cứ đầu trong cùng một crate.
     my_mod::public_function_in_crate();
 
-    // pub(in path) items can only be called from within the module specified
-    // Error! function `public_function_in_my_mod` is private
+    // Các mục khai báo pub(in path) chỉ có thể được truy cập trong module được chỉ định.
+    // Lỗi! hàm `public_function_in_my_mod` là riêng tư.
     //my_mod::nested::public_function_in_my_mod();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú trên dòng này
 
-    // Private items of a module cannot be directly accessed, even if
-    // nested in a public module:
+    // Các mục riêng tư của module không thể được truy cập trực tiếp, ngay cả khi
+    // nó được lồng bên trong một module công khai:
 
-    // Error! `private_function` is private
+    // Lỗi! `private_function` là riêng tư
     //my_mod::private_function();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú trên dòng này
 
-    // Error! `private_function` is private
+    // Lỗi! `private_function` là riêng tư
     //my_mod::nested::private_function();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú trên dòng này
 
-    // Error! `private_nested` is a private module
+    // Error! `private_nested` là một module riêng tư
     //my_mod::private_nested::function();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú trên dòng này
 
-    // Error! `private_nested` is a private module
+    // Error! `private_nested` là một module riêng tư
     //my_mod::private_nested::restricted_function();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Hãy thử bỏ ghi chú trên dòng này
 }
 ```
