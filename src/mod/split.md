@@ -1,7 +1,6 @@
-# File hierarchy
+# Phân cấp tập tin
 
-Modules can be mapped to a file/directory hierarchy. Let's break down the
-[visibility example][visibility] in files:
+Các module có thể được ánh xạ vào một cấu trúc tập tin/thư mục. Hãy phân tích ví dụ [visibility][visibility] trong các tập tin:
 
 ```shell
 $ tree .
@@ -13,11 +12,11 @@ $ tree .
 └── split.rs
 ```
 
-In `split.rs`:
+Trong tập tin `split.rs`:
 
 ```rust,ignore
-// This declaration will look for a file named `my.rs` and will
-// insert its contents inside a module named `my` under this scope
+// Khai báo này sẽ tìm tập tin tên là `my.rs` và sẽ
+// chèn nội dung của nó vào trong một module tên `my` trong phạm vi này (scope).
 mod my;
 
 fn function() {
@@ -36,12 +35,11 @@ fn main() {
 
 ```
 
-In `my.rs`:
+Trong tập tin `my.rs`:
 
 ```rust,ignore
-// Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
-// and `inaccessible.rs` files and insert them here under their respective
-// modules
+// Tương tự `mod inaccessible` và `mod nested` sẽ tìm các tập tin `nested.rs`
+// và `inaccessible.rs` và chèn chúng vào đây dưới các module tương ứng.
 mod inaccessible;
 pub mod nested;
 
@@ -60,7 +58,7 @@ pub fn indirect_access() {
 }
 ```
 
-In `my/nested.rs`:
+Trong tập tin `my/nested.rs`:
 
 ```rust,ignore
 pub fn function() {
@@ -73,7 +71,7 @@ fn private_function() {
 }
 ```
 
-In `my/inaccessible.rs`:
+Trong tập tin `my/inaccessible.rs`:
 
 ```rust,ignore
 #[allow(dead_code)]
@@ -82,7 +80,7 @@ pub fn public_function() {
 }
 ```
 
-Let's check that things still work as before:
+Kiểm tra xem mọi thứ vẫn hoạt động như trước:
 
 ```shell
 $ rustc split.rs && ./split
