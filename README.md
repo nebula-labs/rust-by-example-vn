@@ -1,6 +1,8 @@
 # Rust By Example
 Phiên bản tiếng Việt của https://doc.rust-lang.org/stable/rust-by-example - Học lập trình Rust thông qua các ví dụ (Có Live code editor)
 
+Phiên bản tiếng Anh gốc ở https://github.com/rust-lang/rust-by-example
+
 Dịch giả: Nguyễn Đức Chính - Nebula Labs <eyescryptoinsights@gmail.com>
 
 ## Cách sử dụng 
@@ -20,3 +22,9 @@ $ mdbook serve
 
 [site-en]: https://doc.rust-lang.org/stable/rust-by-example
 [cài đặt Rust]: https://www.rust-lang.org/tools/install
+
+## Tiến độ
+
+Có 198 file, query bằng cách `find . -type f -name "*.md" | wc -l`.
+
+Ở thời điểm 01/03/2022, có 3 người cùng dịch, mỗi người dịch 2 file, tốc độ sẽ là 6 file/tuần. Như vậy sẽ mất khoảng hơn 8 tháng để dịch xong. Với thêm 2 người nữa, bản dịch này sẽ chỉ mất 5 tháng. 8 người dịch sẽ đưa thời gian xuống còn 3 tháng.
