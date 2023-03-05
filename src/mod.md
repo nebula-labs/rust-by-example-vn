@@ -1,8 +1,5 @@
 # Modules
 
-Rust provides a powerful module system that can be used to hierarchically split
-code in logical units (modules), and manage visibility (public/private) between
-them.
+Rust cung cấp một hệ thống module mạnh mẽ có thể được sử dụng để phân chia các mã theo cấp bậc thành các đơn vị logic (module) và quản lý phạm vi (công khai/riêng tư) `(public/private)` giữa chúng.
 
-A module is a collection of items: functions, structs, traits, `impl` blocks,
-and even other modules.
+Một module là một tập hợp các thứ như: hàm, cấu trúc, đặc điểm, khối `impl` và thậm chí nó có thể bao gồm các module khác.
