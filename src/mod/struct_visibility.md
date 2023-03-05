@@ -1,4 +1,4 @@
-# Struct visibility
+# Phạm vi của cấu trúc
 
 Các cấu trúc (struct) có một mức độ phạm vi truy cập được thêm vào đối với các trường của chúng. Phạm vi mặc định là riêng tư (private), và có thể được ghi đè bằng từ khóa `pub`. Phạm vi này chỉ được xem xét khi một cấu trúc được truy cập từ bên ngoài module mà nó được định nghĩa, và mục đích của nó là che thông tin (đóng gói) (encapsulation).
 
