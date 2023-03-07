@@ -1,6 +1,6 @@
 # Wrapping errors
 
-Một sự thay thế cho boxing errors(các lỗi được đóng thùng) là bọc(wrap) chúng trong loại lỗi của riêng bạn.
+Một phương pháp khác để xử lý các lỗi là bọc chúng trong một kiểu dữ liệu lỗi mà bạn tự định nghĩa.
 
 ```rust,editable
 use std::error;
@@ -13,8 +13,8 @@ type Result<T> = std::result::Result<T, DoubleError>;
 #[derive(Debug)]
 enum DoubleError {
     EmptyVec,
-    // Chúng tôi sẽ trì hoãn việc triển khai lỗi phân tích cú pháp cho lỗi của họ.
-    // Cung cấp thông tin bổ sung yêu cầu thêm dữ liệu vào loại lỗi.
+    // Chúng ta sẽ trì hoãn việc triển khai phân tích lỗi cú pháp đối với lỗi của chúng.
+    // Việc cung cấp thông tin bổ sung yêu cầu thêm dữ liệu vào loại lỗi.
     Parse(ParseIntError),
 }
 
