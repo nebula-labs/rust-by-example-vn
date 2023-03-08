@@ -1,6 +1,6 @@
 # Build Scripts
 
-Đôi khi một bản build bình thường từ `cargo` là không đủ. Crate của bạn có lẽ cần một số điều kiện tiên quyết trước khi `cargo` sẽ biên dịch thành công, những thứ như là tạo mã, hoặc một số mã gốc cần được biên dịch. Để giải quyết vấn đề này chúng tôi đã thêm các build script mà Cargo có thể chạy.
+Đôi khi một bản build bình thường từ `cargo` là không đủ. Crate của bạn có lẽ cần một số điều kiện tiên quyết trước khi `cargo` có thể biên dịch thành công, những thứ như là tạo mã, hoặc một số mã gốc cần được biên dịch. Để giải quyết vấn đề này chúng ta có các kịch bản build mà Cargo có thể chạy.
 
 Để thêm một build script vào gói của bạn, nó có thể được chỉ định trong 
 `Cargo.toml` như sau:
