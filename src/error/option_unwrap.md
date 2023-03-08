@@ -5,7 +5,7 @@ Ta đã cho chương trình `panic` nếu ta uống nước chanh có đường.
 Nhưng nếu ta mong đợi một loại đồ uống nhưng lại không nhận được gì thì sao?
 Trường hợp đó cũng tệ không kém, vì vậy nó cần phải được xử lý!
 
-Chúng ta có thể kiểm tra điều này với string rỗng (`""`) giống như ta đã làm với nước chanh.
+Chúng ta có thể kiểm tra điều này với empty string (`""`) giống như ta đã làm với nước chanh.
 Vì ta đang dùng Rust, hãy để compiler chỉ ra các trường hợp không có đồ uống.
 
 Một `enum` tên là `Option<T>` trong thư viện `std` được sử dụng trong trường hợp có thể không có một phần tử nào.
@@ -19,8 +19,8 @@ Các trường hợp này có thể được xử lý một cách rõ ràng thô
 
 Lưu ý rằng có thể tùy chỉnh `panic` bằng cách sử dụng [expect][expect],
 nhưng xử lý ngầm định (`unwrap`) sẽ để lại cho ta một kết quả ít có ý nghĩa hơn so với việc xử lý rõ ràng.
-Trong ví dụ sau đây, việc xử lý rõ ràng giúp ta kiểm soát kết quả hơn,
-trong khi ta vẫn có thể `panic` nếu cần.
+Trong ví dụ sau đây, việc xử lý rõ ràng giúp ta kiểm soát kết quả tốt hơn,
+trong khi vẫn giữ tùy chọn `panic` nếu cần.
 
 ```rust,editable,ignore,mdbook-runnable
 // Người lớn (adult) thì cái gì cũng uống được.
