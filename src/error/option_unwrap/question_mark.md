@@ -1,6 +1,6 @@
 # Unpacking options with `?`
 
-Bạn có thể bóc vỏ `Option` bằng cách sử dụng câu lệnh `match`, nhưng thường thì sử dụng toán tử `?` sẽ dễ dàng hơn. Nếu `x` là một `Option`, thì khi đánh giá `x?` sẽ trả về giá trị bên trong nếu `x` là `Some`, ngược lại nó sẽ kết thúc các hàm đang được thực thi và trả về `None`.
+Bạn có thể unpack `Option` bằng cách sử dụng câu lệnh `match`, nhưng thường thì sử dụng toán tử `?` sẽ dễ dàng hơn. Nếu `x` là một `Option`, thì khi đánh giá `x?` sẽ trả về giá trị bên trong nếu `x` là `Some`, ngược lại nó sẽ kết thúc các hàm đang được thực thi và trả về `None`.
 
 ```rust,editable
 fn next_birthday(current_age: Option<u8>) -> Option<String> {
