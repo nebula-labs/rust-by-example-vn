@@ -1,16 +1,10 @@
 # Combinators: `map`
 
-`match` is a valid method for handling `Option`s. However, you may
-eventually find heavy usage tedious, especially with operations only valid
-with an input. In these cases, [combinators][combinators] can be used to
-manage control flow in a modular fashion.
+`match` là một phương thức xử lý hợp lệ của `Option`. Tuy nhiên, bạn có thể cảm thấy chán khi sử dụng chúng nhiều, đặc biệt là với các hoạt động chỉ đánh giá cho một đầu vào. Trong những trường hợp này, [combinators][combinators] có thể được sử dụng để quản lý luồng điều khiển một cách linh hoạt.
 
-`Option` has a built in method called `map()`, a combinator for the simple
-mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be
-chained together for even more flexibility.
+`Option` có sẵn một phương thức gọi là `map()`, một combinator cho việc đơn giản hóa việc ánh xạ `Some -> Some` và `None -> None`. Nhiều lần gọi `map()` có thể được nối với nhau để có tăng thêm tính linh hoạt.
 
-In the following example, `process()` replaces all functions previous
-to it while staying compact.
+Trong ví dụ sau, `process()` thay thế tất cả các hàm trước nó trong khi vẫn giữ nguyên tính gọn gàng.
 
 ```rust,editable
 #![allow(dead_code)]
@@ -21,8 +15,8 @@ to it while staying compact.
 #[derive(Debug)] struct Chopped(Food);
 #[derive(Debug)] struct Cooked(Food);
 
-// Peeling food. If there isn't any, then return `None`.
-// Otherwise, return the peeled food.
+// Bóc vỏ đồ ăn. Nếu không có thì trả về `None`.
+// Ngược lại, trả về đồ ăn đã được bóc vỏ.
 fn peel(food: Option<Food>) -> Option<Peeled> {
     match food {
         Some(food) => Some(Peeled(food)),
@@ -30,8 +24,9 @@ fn peel(food: Option<Food>) -> Option<Peeled> {
     }
 }
 
-// Chopping food. If there isn't any, then return `None`.
-// Otherwise, return the chopped food.
+
+// Cắt đồ ăn. Nếu không có thì trả về `None`.
+// Ngược lại, trả về đồ ăn đã được cắt.
 fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     match peeled {
         Some(Peeled(food)) => Some(Chopped(food)),
@@ -39,20 +34,22 @@ fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     }
 }
 
-// Cooking food. Here, we showcase `map()` instead of `match` for case handling.
+
+// Nấu đồ ăn. Ở đây, chúng ta dùng `map()` thay vì `match` cho các trường hợp xử lý.
 fn cook(chopped: Option<Chopped>) -> Option<Cooked> {
     chopped.map(|Chopped(food)| Cooked(food))
 }
 
-// A function to peel, chop, and cook food all in sequence.
-// We chain multiple uses of `map()` to simplify the code.
+
+// Một hàm để bóc vỏ, cắt và nấu đồ ăn cùng một lúc.
+// Chúng ta nối nhiều lần sử dụng `map()` để đơn giản hóa code.
 fn process(food: Option<Food>) -> Option<Cooked> {
     food.map(|f| Peeled(f))
         .map(|Peeled(f)| Chopped(f))
         .map(|Chopped(f)| Cooked(f))
 }
 
-// Check whether there's food or not before trying to eat it!
+// Kiểm tra xem liệu có đồ ăn hay không trước khi thử ăn nó!
 fn eat(food: Option<Cooked>) {
     match food {
         Some(food) => println!("Mmm. I love {:?}", food),
@@ -67,6 +64,7 @@ fn main() {
 
     let cooked_apple = cook(chop(peel(apple)));
     let cooked_carrot = cook(chop(peel(carrot)));
+    // Bây giờ, hãy thử hàm `process()` đơn giản hơn.
     // Let's try the simpler looking `process()` now.
     let cooked_potato = process(potato);
 
@@ -76,7 +74,7 @@ fn main() {
 }
 ```
 
-### See also:
+### Xem thêm:
 
 [closures][closures], [`Option`][option], [`Option::map()`][map]
 
