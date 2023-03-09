@@ -8,7 +8,7 @@ Trường hợp đó cũng tệ không kém, vì vậy nó cần phải được
 Chúng ta có thể kiểm tra điều này với empty string (`""`) giống như ta đã làm với nước chanh.
 Vì ta đang dùng Rust, hãy để compiler chỉ ra các trường hợp không có đồ uống.
 
-Một `enum` tên là `Option<T>` trong thư viện `std` được sử dụng trong trường hợp có thể không có một phần tử nào.
+Một `enum` tên là `Option<T>` trong thư viện `std` được sử dụng trong trường hợp có thể không có phần tử kiểu T.
 Nó có dạng một trong hai "tuỳ chọn":
 
 * `Some(T)`: Một phần tử của kiểu `T` được tìm thấy
