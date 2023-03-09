@@ -18,7 +18,7 @@ Các trường hợp này có thể được xử lý một cách rõ ràng thô
 `unwrap`. Xử lý ngầm định sẽ trả về phần tử bên trong hoặc `panic`.
 
 Lưu ý rằng có thể tùy chỉnh `panic` bằng cách sử dụng [expect][expect],
-nhưng xử lý ngầm định (`unwrap`) sẽ để lại cho ta một kết quả ít có ý nghĩa hơn so với việc xử lý rõ ràng.
+nhưng xử lý ngầm định (`unwrap`) sẽ trả lại cho ta một kết quả ít có ý nghĩa hơn so với việc xử lý rõ ràng.
 Trong ví dụ sau đây, việc xử lý rõ ràng giúp ta kiểm soát kết quả tốt hơn,
 trong khi vẫn giữ tùy chọn `panic` nếu cần.
 
