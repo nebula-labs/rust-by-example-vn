@@ -1,6 +1,6 @@
 # Lặp qua các `Result`
 
-Một `Iter::map` có thể xảy ra lỗi, ví dụ:
+Một `Iter::map` có thể không thành công, ví dụ:
 
 ```rust,editable
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-Đây là các cách để xử lí tình huống này.
+Hãy thông qua từng bước của chiến lược để xứ lý tình huống này.
 
-## Bỏ qua các item bị lỗi bằng cách sử dụng `filter_map()`
+## Bỏ qua các phần tử bị lỗi bằng cách sử dụng `filter_map()`
 
 `filter_map` gọi một function và loại các các kêt quả bị lỗi.
 
@@ -32,7 +32,7 @@ fn main() {
 }
 ```
 
-## Thu thập các item bị lỗi với `map_err()` và `filter_map()`
+## Thu thập các phần tử bị lỗi với `map_err()` và `filter_map()`
 
 `map_err` gọi một function nhận vào một error, bằng cách thêm `map_err` vào `filter_map` chúng ta có thể lưu lại các lỗi xảy ra trong lúc thực hiện vòng lặp.
 
@@ -54,7 +54,7 @@ fn main() {
 
 ## Kết thúc vòng lặp với `collect()`
 
-`Result` implements `FromIterator`, nên một vector chứa các kết quả (`Vec<Result<T, E>>`)
+`Result` có triển khai `FromIterator`, nên một vector chứa các kết quả (`Vec<Result<T, E>>`)
 có thể được chuyển thành một kết quả với vector(`Result<Vec<T>, E>`). Khi một
 `Result::Err` được tìm thấy, vòng lặp sẽ bị hủy.
 

@@ -1,13 +1,13 @@
 # `abort` và `unwind`
 
-Phần trước đã mô tả cơ chế xử lí lỗi `panic`. Các thành phần code khác nhau có thể được thực thi một cách có điều kiện dựa trên các cài đặt `panic`. Các giá trị hiện có là `unwind` và `abort`.
+Phần trước đã mô tả cơ chế xử lí lỗi `panic`. Các thành phần code khác nhau có thể được biên dịch một cách có điều kiện dựa trên các cài đặt `panic`. Các giá trị có thể là `unwind` và `abort`.
 
-Dựa trên ví dụ trước đó, chúng ta sử dụng các panic strategy để thực hiện các dòng code khác nhau.
+Dựa trên ví dụ về nước chanh trước đó, chúng ta sử dụng các panic strategy để thực hiện các dòng code khác nhau.
 
 ```rust,editable,mdbook-runnable
 
 fn drink(beverage: &str) {
-   // You shouldn't drink too much sugary beverages.
+   // Bạn không nên uống quá nhiều đồ uống có đường.
     if beverage == "lemonade" {
         if cfg!(panic="abort"){ println!("This is not your party. Run!!!!");}
         else{ println!("Spit it out!!!!");}
