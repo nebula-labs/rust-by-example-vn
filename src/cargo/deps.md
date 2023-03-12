@@ -42,7 +42,7 @@ Trường `version` xác định phiên bản của crate theo quy chuẩn [Sema
 
 Trường `authors` là một danh sách các tác giả được sử dụng khi xuất bản crate.
 
-Phần `[dependencies]` để bạn tùy ý thêm các dependency vào project của mình.
+Phần `[dependencies]` để bạn tùy ý thêm các thư viện phụ thuộc vào dự án của mình.
 
 Ví dụ, giả sử rằng chúng ta muốn chương trình của mình có một CLI tuyệt vời. Bạn có thể tìm kiếm rất nhiều package trên [crates.io](https://crates.io/) (Đăng ký chính thức của Rust). Một lựa chọn phổ biến là [clap](https://crates.io/crates/clap). Khi viết bài này, phiên bản `clap`được công bố gần đây nhất là `2.27.1`. Để thêm một depencency tới chương trình của mình, chúng ta đơn giản chỉ cần thêm vào tệp `Cargo.toml` ở phía dưới phần `dependencies`:`clap = "2.27.1"`.  Và thế là xong. Bạn có thể bắt đầu sử dụng `clap` trong chương trình của mình.
 
