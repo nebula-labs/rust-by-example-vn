@@ -6,7 +6,7 @@ Nhưng nếu ta mong đợi một loại đồ uống nhưng lại không nhận
 Trường hợp đó cũng tệ không kém, vì vậy nó cần phải được xử lý!
 
 Chúng ta có thể kiểm tra điều này với empty string (`""`) giống như ta đã làm với nước chanh.
-Vì ta đang dùng Rust, hãy để compiler chỉ ra các trường hợp không có đồ uống.
+Vì ta đang dùng Rust, hãy để compiler (trình biên dịch) chỉ ra các trường hợp không có đồ uống.
 
 Một `enum` tên là `Option<T>` trong thư viện `std` được sử dụng trong trường hợp có thể không có phần tử kiểu T.
 Nó có dạng một trong hai "tuỳ chọn":
