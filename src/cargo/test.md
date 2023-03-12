@@ -1,7 +1,7 @@
 # Tests
 Như chúng ta đã biết kiểm thử  không thể thiếu đối với bất kì giai đoạn nào trong quá trình phát triển phần mềm. Rust ưu tiên cho việc unit test( kiểm thử đơn vị) và integration test( kiểm thử tích hợp) ( [xem chương này](https://doc.rust-lang.org/book/ch11-00-testing.html) tại TRPL).
 
-Từ các chương kiểm thử được liên kết phía trên, chúng ta sẽ biết cách để viết unit test và integration test.
+Từ các chương kiểm thử trong liên kết phía trên, chúng ta sẽ biết cách để viết unit test và integration test.
 Về mặt tổ chức, chúng tôi đặt các unit test bên trong các mô-đun, chúng sẽ test và integration test trong chính thư mục `tests/`:
 ```rust
 foo
