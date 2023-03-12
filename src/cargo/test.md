@@ -38,7 +38,7 @@ test test_foo ... ok
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ```
-Bạn cũng có thể chạy kiểm thử với tên test cụ thể(`test_foo`): 
+Bạn cũng có thể chạy kiểm thử với tên của phép kiểm thử cụ thể(`test_foo`): 
 
 ```rust
 $ cargo test test_foo
