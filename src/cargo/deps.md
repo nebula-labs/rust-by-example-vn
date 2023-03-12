@@ -5,7 +5,7 @@ Hầu hết các chương trình đều phụ thuộc vào một vài thư việ
 Để tạo mới một project Rust,
 
 ```rust,mdbook-runnable,editable
-# tạo nhị phân
+# một tệp nhị phân
 cargo new foo
 
 # tạo thư viện
