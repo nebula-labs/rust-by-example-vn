@@ -36,7 +36,7 @@ authors = ["mark"]
 
 [dependencies]
 ```
-Trường `name` bên dưới `[package]` xác định tên của project.Tên project cũng được sử dụng nếu bạn xuất bản crate lên `crates.io`. Nó cũng là tên của tệp nhị phân đầu ra khi được biên dịch.
+Trường `name` bên dưới `[package]` xác định tên của dự án. Tên dự án cũng được sử dụng nếu bạn xuất bản crate lên `crates.io`. Nó cũng là tên của tệp nhị phân đầu ra khi được biên dịch.
 
 Trường `version` xác định phiên bản của crate theo quy chuẩn [Semantic Versioning](https://semver.org/).
 
