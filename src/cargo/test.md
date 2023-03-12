@@ -55,7 +55,7 @@ test test_foo_bar ... ok
 
 test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out
 ```
-Cảnh báo: Cargo có thể chạy nhiều kiểm thử cùng lúc, vì thế hãy chắc chắn rằng không xảy ra tranh chấp tài nguyên. 
+Lưu ý: Cargo có thể chạy nhiều kiểm thử cùng lúc, vì thế hãy chắc chắn rằng không xảy ra tranh chấp tài nguyên. 
 
 Một ví dụ về kiểm thử đồng thời này gây ra sự cố nếu hai kiểm thử cố gắng ghi vào cùng một tệp tin, chẳng hạn như dưới đây:
 ```rust
