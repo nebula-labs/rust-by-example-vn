@@ -57,7 +57,7 @@ authors = ["mark"]
 [dependencies]
 clap = "2.27.1" # from crates.io
 rand = { git = "https://github.com/rust-lang-nursery/rand" } # từ repo online.
-bar = { path = "../bar" } # từ một tệp dẫn trong hệ thống tệp cục bộ.
+bar = { path = "../bar" } # đường dẫn trong hệ thống tệp cục bộ.
 ```
 `cargo` không chỉ là một trình quản lí các dependency. Tất cả các tùy chọn cấu hình đều có sẵn và được liệt kê trong [đặc tả định dạng](https://doc.rust-lang.org/cargo/reference/manifest.html) của `Cargo.toml`
 
