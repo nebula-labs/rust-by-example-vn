@@ -27,7 +27,7 @@ Sau khi chạy các câu lệnh phía trên, bạn sẽ thấy một hệ thốn
     └── src
         └── main.rs
 ```
-`main.rs` là tệp tin gốc của project `foo` vừa được tạo.`Cargo.toml` là tệp tin chứa cấu hình cho `cargo` của project. Nếu bạn nhìn vào bên trong, bạn sẽ thấy một thứ như thế này: 
+`main.rs` là tệp tin gốc của dự án `foo` vừa được tạo - không có gì mới ở đây. `Cargo.toml` là tệp tin chứa cấu hình của `cargo` đối với dự án này. Nếu bạn xem bên trong tệp tin, bạn sẽ thấy giống như thế này: 
 ```rust
 [package]
 name = "foo"
