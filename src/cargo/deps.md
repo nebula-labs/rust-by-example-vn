@@ -12,7 +12,7 @@ cargo new foo
 cargo new --lib bar
 ```
 
-Với phần còn lại của chương này, giả sử chúng ta đang tạo 1 hệ nhị phân, hơn là một thư viện, song mọi khái niệm là giống nhau.
+Trong phần tiếp theo của chương này, giả sử rằng chúng ta đang tạo 1 tập nhị phân, chứ không phải một thư viện, song các khái niệm là giống nhau.
 
 Sau khi chạy các câu lệnh phía trên, bạn sẽ thấy một hệ thống phân cấp tệp tin như sau: 
 
