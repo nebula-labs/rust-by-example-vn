@@ -4,6 +4,7 @@ Phiên bản tiếng Việt của https://doc.rust-lang.org/stable/rust-by-examp
 Phiên bản tiếng Anh gốc ở https://github.com/rust-lang/rust-by-example
 
 Dịch giả: Nguyễn Đức Chính - Nebula Labs <eyescryptoinsights@gmail.com>
+
 Project manager: Nguyễn Thế Vinh - Nebula Labs <nghuyenthevinh@gmail.com>
 
 ## Cách sử dụng 
