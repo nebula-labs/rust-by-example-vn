@@ -14,7 +14,7 @@ foo
     └── my_other_test.rs
 
 ```
-Mỗi tệp tin trong `tests` là một [integration test](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests) riêng biệt, tức là kiểm thử đó nhằm kiểm tra thư viện của bạn như thể nó được gọi từ một dependency crate. 
+Mỗi tệp tin trong `tests` là một [integration test](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests) riêng biệt, tức là kiểm thử đó nhằm kiểm tra thư viện của bạn như thể nó được gọi từ một crate phụ thuộc. 
 
 Chương [Testing](https://doc.rust-lang.org/rust-by-example/testing.html) này xây dựng trên 3 kiểu kiểm thử: [Unit](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html), [Doc](https://doc.rust-lang.org/rust-by-example/testing/doc_testing.html), và [Integration](https://doc.rust-lang.org/rust-by-example/testing/integration_testing.html).
 
