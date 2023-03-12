@@ -61,6 +61,6 @@ bar = { path = "../bar" } # đường dẫn trong hệ thống tệp cục bộ.
 ```
 `cargo` không chỉ là một trình quản lí các phụ thuộc. Tất cả các tùy chọn cấu hình sẵn có đều được liệt kê trong [đặc tả định dạng](https://doc.rust-lang.org/cargo/reference/manifest.html) của `Cargo.toml`
 
-Để  build project của mình chúng ta có thể  thực thi bằng câu lệnh `cargo build` ở bất kì đâu trong thư mục project ( ngay cả trong các thư mục con). Chúng ta có thể chạy `cargo run` để build và run. Lưu ý rằng những câu lệnh này sẽ giải quyết tất cả các dependency, tải các crate nếu cần, và build tất cả mọi thứ, bảo gồm crate của mình. ( Lưu ý rằng nó chỉ build lại những gì mà nó chưa được build, tương tự như `make`).
+Để  build dự án, chúng ta có thể  thực thi lệnh `cargo build` ở bất kì đâu trong thư mục dự án (ngay cả trong các thư mục con). Chúng ta có thể sử dụng `cargo run` để build và chạy chương trình. Lưu ý rằng những câu lệnh này sẽ giải quyết tất cả các phụ thuộc, tải xuống các crate nếu cần, và build tất cả mọi thứ, bao gồm crate của bạn. ( Lưu ý rằng nó chỉ build lại những gì mà nó chưa được build trước đó, tương tự như `make`).
 
 Thì đấy! Đó là tất cả về dependency.
