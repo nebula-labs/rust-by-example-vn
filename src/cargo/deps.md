@@ -63,4 +63,4 @@ bar = { path = "../bar" } # đường dẫn trong hệ thống tệp cục bộ.
 
 Để  build dự án, chúng ta có thể  thực thi lệnh `cargo build` ở bất kì đâu trong thư mục dự án (ngay cả trong các thư mục con). Chúng ta có thể sử dụng `cargo run` để build và chạy chương trình. Lưu ý rằng những câu lệnh này sẽ giải quyết tất cả các phụ thuộc, tải xuống các crate nếu cần, và build tất cả mọi thứ, bao gồm crate của bạn. ( Lưu ý rằng nó chỉ build lại những gì mà nó chưa được build trước đó, tương tự như `make`).
 
-Thì đấy! Đó là tất cả về dependency.
+Trên đây là tất cả về quản lý các phụ thuộc.
