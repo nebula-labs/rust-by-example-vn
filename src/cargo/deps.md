@@ -1,6 +1,6 @@
 # Dependencies
 
-Hầu hết các chương trình đều phụ thuộc vào các thư viện. Nếu bạn đã từng tự tay quản lí các dependency, bạn biết nó vất vả như thế nào. Thật may mắn, hệ sinh thái ngôn ngữ Rust được chuẩn hóa với `cargo`! `cargo` có thể quản lí các dependency cho một dự án.
+Hầu hết các chương trình đều phụ thuộc vào một vài thư viện nào đó. Nếu bạn đã từng tự tay quản lí các thư viện phụ thuộc này, bạn sẽ biết việc này có thể rất phiền toái. May mắn thay, hệ sinh thái Rust đi kèm với công cụ cargo! cargo có thể quản lý các phụ thuộc cho một dự án.
 
 Để tạo mới một project Rust,
 
