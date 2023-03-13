@@ -1,16 +1,13 @@
 # Capturing
 
-Closures are inherently flexible and will do what the functionality requires
-to make the closure work without annotation. This allows capturing to
-flexibly adapt to the use case, sometimes moving and sometimes borrowing.
-Closures can capture variables:
+Closures vốn dĩ linh hoạt và sẽ làm bất cứ điều gì mà function yêu cầu để làm cho closure hoạt động mà không cần chú thích(annotation). Điều này cho phép capturing thích ứng với các trường hợp sử dụng(use case), đôi khi moving và đôi khi borrowing.
+Closures có thể capture các biến thông qua:
 
-* by reference: `&T`
-* by mutable reference: `&mut T`
-* by value: `T`
+* bằng tham chiếu: `&T`
+* bằng tham chiếu có thể thay đổi: `&mut T`
+* bằng giá trị: `T`
 
-They preferentially capture variables by reference and only go lower when
-required.
+Chúng ưu tiên capture các biến qua tham chiếu và chỉ đi xuống thấp hơn khi được yêu cầu.
 
 ```rust,editable
 fn main() {

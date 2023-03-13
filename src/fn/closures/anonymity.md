@@ -1,33 +1,24 @@
 # Type anonymity
 
-Closures succinctly capture variables from enclosing scopes. Does this have
-any consequences? It surely does. Observe how using a closure as a function
-parameter requires [generics], which is necessary because of how they are
-defined:
+Closures succinctly capture variables from enclosing scopes. Điều này có bất kì hậu quả gì không? Chắc chắn là có. Observe bằng cách sử dụng một closure như là một function parameter yêu cầu là [generics], điều này là cần thiết vì các chúng được định nghĩa:
 
 ```rust
-// `F` must be generic.
+// `F` phải là một generic.
 fn apply<F>(f: F) where
     F: FnOnce() {
     f();
 }
 ```
 
-When a closure is defined, the compiler implicitly creates a new
-anonymous structure to store the captured variables inside, meanwhile
-implementing the functionality via one of the `traits`: `Fn`, `FnMut`, or
-`FnOnce` for this unknown type. This type is assigned to the variable which
-is stored until calling.
+Khi một closure được định nghĩa, compiler mặc nhiên tạo ra một kiểu cấu trúc không xác định mới để lưu giữ các biến bên trong, trong lúc triển khai các chức năng qua một kiểu `traits` là: `Fn`, `FnMut`, hoặc
+`FnOnce` cho một kiểu không xác định này. Kiểu dữ liệu này được gán cho biến được lưu trữ khi gọi đến.
 
-Since this new type is of unknown type, any usage in a function will require
-generics. However, an unbounded type parameter `<T>` would still be ambiguous
-and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
-`FnOnce` (which it implements) is sufficient to specify its type.
+Vì kiểu dữ liệu mới này là kiểu dữ liệu không xác định, bất kì cách sử dụng nào trong một function sẽ yêu cầu kiểu generics. Tuy nhiên, một tham số kiểu không giới hạn(unbounded) `<T>` vẫn sẽ là mơ hồ và không được phép. Như vậy, giới hạn bởi một trong các kiểu `traits` là: `Fn`, `FnMut`, hoặc
+`FnOnce` (kiểu nó được triển khai) là đủ để xác định loại của nó.
 
 ```rust,editable
-// `F` must implement `Fn` for a closure which takes no
-// inputs and returns nothing - exactly what is required
-// for `print`.
+// `F` phải triển khai `Fn` cho một closure mà không có inputs
+// và không trả lại cái gì - chính xác những gì được yêu cầu là `print`
 fn apply<F>(f: F) where
     F: Fn() {
     f();
@@ -36,8 +27,8 @@ fn apply<F>(f: F) where
 fn main() {
     let x = 7;
 
-    // Capture `x` into an anonymous type and implement
-    // `Fn` for it. Store it in `print`.
+    // Capture `x` vào một kiểu ẩn danh và triển khai `Fn` cho nó
+    // Lưu trữ nó trong `print`.
     let print = || println!("{}", x);
 
     apply(print);
