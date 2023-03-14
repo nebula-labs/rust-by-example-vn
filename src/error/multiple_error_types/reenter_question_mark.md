@@ -54,7 +54,7 @@ fn main() {
     print(double_first(strings));
 }
 ```
-Cái này thực sự khá trong sáng. So với `panic` ban đầu, nó rất giống với việc thay thế các lời gọi `unwrap` bằng `?` ngoại trừ các kiểu trả về là `Result`. Kết quả là chúng được phá hủy ở cấp cao nhất.
+Điều này thực sự khá rõ ràng. So với `panic` ban đầu, nó rất giống với việc thay thế các lời gọi `unwrap` bằng `?` ngoại trừ các kiểu trả về là `Result`. DO đó, chúng được phân giải ra ở cấp cao nhất.
 
 ### Xem thêm
 [From::from](https://doc.rust-lang.org/std/convert/trait.From.html) và [?](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator)
