@@ -1,4 +1,4 @@
-# Kéo `Result` ra khỏi `Option`
+# Lấy `Result` ra khỏi `Option`
 
 Cách cơ bản nhất để xử lý loại lỗi hỗn hợp là nhúng chúng vào với nhau.
 
