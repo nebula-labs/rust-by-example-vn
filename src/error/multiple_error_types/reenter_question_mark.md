@@ -1,5 +1,5 @@
 # Các công dụng khác của `?`
-Trong ví dụ trước hãy lưu ý rằng phản ứng tức thời của chúng tôi đối với việc gọi `parse` là để `map` lỗi từ một lỗi thư viện vào môt lỗi hộp: 
+Trong ví dụ trước hãy lưu ý rằng phản ứng tức thời của chúng tôi đối với việc gọi `parse` là để `map` lỗi từ một lỗi thư viện vào môt lỗi được đóng gói: 
 ```rust
 .and_then(|s| s.parse::<i32>()
     .map_err(|e| e.into())
