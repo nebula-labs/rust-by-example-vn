@@ -6,7 +6,7 @@ Trong ví dụ trước hãy lưu ý rằng phản ứng tức thời của chú
 ```
 Vì đây là một thao tác đơn giản và phổ biến, nên sẽ rất thuận tiện nếu nó có thể được bỏ qua. Than ôi, bởi vì `and_then` không đủ linh hoạt, nên không thể. Tuy nhiên, thay vào đó chúng ta có thể sử dụng `?`.
 
-Trước đây `?` đã được giải thích là `unwrap` hoặc `return Err(err)`. Điều này gần như đúng, nó thực sự có ý nghĩa rằng `unwrap` hoặc `return Err(From::from(err)`. Do `From::from` là một tiện ích chuyển đổi giữa các kiểu khác nhau, điều này có nghĩa là nếu bạn sử dụng `?` lỗi có thể tự động chuyển đổi thành kiểu trả về .
+Trước đó `?` đã được giải thích là `unwrap` hoặc `return Err(err)`. Điều này chỉ đúng phần nào, thực tế nó có nghĩa là `unwrap` hoặc `return Err(From::from(err)`. Do `From::from` là một tiện ích để chuyển đổi giữa các kiểu khác nhau, điều này có nghĩa là nếu bạn sử dụng `?` lỗi có thể tự động chuyển đổi thành kiểu trả về .
 
 Dưới đây, chúng tôi viết lại ví dụ trước bằng cách sử dụng `?`. Kết quả là, khi `From::from` được thực thi nó làm biến mất lỗi `map_err`. 
 
