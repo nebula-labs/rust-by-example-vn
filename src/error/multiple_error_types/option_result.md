@@ -22,7 +22,7 @@ fn main() {
     // Error 1: Input vector rỗng.
 
     println!("The first doubled is {:?}", double_first(strings));
-    // Error 2: phần tử không phân tích thành một số.
+    // Error 2: phần tử không thể chuyển thành một số.
 }
 ```
 Nhiều lần chúng ta muốn dừng việc xử lý lỗi( như `?`) nhưng không thể dừng trong khi `Option` đang là `None`. Mội vài tổ hợp rất tiện dụng để  hoán đổi `Result` và `Option`.
