@@ -7,7 +7,7 @@ Trong ví dụ dưới đây, `trait` `Contains` cho phép sử dụng các ki�
 Sau đó, trait được triển khai cho kiểu `Container`, chỉ định kiểu `i32` cho `A` và `B`
 để có thể sử dụng với hàm difference().
 
-Bởi vì `Contains` là generic, chúng ta bị buộc phải rõ ràng chỉ định *tất cả* các
+Bởi vì `Contains` là generic, chúng ta buộc phải chỉ định rõ ràng *tất cả* các
 kiểu generic cho `fn difference()`. Trong thực tế, chúng ta muốn có một cách để
 biểu thị rằng `A` và `B` được xác định bởi *đầu vào* `C`. Bạn sẽ thấy trong phần tiếp
 theo, associated types cho ta khả năng đó.
