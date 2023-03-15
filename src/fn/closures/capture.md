@@ -7,7 +7,7 @@ Closures có thể capture(khai báo) các biến thông qua:
 * bằng tham chiếu có thể thay đổi: `&mut T`
 * bằng giá trị: `T`
 
-Chúng ưu tiên capture biến bằng tham chiếu và chỉ đi sử dụng cách thấp hơn khi cần thiết.
+Chúng ưu tiên capture biến bằng tham chiếu và chỉ sử dụng các cách khác khi cần thiết.
 
 ```rust,editable
 fn main() {
@@ -15,8 +15,8 @@ fn main() {
     
     let color = String::from("green");
 
-    // Một closure để print `color` sẽ ngay lập tức mượn(borrows) (`&`) `color` và
-    // lưu borrow và closure vào trong biến `print`. Nó vẫn sẽ được borrow cho đến khi `print` được sử dụng lần cuối 
+    // Một closure để in ra biến `color` sẽ ngay lập tức mượn(borrows) (`&`) `color` và
+    // lưu borrow và closure vào trong biến `print`. Nó vẫn sẽ giữ borrow cho đến khi `print` được sử dụng lần cuối 
     // `println!` chỉ yêu cầu đối số bằng tham chiếu không thể thay đổi(immutable) vì vậy nó không đặt ra bất cứ hạn chế nào khác.
     let print = || println!("`color`: {}", color);
 
@@ -27,13 +27,13 @@ fn main() {
     let _reborrow = &color;
     print();
 
-    // Một thao tác move hoặc reborrow được phép sau lần cuối cùng sử dụng `print`
+    // Một thao tác move hoặc reborrow sẽ có thể được phép thực hiện sau lần cuối cùng sử dụng `print`
     let _color_moved = color;
 
 
     let mut count = 0;
     // Một closure để tăng giá trị của `count` có thể sử dụng `&mut count` hoặc `count`
-    // nhưng `&mut count` là hạn chế hơn so nên nó sẽ lấy tham chiếu đến `count`. Ngay lập tức borrows `count`.
+    // nhưng `&mut count` có ít hạn chế hơn cho nên closure sẽ chọn `&mut count`. Ngay lập tức borrows `count`.
     //
     // Cần thêm `mut` cho `inc` bởi vì một tham chiếu `&mut` được lưu dữ liệu bên trong. 
     // Do đó, việc gọi closure làm thay đổi trong closure, điều này yêu cầu một `mut`.
@@ -45,8 +45,8 @@ fn main() {
     // Gọi tới closure bằng cách sử dụng một mutable borrow.
     inc();
 
-    // Closure vẫn mượn(borrows) `count` có thể thay đổi(mutably) bởi vì nó được gọi sau đó.
-    // Một nỗ lực để mượn lại(reborrow) sẽ dẫn đến một lỗi.
+    // Closure vẫn mượn(borrows) `count` ở dạng có thể thay đổi(mutably) bởi vì nó được gọi sau đó.
+    // Nếu bạn thực hiện mượn lại(reborrow) sẽ dẫn đến một lỗi.
     // let _reborrow = &count; 
     // ^ TODO: thử bỏ chú thích(uncommenting) dòng phía trên.
     inc();
