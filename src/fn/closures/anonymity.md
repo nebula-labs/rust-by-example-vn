@@ -12,7 +12,7 @@ fn apply<F>(f: F) where
 
 Khi một closure được định nghĩa, compiler tự động tạo ra một kiểu cấu trúc không xác định mới để lưu giữ các biến bên trong closure, trong khi đó, triển khai chức năng thông qua một trong các `traits`: `Fn`, `FnMut`, hoặc `FnOnce` cho kiểu không xác định đó. Kiểu dữ liệu này được gán cho biến và được lưu trữ khi gọi đến.
 
-Vì kiểu dữ liệu mới này là kiểu dữ liệu không xác định, bất kì cách sử dụng nào trong một function sẽ yêu cầu kiểu generics. Tuy nhiên, một tham số kiểu không giới hạn(unbounded) `<T>` vẫn sẽ là mơ hồ và không được phép. Vì vậy, ràng buộc bởi một trong các `traits`: `Fn`, `FnMut`, hoặc
+Vì kiểu dữ liệu mới này là kiểu dữ liệu không xác định, bất kì khi nào sử dụng trong một function sẽ yêu cầu kiểu generics. Tuy nhiên, một tham số kiểu không giới hạn(unbounded) `<T>` vẫn sẽ là mơ hồ và không được phép. Vì vậy, ràng buộc bởi một trong các `traits`: `Fn`, `FnMut`, hoặc
 `FnOnce` (kiểu nó được triển khai) là đủ để xác định kiểu của nó.
 
 ```rust,editable
