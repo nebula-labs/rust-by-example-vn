@@ -1,6 +1,6 @@
 # Capturing
 
-Closures có tính linh hoạt và sẽ thực hiện bất cứ điều gì mà function yêu cầu để làm cho closure hoạt động mà không cần chú thích(annotation). Điều này cho phép việc capturing(khi khai báo closure) thích nghi với các trường hợp sử dụng(use case), đôi khi sử dụng moving và borrowing.
+Closures vốn rất linh hoạt và sẽ thực hiện bất cứ điều gì mà function yêu cầu để làm cho closure hoạt động mà không cần chú thích(annotation). Điều này cho phép việc capturing(khi khai báo closure) thích nghi với các trường hợp sử dụng(use case), đôi khi sử dụng moving và borrowing.
 Closures có thể capture(khai báo) các biến thông qua:
 
 * bằng tham chiếu: `&T`
