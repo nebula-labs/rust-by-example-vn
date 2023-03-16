@@ -4,7 +4,7 @@ Trong các ví dụ trước, bạn đã được giới thiệu về cách xử
 Ngoài cách trên, bạn có thể phân tích và xử lý lỗi theo từng trường hợp bằng cách sử dụng câu lệnh `match` và kĩ thuật _early returns_
 
 Nhờ đó, bạn có thể dừng thực thi hàm đang chạy và trả về lỗi nếu có. Đối với một số người,
-kiểu code này có thể dễ hiểu và để viết hơn. Dưới đây là một phiên bản khác của ví dụ trước đó được viết lại sử dụng kĩ thuật early returns:
+kiểu code này có thể dễ hiểu và dễ viết hơn. Dưới đây là một phiên bản khác của ví dụ trước đó được viết lại sử dụng kĩ thuật early returns:
 
 ```rust,editable
 use std::num::ParseIntError;
@@ -36,7 +36,7 @@ fn main() {
 }
 ```
 
-Tới đây, bạn đã được học về cách xử lý lỗi một cách tường minh bằng cách sử combinators
+Tới đây, bạn đã được học về cách xử lý lỗi một cách tường minh bằng cách sử dụng combinators
 và kĩ thuật early returns. Mặc dù chúng ta thường sẽ tránh việc sử dụng panic khi gặp lỗi,
 nhưng đôi khi phải xử lý tường minh tất cả các lỗi có thể xảy ra dẫn đến việc viết code
 rất lằng nhằng và phiền toái.

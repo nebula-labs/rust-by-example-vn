@@ -1,14 +1,13 @@
 # Toán tử `?`
 
-Đôi khi, chúng ta chỉ cần phiên bản đơn giản hơn của hàm `unwrap` đó là trả về giá trị
-chứ không cần đến việc `panic` chương trình mà nó gây ra. Hiện tại, để xử lý tốt khi sử dụng `unwrap`
+Thỉnh thoảng, chúng ta chỉ muốn đơn giản là sử dụng hàm `unwrap` mà bỏ qua khả năng `panic`. Hiện tại, để xử lý tốt khi sử dụng `unwrap`
 ta phải viết nhiều đoạn code lồng rất sâu vào nhau trong khi thứ mà ta muốn chỉ là lấy ra giá trị trả về.
 Đây là lý do mà toán tử `?` được tạo ra.
 
 Khi gặp phải một đối tượng `Err`, có hai cách xử lý:
 
-1. Thực thi `panic!`, chúng ta nên tránh làm thế này nếu có thể.
-2. `return` đối tượng `Err`, bởi vì `Err` nghĩa là chương trình không thể xử lý được tiếp tục nữa.
+1. `panic!`, chúng ta nên tránh làm thế này nếu có thể.
+2. `return` vì `Err` nghĩa là chương trình không thể xử lý được tiếp tục nữa.
 
 Toán tử `?` _gần tương đương nhất với_[^†] hàm `unwrap` vì hàm `unwrap` sẽ `return` các `Err`s
 thay vì `panic` cả chương trình.
