@@ -1,7 +1,7 @@
 # Toán tử `?`
 
-Thỉnh thoảng, chúng ta chỉ muốn đơn giản là sử dụng hàm `unwrap` mà bỏ qua khả năng `panic`. Hiện tại, để xử lý tốt khi sử dụng `unwrap`
-ta phải viết nhiều đoạn code lồng rất sâu vào nhau trong khi thứ mà ta muốn chỉ là lấy ra giá trị trả về.
+Thỉnh thoảng, chúng ta chỉ muốn đơn giản là sử dụng hàm `unwrap` mà bỏ qua khả năng `panic`. Hiện tại, `unwrap` buộc chúng ta phải viết các mã lồng vào nhau sâu hơn
+để lấy giá trị ra trong khi thứ mà ta muốn chỉ là lấy ra giá trị trả về.
 Đây là lý do mà toán tử `?` được tạo ra.
 
 Khi gặp phải một đối tượng `Err`, có hai cách xử lý:
