@@ -1,9 +1,9 @@
-# Các Methods và Functions liên quan nhau (Associated Functions & Methods)
+# Associated functions & Methods
 
-Một số function được kết nối với một loại cụ thể. Chúng có hai dạng:
-các hàm và phương thức liên quan. Hàm liên thuộc là hàm thường được định
-nghĩa trên một loại, trong khi các phương thức là các chức năng liên quan được
-được gọi trên một thể hiện cụ thể của một loại.
+Một số function được kết nối với một loại (type) cụ thể. Có hai dạng:
+các hàm liên quan và phương thức. Hàm liên quan là hàm thường được định
+nghĩa trên một loại, trong khi các phương thức là các hàm liên quan được
+được gọi trên một thể hiện (instance) cụ thể của một loại.
 
 ```rust,editable
 struct Point {
@@ -11,7 +11,7 @@ struct Point {
     y: f64,
 }
 
-// Khối triển khai, tất cả các chức năng & phương thức liên quan đến `Point`
+// Triển khai tất cả các fucntion & method liên quan đến `Point`
 impl Point {
     // Đây là một "associated function" bởi vì function này được kết nối với
     // một loại cụ thể là Point
@@ -87,7 +87,7 @@ fn main() {
         p2: Point::new(3.0, 4.0),
     };
 
-    // Phương thức được gọi bằng cách sử dụng toán tử "."
+    // Method được gọi bằng cách sử dụng toán tử "."
     // Lưu ý rằng biến số `&self` được ngầm định truyền vào
     // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
@@ -111,6 +111,6 @@ fn main() {
 
     // Error! Previous `destroy` call "consumed" `pair`
     //pair.destroy();
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Bỏ comment dòng này để kiểm tra
 }
 ```
