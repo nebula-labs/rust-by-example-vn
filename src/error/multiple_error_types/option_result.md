@@ -1,4 +1,4 @@
-# Kéo `Result` ra khỏi `Option`
+# Lấy `Result` ra khỏi `Option`
 
 Cách cơ bản nhất để xử lý loại lỗi hỗn hợp là nhúng chúng vào với nhau.
 
@@ -22,10 +22,10 @@ fn main() {
     // Error 1: Input vector rỗng.
 
     println!("The first doubled is {:?}", double_first(strings));
-    // Error 2: phần tử không phân tích thành một số.
+    // Error 2: phần tử không thể chuyển thành một số.
 }
 ```
-Nhiều lần chúng ta muốn dừng việc xử lý lỗi( như `?`) nhưng không thể dừng trong khi `Option` đang là `None`. Mội vài tổ hợp rất tiện dụng để  hoán đổi `Result` và `Option`.
+Có những lúc chúng ta muốn dừng việc xử lý khi có lỗi xảy ra( giống như khi sử dụng `?`) nhưng  vẫn tiếp tục xử lý khi `Option` là `None`. Mội vài combinator rất hữu ích để  hoán đổi `Result` và `Option`.
 
 ```rust
 use std::num::ParseIntError;
