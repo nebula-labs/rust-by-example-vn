@@ -1,7 +1,7 @@
 # `panic`
 
 `Panic` chính là cơ chế xử lí lỗi đơn giản nhất mà ta sắp đề cập tới.  
-Nó in ra thông điệp lỗi, bắt đầu giải phóng stack và thường sẽ
+Nó in ra thông điệp lỗi, huỷ bỏ các hoạt động đang thực thi, giải phóng stack và thường sẽ
 thoát chương trình.
 Bây giờ chúng ta sẽ gọi hàm `panic` dựa trên câu điều kiện lỗi:
 

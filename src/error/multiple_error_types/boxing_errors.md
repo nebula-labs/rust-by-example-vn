@@ -1,6 +1,7 @@
 # `Box`ing lỗi
 
-[`Box`][box] là một cách để viết đoạn mã đơn giản mà vẫn bảo toàn được những lỗi ban đầu. Nhược điểm của cách làm này là kiểu dữ liệu lỗi bên trong chỉ có thể được xác định tại thời gian thực thi và không [statically determined][dynamic_dispatch].
+[`Box`][box] là một cách để viết đoạn mã đơn giản mà vẫn bảo toàn được những lỗi ban đầu. Nhược điểm của cách làm này là kiểu dữ liệu lỗi bên trong chỉ có thể được xác định tại thời gian thực thi và không được[xác định tĩnh][dynamic_dispatch] (statically determined).
+(Dịch giả: Điều này có nghĩa là khi sử dụng các kiểu lỗi động (dynamic error types) như Box trong Rust, kiểu lỗi cụ thể mà chương trình có thể gặp phải sẽ không được xác định tại thời điểm biên dịch (compile time), mà chỉ được biết đến khi chạy chương trình.)
 
 Thư viện stdlib hỗ trợ boxing các lỗi của chúng ta bằng cách triển khai `Box` và chuyển đổi bất cứ kiểu dữ liệu nào có trait `Error` trở thành trait object `Box<Error>` thông qua trait [`From`][from].
 
@@ -52,7 +53,7 @@ fn main() {
 
 ### Tham khảo thêm:
 
-[Dynamic dispatch][dynamic_dispatch] and [`Error` trait][error]
+[Dynamic dispatch][dynamic_dispatch] và [`Error` trait][error]
 
 [box]: https://doc.rust-lang.org/std/boxed/struct.Box.html
 [dynamic_dispatch]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch

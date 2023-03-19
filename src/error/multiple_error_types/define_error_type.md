@@ -1,6 +1,6 @@
 # Định nghĩa một kiểu dữ liệu lỗi
 
-Đôi khi ta có thể đơn giản hóa đoạn mã bằng cách masking tất cả các kiểu dữ liệu lỗi khác nhau với một loại lỗi duy nhất. Ta có thể thể hiện ra bằng một lỗi đã được tùy chỉnh.
+Đôi khi ta có thể đơn giản hóa đoạn mã bằng cách che giấu (masking) tất cả các kiểu dữ liệu lỗi khác nhau với một loại lỗi duy nhất. Ta có thể thể hiện ra bằng một lỗi đã được tùy chỉnh.
 
 Rust cho phép chúng ta tự định nghĩa kiểu dữ liệu lỗi của riêng mình. Nhìn chung, một kiểu dữ liệu "tốt" phải:
 * Đại diện cho nhiều lỗi với cùng một kiểu dữ liệu
@@ -11,7 +11,7 @@ Rust cho phép chúng ta tự định nghĩa kiểu dữ liệu lỗi của riê
 * Có thể chứa thông tin về lỗi
     - Nên: `Err(BadChar(c, position))`
     - Không nên: `Err("Không thể sử dụng kí tự + ở đây".to_owned())`
-* Bao hàm/kết hợp (?) được nhiều lỗi khác
+* Kết hợp được với các kiểu lỗi khác
 
 
 ```rust,editable

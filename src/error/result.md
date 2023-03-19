@@ -1,26 +1,24 @@
 # `Result`
+[`Result`][result] là phiên bản nâng cấp của kiểu [`Option`][option], mô tả lỗi có thể xảy ra thay vì chỉ mô tả việc kết quả có thể có hoặc không có.
 
-[`Result`][result], kiểu dữ liệu diễn tả được *lỗi* xảy ra (nếu có) là phiên bản nâng cấp
- của kiểu [`Option`][option], chỉ có thể trả ra một thực thể có tồn tại hay không.
-
-Bởi vì, `Result<T, E>` có thể chỉ đến 1 trong 2 kết quả:
+Đúng với nhận định trên, `Result<T, E>` trong Rust có thể có một trong hai kết quả:
 
 * `Ok(T)`: Một thực thể `T` được tìm thấy
 * `Err(E)`: Một lỗi được tìm thấy là `E`
 
-Theo thông lệ, Kết quả mong muốn sẽ là `Ok` trong khi kết quả không mong đợi sẽ là `Err`.
+Trong Rust, quy ước rằng kết quả mong đợi của một hàm là `Ok`, trong khi kết quả không mong đợi là `Err`.
 
 Tương tự `Option`, `Result` đi kèm với rất nhiều phương thức. Ví dụ như `unwrap()`,
 sẽ trả về thực thể `T` hoặc `panic`. Tùy vấn đề cần xử lí mà ta kết hợp cả `Result` và `Option`. 
 
 Khi dùng Rust, bạn sẽ thường gặp các phương thức trả về kiểu dữ liệu `Result`, 
-như là phương thức [`parse()`][parse]. Không phải lúc nào cũng có thể chuyển hóa
-một chuỗi kí tự thành một kiểu dữ liệu khacsm nên `parse()` sẽ trả về một
-kiểu dữ liệu `Result` chỉ ra lỗi nếu có
+như là phương thức [`parse()`][parse]. Không phải lúc nào cũng có thể chuyển đổi
+một chuỗi kí tự thành một kiểu dữ liệu khác nên `parse()` sẽ trả về một
+kiểu dữ liệu `Result` cho biết có thể lỗi sẽ xảy ra
 be possible to parse a string into the other type, so `parse()` returns a
 `Result` indicating possible failure.
 
-Hãy cùng xem chuyện gì sẽ xảy ra khi ta `parse()` một chuỗi nhé:
+Hãy xem xét những gì sẽ xảy ra khi chúng ta chuyển đổi thành công và không thành công một chuỗi bằng phương thức `parse()`:
 
 ```rust,editable,ignore,mdbook-runnable
 fn multiply(first_number_str: &str, second_number_str: &str) -> i32 {
@@ -39,17 +37,17 @@ fn main() {
 }
 ```
 
-Trong trường hợp thất bại, `parse()` sẽ trả về một lỗi để `unwrap()`
-có thể gọi hàm `panic`. Tiếp theo, hàm `panic` sẽ thoát chương trình và cung cấp
+Trong trường hợp không thành công, phương thức parse() sẽ trả về một lỗi mà phương thức unwrap()
+sẽ gây ra lỗi `panic`. Ngoài ra, lỗi `panic` cũng sẽ kết thúc chương trình và cung cấp
 một thông điệp lỗi khó hiểu.
 
-Để nâng cao chất lượng của thông điệp lỗi, ta chuyên biệt hóa kiểu dữ liệu trả về
+Để cải thiện chất lượng thông báo lỗi, chúng ta nên cụ thể hóa hơn về kiểu giá trị trả về
 và xử lí lỗi kĩ càng hơn
 
 ## Using `Result` in `main`
 
-Kiểu dữ liệu `Result` còn có thể là kiểu dữ liệu trả về của hàm `main`
-nếu ta xử lí chuyên biệt. Thường thì hàm `main` sẽ có dạng:
+Kiểu dữ liệu `Result` cũng có thể là kiểu dữ liệu trả về của hàm `main`
+nếu được chỉ định rõ ràng. Thông thường, hàm `main` sẽ có dạng:
 
 ```rust
 fn main() {
@@ -58,7 +56,7 @@ fn main() {
 ```
 Tuy nhiên hàm `main` cũng trả về kiểu `Result`. Nếu một lỗi xảy ra trong hàm `main`,
 nó sẽ trả về mã lỗi và in ra một bản trình bày về lỗi (sử dụng trait [`Debug`]).
-Ví dụ sau đây là một trường hợp minh chứng và cũng đụng đến một vài khía cạnh được
+Ví dụ sau đây là một trường hợp minh chứng và đề cập đến các khía cạnh được
 nói qua ở [mục này].
 
 ```rust,editable
