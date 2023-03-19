@@ -1,6 +1,6 @@
 # Associated functions & Methods
 
-Một số function được kết nối với một loại (type) cụ thể. Có hai dạng:
+Một số function được liên kết với một kiểu dữ liệu (type) cụ thể. Có hai dạng là:
 các hàm liên quan và phương thức. Hàm liên quan là hàm thường được định
 nghĩa trên một loại, trong khi các phương thức là các hàm liên quan được
 được gọi trên một thể hiện (instance) cụ thể của một loại.
