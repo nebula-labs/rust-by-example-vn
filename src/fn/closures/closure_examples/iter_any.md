@@ -10,9 +10,8 @@ pub trait Iterator {
     // `any` truyền `&mut self` có nghĩa là người gọi có thể mượn và sửa đổi giá trị,
     // nhưng không thể tiêu thụ nó.
     fn any<F>(&mut self, f: F) -> bool where
-        // `FnMut` meaning any captured variable may at most be modified, not consumed.
         // `FnMut` có nghĩa là bất kì biến nào được chụp nhiều nhất có thể được sửa đổi, không được sử dụng. 
-        // `&Self::Item` cho biết nó nhận các đối số để đóng bằng cách tham chiếu.
+        // `&Self::Item` cho biết nó đưa các đối số vào closure bằng giá trị.
         F: FnMut(Self::Item) -> bool;
 }
 ```
@@ -21,16 +20,16 @@ fn main() {
     let vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
 
-    // `Phương thức iter() cho `vecs trả về kiểu `&i32`. Phá bỏ cấu trúc thành `i32`.
+    // `Phương thức iter() cho `vecs trả về kiểu `&i32`. Destructure thành `i32`.
     println!("2 in vec1: {}", vec1.iter()     .any(|&x| x == 2));
-    // Phương thức `into_iter()` cho vecs trả về kiểu `i32`. Không yêu cầu phá bỏ cấu trúc.
+    // Phương thức `into_iter()` cho vecs trả về kiểu `i32`. Không yêu cầu Destructure.
     println!("2 in vec2: {}", vec2.into_iter().any(|x| x == 2));
 
-    // Phương thức `iter()` chỉ mượn `vec1` và giá trị của nó, vì thế họ có thể sử dụng lại.
+    // Phương thức `iter()` chỉ mượn `vec1` và phần tử của nó, vì thế họ có thể sử dụng lại.
     println!("vec1 len: {}", vec1.len());
     println!("First element of vec1 is: {}", vec1[0]);
     // Phương thức `into_iter()` chuyển `vec2` và các phần tử của nó, vì thế chúng 
-    // không được sử dụng lại
+    // không thể được sử dụng lại
     // println!("First element of vec2 is: {}", vec2[0]);
     // println!("vec2 len: {}", vec2.len());
     // TODO: Thử không comment hai dòng trên và xem biên dịch lỗi..
