@@ -11,7 +11,7 @@ struct Point {
     y: f64,
 }
 
-// Triển khai tất cả các fucntion & method liên quan đến `Point`
+// Triển khai tất cả các function & method liên quan đến `Point`
 impl Point {
     // Đây là một "associated function" bởi vì function này được kết nối với
     // một kiểu cụ thể là struct Point
