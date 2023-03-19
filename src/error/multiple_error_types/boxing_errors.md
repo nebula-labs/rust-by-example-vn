@@ -2,16 +2,13 @@
 
 [`Box`][box] là một cách để viết đoạn mã đơn giản mà vẫn bảo toàn được những lỗi ban đầu. Nhược điểm của cách làm này là kiểu dữ liệu lỗi bên trong chỉ có thể được xác định tại thời gian thực thi và không [statically determined][dynamic_dispatch].
 
-Thư viện stdlib hỗ trợ boxing các lỗi bằng cách thực hiện chuyển đổi bất cứ kiểu dữ liệu nào có `Error` trait thành trait object `Box<Error>` thông qua trait [`From`][from].
-<!-- The stdlib helps in boxing our errors by having `Box` implement conversion from
-any type that implements the `Error` trait into the trait object `Box<Error>`,
-via [`From`][from]. -->
+Thư viện stdlib hỗ trợ boxing các lỗi của chúng ta bằng cách triển khai `Box` và chuyển đổi bất cứ kiểu dữ liệu nào có trait `Error` trở thành trait object `Box<Error>` thông qua trait [`From`][from].
 
 ```rust,editable
 use std::error;
 use std::fmt;
 
-// Change the alias to `Box<error::Error>`.
+// Thay đổi alias thành `Box<error::Error>`.
 type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 #[derive(Debug, Clone)]
@@ -19,7 +16,7 @@ struct EmptyVec;
 
 impl fmt::Display for EmptyVec {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "invalid first item to double")
+        write!(f, "phần tử đầu tiên không hợp lệ để có thể nhân đôi")
     }
 }
 
@@ -37,8 +34,8 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
 
 fn print(result: Result<i32>) {
     match result {
-        Ok(n) => println!("The first doubled is {}", n),
-        Err(e) => println!("Error: {}", e),
+        Ok(n) => println!("Phần tử đầu tiên được nhân đôi bằng {}", n),
+        Err(e) => println!("Lỗi: {}", e),
     }
 }
 
