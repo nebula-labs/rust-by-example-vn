@@ -2,8 +2,8 @@
 
 Một số function được liên kết với một kiểu dữ liệu (type) cụ thể. Có hai dạng là:
 các hàm liên quan và phương thức. Hàm liên quan là hàm thường được định
-nghĩa trên một loại, trong khi các phương thức là các hàm liên quan được
-được gọi trên một thể hiện (instance) cụ thể của một loại.
+nghĩa trên một kiểu một cách chung chung, trong khi các phương thức là các hàm liên quan
+nhưng được gọi trên một thể hiện (instance) cụ thể của một kiểu.
 
 ```rust,editable
 struct Point {
@@ -14,7 +14,7 @@ struct Point {
 // Triển khai tất cả các fucntion & method liên quan đến `Point`
 impl Point {
     // Đây là một "associated function" bởi vì function này được kết nối với
-    // một loại cụ thể là Point
+    // một kiểu cụ thể là struct Point
     //
     // Associated functions không cần phải được gọi với một instance.
     // Các function này có thể được sử dụng dạng như một constructor.
@@ -35,14 +35,14 @@ struct Rectangle {
 
 impl Rectangle {
     // Đây là một method
-    // `&self` trỏ tới `self: &Self`, trong đó `Self` là loại 
+    // `&self` là cú pháp vắn tắt của `self: &Self`, trong đó `Self` là kiểu 
     // của đối tượng gọi method. Trong trường hợp này `Self` = `Rectangle`
     fn area(&self) -> f64 {
-        // `self` cung cấp truy cập vào các fields của struct thông qua toán tử "."
+        // sử dụng `self` cho phép truy cập vào các fields của struct thông qua toán tử dấu chấm "."
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        // `abs` là một phương thức `f64` trả về giá trị tuyệt đối của đối tượng gọi
+        // `abs` là một phương thức của kiểu dữ liệu `f64` trả về giá trị tuyệt đối của đối tượng gọi
         ((x1 - x2) * (y1 - y2)).abs()
     }
 
@@ -54,7 +54,7 @@ impl Rectangle {
     }
 
     // Phương thức này yêu cầu đối tượng gọi tới phải là mutable
-    // `&mut self` trỏ tới `self: &mut Self`
+    // `&mut self` là cú pháp viết tắt của `self: &mut Self`
     fn translate(&mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
@@ -64,12 +64,12 @@ impl Rectangle {
     }
 }
 
-// `Pair` sở hữu các tài nguyên: hai số int trên vùng nhớ heap 
+// `Pair` sở hữu các tài nguyên: hai số nguyên 32 bit trên vùng nhớ heap 
 struct Pair(Box<i32>, Box<i32>);
 
 impl Pair {
     // Phương thức này "sử dụng" các tài nguyên của đối tượng gọi tới
-    // `self` trỏ tới `self: Self`
+    // `self` là viết tắt của `self: Self`
     fn destroy(self) {
         // Destructure `self`
         let Pair(first, second) = self;
@@ -109,7 +109,7 @@ fn main() {
 
     pair.destroy();
 
-    // Error! Previous `destroy` call "consumed" `pair`
+    // Error! Phương thức `destroy` được gọi trước đó đã "tiêu thụ" `pair`
     //pair.destroy();
     // TODO ^ Bỏ comment dòng này để kiểm tra
 }

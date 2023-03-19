@@ -10,7 +10,7 @@ fn is_odd(n: u32) -> bool {
 }
 
 fn main() {
-    println!("Find the sum of all the squared odd numbers under 1000");
+    println!("Tìm tổng của tất cả các số lẻ có bình phương nhỏ hơn 1000");
     let upper = 1000;
 
     // Cách tiếp cận mệnh lệnh (imperative approach)
