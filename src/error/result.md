@@ -14,7 +14,7 @@ Tương tự `Option`, `Result` đi kèm với rất nhiều phương thức. V�
 sẽ trả về thực thể `T` hoặc `panic`. Tùy vấn đề cần xử lí mà ta kết hợp cả `Result` và `Option`. 
 
 Khi dùng Rust, bạn sẽ thường gặp các phương thức trả về kiểu dữ liệu `Result`, 
-như là phương thức [`parse()`][parse]. Không phải lúc nào cũng có thể chuyển hóa
+như là phương thức [`parse()`][parse]. Không phải lúc nào cũng có thể chuyển đổi
 một chuỗi kí tự thành một kiểu dữ liệu khacsm nên `parse()` sẽ trả về một
 kiểu dữ liệu `Result` chỉ ra lỗi nếu có
 be possible to parse a string into the other type, so `parse()` returns a
