@@ -41,7 +41,7 @@ fn main() {
 
 Trong trường hợp thất bại, `parse()` sẽ trả về một lỗi để `unwrap()`
 có thể gọi hàm `panic`. Tiếp theo, hàm `panic` sẽ thoát chương trình và cung cấp
-một thông điệp lỗi khó hiểu.
+một thông báo lỗi không mong muốn
 
 Để nâng cao chất lượng của thông điệp lỗi, ta chuyên biệt hóa kiểu dữ liệu trả về
 và xử lí lỗi kĩ càng hơn
