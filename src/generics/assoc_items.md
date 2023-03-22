@@ -1,6 +1,6 @@
 # Associated items
 
-"Associated Items" là một tập hợp các quy tắc liên quan đến các [`item`][items] của các loại khác nhau.
+"Associated Items" là một tập hợp các quy tắc liên quan đến các [`item`][items] của các kiểu khác nhau.
 Nó là một phần mở rộng của `trait` generics, nó cho phép các `trait` có thể định nghĩa các `item` mới bên trong.
 
 
