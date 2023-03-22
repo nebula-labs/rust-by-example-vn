@@ -12,7 +12,7 @@ fn printer<T: Display>(t: T) {
 }
 ```
 
-Bounding hạn chế generic thành các kiểu tuân thủ với bounds. Nghĩa là:
+Bounding hạn chế generic thành các kiểu phù hợp với bounds. Nghĩa là:
 
 ```rust,ignore
 struct S<T: Display>(T);
