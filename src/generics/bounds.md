@@ -1,7 +1,7 @@
 # Bounds
 
 Khi làm việc với generics, các tham số thường phải sử dụng các traits như *bounds*
-để chỉ định chức năng mà một loại triển khai. Ví dụ sau sử dụng trait `Display`
+để chỉ định chức năng mà một kiểu triển khai. Ví dụ sau sử dụng trait `Display`
 để in và do đó nó yêu cầu `T` được ràng buộc bởi `Display`; nói cách khác, `T` *phải* triển khai `Display`.
 
 ```rust,ignore
