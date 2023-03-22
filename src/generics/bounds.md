@@ -65,7 +65,7 @@ fn main() {
 }
 ```
 
-Ngoài ra, [`where`][where] cũng có thể được sử dụng để áp dụng bounds
+Ngoài ra, mệnh đề [`where`][where] cũng có thể được sử dụng để áp dụng bounds
 trong một số trường hợp để biểu đạt rõ ràng hơn.
 
 ### Xem thêm:
