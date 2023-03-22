@@ -21,7 +21,7 @@ struct S<T: Display>(T);
 let s = S(vec![1]);
 ```
 
-Một công dụng khác của bounding là các generic được phép sử dụng [methods]
+Một công dụng khác của bounding là các generic instance được phép truy cập đến các [methods]
 của các traits được chỉ định trong bounds. Ví dụ:
 
 ```rust,editable
