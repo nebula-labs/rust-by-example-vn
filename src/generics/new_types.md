@@ -1,6 +1,6 @@
 # New Type Idiom
 
-Thành ngữ `newtype` đảm bảo tại thời điểm biên dịch rằng giá trị của đúng kiểu được phải cung cấp cho chương trình.
+Thành ngữ `newtype` đảm bảo tại thời điểm biên dịch rằng giá trị với đúng kiểu được cung cấp cho chương trình.
 
 Ví dụ, một hàm xác minh tuổi tác _phải_ được truyền vào một giá trị kiểu `Years`.
 
