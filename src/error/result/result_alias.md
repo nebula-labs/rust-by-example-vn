@@ -1,56 +1,29 @@
 # aliases for Result
-Tương tự như Option. Một kết quả trả về (Result) của một function thường sẽ có hai trường hợp:
+Trong Rust, chúng ta có thể tạo các alias để tái sử dụng lại các kiểu Result cụ thể nhiều lần. Alias có thể được định nghĩa ở mức độ module và đặc biệt hữu ích để định nghĩa tất cả các Result liên quan với một module cụ thể một cách ngắn gọn. Trong thư viện chuẩn của Rust, ngay cả alias cho io::Result cũng được cung cấp.
 
- Nếu thành công thì trả về kết quả
- Nếu lỗi (Err) và trả về thông tin lỗi.
-Result mô tả lỗi gì đang xảy
+Dưới đây là một ví dụ nhanh để thể hiện cú pháp:
 
-sau đây là ví dụ
-//tạo enum mô tả 3 vị trí cúa nhân viên CEO, CTO thì có quyền truy cao nhất
-enum Possition {
-    CEO,
-    CTO,
-    IT,
+use std::num::ParseIntError;
+
+// Định nghĩa một alias generic cho `Result` với kiểu lỗi là `ParseIntError`.
+type AliasedResult<T> = Result<T, ParseIntError>;
+
+// Sử dụng alias trên để tham chiếu đến kiểu `Result` cụ thể của chúng ta.
+fn multiply(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32> {
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+    })
 }
-//Trạng thái của nhân viên đó khi truy cập vào hệ thống
-enum Status {
-    Allow,
-    Deny,
-}
-// mô tả thông tin của nhân viên để có thể vào hệ thống
-struct Employee {
-    possition: Possition,
-    status: Status,
-}
-//hàm này định nghĩa các quyền truy cập, nếu status là deny thì chặn không cho vô hệ thống
-//nếu là nhân viên IT thì không được vào hệ thống, còn các vị trí còn lại thì được vô
-fn try_access(employee: &Employee) -> Result<(), String> {
-    match employee.status {
-        Status::Deny => return Err("Access deny".to_string()),
-        _ => (),
-    }
-    match employee.possition {
-        Possition::CEO => Ok(()),
-        Possition::CTO => Ok(()),
-        Possition::IT => Err("Invalid possition".to_string()),
+
+// Ở đây, alias lại giúp tiết kiệm một số không gian.
+fn print(result: AliasedResult<i32>) {
+    match result {
+        Ok(n)  => println!("n is {}", n),
+        Err(e) => println!("Error: {}", e),
     }
 }
-//hàm này in thông tin nhân viên được truy cập thành công hay thất bại
-fn print_access(employee: Employee) -> Result<(), String> {
-    if try_access(&employee).is_ok(){
-        println!("Success access");
-    }
-    else {
-        println!("Deny access");
-    }
-    Ok(())
-}
-//nhân viên 1 được truy cập vào
-//nhân viên 2 không được truy cập vào
+
 fn main() {
-    let employee1 = Employee{possition: Possition::CEO, status: Status::Allow};
-    let employee2 = Employee {possition: Possition::IT, status: Status::Deny};
-
-    print_access(employee1);
-    print_access(employee2);
+    print(multiply("10", "2"));
+    print(multiply("t", "2"));
 }
