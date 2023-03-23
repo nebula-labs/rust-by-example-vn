@@ -1,34 +1,40 @@
 # Closures 
-//Cung cấp cho lập trình viên khả năng định nghĩa một hàm nặc danh, có thể được lưu trữ trong một biến và được
-//truyền vào các hàm khác nhau như một tham số
-//nó giúp cho code ngắn gọn, dễ đọc và dễ bảo trì hơn giảm thiểu lượng code lặp lại
+Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ, closure nắm giữ biến x:
 
-fn main(){
+|val| val + x
 
-    let outer_var = 42;
-    
-   //dạng thứ nhất định nghĩa như 1 hàm, khai báo kiểu dữ liệu biến và giá trị trả về  và sử dụng ||
-    let closure_annotated = |i: i32| -> i32 { i + outer_var };
-    //dạng thứ 2 không có {} và sử dụng ||
-    let closure_inferred  = |i| i + outer_var  ;
+Cú pháp và tính năng của closures khiến chúng rất thuận tiện cho việc sử dụng trực tiếp. Gọi một closure giống như gọi một hàm. Tuy nhiên, cả kiểu đầu vào và trả về đều có thể được suy ra và tên biến đầu vào phải được chỉ định.
 
-    // các sử dụng của hai dạng đều giống như gọi hàm có tham số không có tham số
-    println!("closure_annotated: {}", closure_annotated(5)); //ket qua la 47
-    println!("closure_inferred: {}", closure_inferred(8));//ket qua la 50
-    
-    //trường hợp này không có tham số truyền vào
-    let one = || 1;
-    println!("closure returning one: {}", one());//ket qua la 1
+Các đặc điểm khác của closures bao gồm:
 
-    //chúng ta cũng có thể sử dụng các hàm có sẵn vào closures trong trường hợp này chúng ta sử dụng hàm sort_by
-    //để sắp xếp các giá trị trong mảng
-    let mut n = vec![3,5,1,80,23,10];
-    n.sort_by(|a, b|b.cmp(a));
+	*sử dụng || thay vì () để bao quanh các biến đầu vào.
+	*phân cách cú pháp thân tùy chọn ({}) cho một biểu thức đơn (bắt buộc nếu không sử dụng).
+	*khả năng bắt giữ các biến môi trường bên ngoài.
 
-    println!("sap sep theo thu tu giam dan {:?}",n);
-    //sap sep theo thu tu giam dan [80, 23, 10, 5, 3, 1]
-    n.sort_by(|a, b|a.cmp(b));
-    println!("sap sep theo thu tu tang dan {:?}",n);
-    //sap sep theo thu tu tang dan [1, 3, 5, 10, 23, 80]
-	
+fn main() {
+	let outer_var = 42;
+
+	// Một hàm thông thường không thể truy cập được các biến trong môi trường bao quanh
+	// fn function(i: i32) -> i32 { i + outer_var }
+	// TODO: bỏ chú thích ở dòng trên và xem lỗi của trình biên dịch. Trình biên dịch
+	// đề xuất chúng ta nên định nghĩa một closure thay thế.
+
+	// Closures là vô danh, ở đây chúng tôi đang liên kết chúng với các tham chiếu
+	// Chú thích giống như chú thích hàm, nhưng không bắt buộc
+	// như là các `{}` bao quanh thân hàm. Những hàm vô danh này
+	// được gán cho các biến có tên phù hợp.
+	let closure_annotated = |i: i32| -> i32 { i + outer_var };
+	let closure_inferred  = |i     |          i + outer_var  ;
+
+	// Gọi các closures.
+	println!("closure_annotated: {}", closure_annotated(1));
+	println!("closure_inferred: {}", closure_inferred(1));
+	// Khi loại của closure đã được suy ra, nó không thể được suy ra lại với loại khác.
+	// println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
+	// TODO: bỏ chú thích ở dòng trên và xem lỗi của trình biên dịch.
+
+	// Một closure không có tham số và trả về một `i32`.
+	// Loại trả về được suy ra.
+	let one = || 1;
+	println!("closure returning one: {}", one());
 }
