@@ -1,41 +1,50 @@
 # Diverging functions
-// Trong Rust, diverging funtion thường được sử dụng trong trường hợp xử lý lỗi. 
-// Khi một lỗi không thể được xử lý và chương trình không thể tiếp tục thực hiện, 
-//thì các diverging function được sử dụng để kích hoạt lỗi và dừng chương trình
+Hàm diverging (Diverging functions) không bao giờ trả về giá trị. Chúng được đánh dấu bằng !, một kiểu dữ liệu rỗng.
 
-// Hàm foo() không có giá trị trả về nhưng thay vào đó, nó kích hoạt một sử dụng panic!() để dừng chương trình. 
+Ví dụ, hàm này sẽ không bao giờ trả về:
+
 fn foo() -> ! {
-    panic!("Day la ham khong tra ve gia tri");
+    panic!("This call never returns.");
 }
+Khác với tất cả các kiểu dữ liệu khác, kiểu này không thể được khởi tạo, bởi vì tập hợp tất cả các giá trị có thể của kiểu này là rỗng. Lưu ý rằng, nó khác với kiểu dữ liệu () (cũng được gọi là empty tuple) - một kiểu dữ liệu với đúng một giá trị có thể.
 
-// Hàm some_fn() không thể được khởi tạo, bởi vì tập hợp tất cả các giá trị có thể có mà loại này có thể có trống
+Ví dụ, hàm này trả về như bình thường, mặc dù không có thông tin nào trong giá trị trả về:
+
 fn some_fn() {
     ()
 }
-// Hàm foo_loop() sử dụng 1 vòng lập vô hạn để chặn một luồng chạy. Vì không bao giờ có giá trị hợp lệ được trả về, hàm được đánh dấu là ->!
-fn foo_loop() -> ! {
-    loop {}
+
+fn main() {
+    let _a: () = some_fn();
+    println!("This function returns and you can see this line.");
 }
-//hàm tính tổng các số lẻ từ 1 đến số nhập vào trong trường hợp này là từ 1 đến 9
-fn sum_odd_numbers(up_to: u32) -> u32 {
+Ngược lại, hàm này sẽ không bao giờ trả lại điều khiển cho người gọi:
+
+#![feature(never_type)]
+
+fn main() {
+    let x: ! = panic!("This call never returns.");
+    println!("You will never see this line!");
+}
+Mặc dù điều này có vẻ như một khái niệm trừu tượng, nhưng nó thực sự rất hữu ích và thường được sử dụng. Lợi ích chính của kiểu dữ liệu này là nó có thể được chuyển đổi sang bất kỳ kiểu dữ liệu nào khác và do đó được sử dụng ở những nơi cần một kiểu chính xác, ví dụ như các mảnh trong câu lệnh match. Điều này cho phép chúng ta viết mã như thế này:
+
+fn main() {
+    fn sum_odd_numbers(up_to: u32) -> u32 {
     let mut acc = 0;
-    for i in 1..up_to {
-   
+    for i in 0..up_to {
+    // Chú ý rằng kiểu trả về của biểu thức "match" phải là u32,
+    // vì kiểu của biến "addition" là u32.
         let addition: u32 = match i%2 == 1 {
-           
-            true => i,
-      
-            false => continue,
+        // Biến "i" có kiểu u32, điều này hoàn toàn đúng.
+        true => i,
+        // Ngược lại, biểu thức "continue" không trả về u32, nhưng vẫn hợp lệ,
+        // vì nó không trả về và do đó không vi phạm yêu cầu kiểu dữ liệu của biểu thức "match".
+        false => continue,
         };
-        acc += addition;
+     acc += addition;
     }
     acc
+   }
+        println!("Sum of odd numbers up to 9 (excluding): {}", sum_odd_numbers(9));
 }
-fn main() {
-    //goi ham some_fn() tra ve ()
-   println!("Ham some_fn {:?}",some_fn());
-    //goi ham tinh tong ca so le tu 1 den 10 ket qua la 25
-    println!("Tong cac so tu 1 den 9 (excluding): {}", sum_odd_numbers(10));
-    //goi ham foo() in ra panic
-    foo();
-}
+It is also the return type of functions that loop forever (e.g. loop {}) like network servers or functions that terminate the process (e.g. exit()).
