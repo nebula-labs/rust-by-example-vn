@@ -14,9 +14,7 @@ sẽ trả về thực thể `T` hoặc `panic`. Tùy vấn đề cần xử lí
 Khi dùng Rust, bạn sẽ thường gặp các phương thức trả về kiểu dữ liệu `Result`, 
 như là phương thức [`parse()`][parse]. Không phải lúc nào cũng có thể chuyển đổi
 một chuỗi kí tự thành một kiểu dữ liệu khác nên `parse()` sẽ trả về một
-kiểu dữ liệu `Result` cho biết có thể lỗi sẽ xảy ra
-be possible to parse a string into the other type, so `parse()` returns a
-`Result` indicating possible failure.
+kiểu dữ liệu `Result` cho biết có thể lỗi sẽ xảy ra.
 
 Hãy xem xét những gì sẽ xảy ra khi chúng ta chuyển đổi thành công và không thành công một chuỗi bằng phương thức `parse()`:
 
@@ -37,12 +35,9 @@ fn main() {
 }
 ```
 
-Trong trường hợp thất bại, `parse()` sẽ trả về một lỗi để `unwrap()`
-có thể gọi hàm `panic`. Tiếp theo, hàm `panic` sẽ thoát chương trình và cung cấp
-một thông báo lỗi không mong muốn.
+Trong trường hợp không thành công, phương thức `parse()` sẽ gây ra lỗi `panic`. Ngoài ra, lỗi `panic` cũng sẽ kết thúc chương trình và cung cấp một thông báo lỗi không mong muốn.
 
-Để cải thiện chất lượng thông báo lỗi, chúng ta nên cụ thể hóa hơn về kiểu giá trị trả về
-và xử lí lỗi kĩ càng hơn
+Để cải thiện chất lượng thông báo lỗi, chúng ta nên cụ thể hóa hơn về kiểu giá trị trả về và xử lí lỗi kĩ càng hơn
 
 ## Using `Result` in `main`
 
