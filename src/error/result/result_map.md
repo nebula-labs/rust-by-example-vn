@@ -1,31 +1,70 @@
 # map for Result
-Result map là một phương thức của kiểu Result trong Rust, cho phép bạn chuyển đổi giá trị thành công
-của Result bằng cách áp dụng một hàm cho giá trị thành công đó. Nó trả về một Result mới có giá trị
-thành công được biến đổi bằng hàm đã cho, hoặc giá trị lỗi của Result gốc nếu có lỗi xảy ra trong 
-quá trình biến đổi
+Trong ví dụ trước đó, việc panic trong hàm multiply sẽ không tạo ra code đáng tin cậy. Thông thường, chúng ta muốn trả về lỗi cho người gọi để họ có thể quyết định cách phản hồi đúng với các lỗi.
 
-// Trong ví dụ này, chúng ta định nghĩa một hàm divide để chia một số cho một số khác. Nếu số bị chia
-bằng 0 thì hàm trả về lỗi. Nếu không thì trả về kết quả
+Trước tiên, chúng ta cần biết loại lỗi mà chúng ta đang xử lý. Để xác định loại Err, chúng ta nhìn vào hàm parse(), được triển khai với trait FromStr cho kiểu i32. Do đó, loại Err được chỉ định là ParseIntError.
 
-fn divide(x: f32, y: f32) -> Result<f32, &'static str> {
-    if y == 0.0 {
-        Err("Khong the chia voi so 0")
-    }
-    else {
-        Ok(x/y)
+Trong ví dụ dưới đây, câu lệnh match trực tiếp dẫn đến mã nguồn tổng thể phức tạp hơn.
+
+use std::num::ParseIntError;
+
+// Với kiểu trả về được viết lại, chúng ta sử dụng khớp mẫu mà không cần unwrap().
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    match first_number_str.parse::<i32>() {
+        Ok(first_number)  => {
+            match second_number_str.parse::<i32>() {
+                Ok(second_number)  => {
+                    Ok(first_number * second_number)
+                },
+                Err(e) => Err(e),
+            }
+        },
+        Err(e) => Err(e),
     }
 }
+
+fn print(result: Result<i32, ParseIntError>) {
+    match result {
+        Ok(n)  => println!("n is {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
+}
+
 fn main() {
-	//chia với số 0 kết quả trả về lỗi
-    let r1 = divide(10.0, 0.0).map(|x|x*2.0);
-    match r1 {
-        Ok(vl) => println!("Ket qua phep chia {}", vl),
-        Err(er) => println!("Loi phep chia {}", er),
+    // Kết quả trả về vẫn là một câu trả lời hợp lý.
+    let twenty = multiply("10", "2");
+    print(twenty);
+
+    // Sau đó, chương trình sẽ trả về thông báo lỗi hữu ích hơn.
+    let tt = multiply("t", "2");
+    print(tt);
+}
+
+May mắn thay, các hàm map, and_then và nhiều hàm kết hợp khác cũng được triển khai cho Result. Result chứa một danh sách đầy đủ các hàm này.
+
+use std::num::ParseIntError;
+
+//Giống với Option, chúng ta có thể sử dụng các hàm kết hợp như map().
+//Hàm này hoàn toàn giống với hàm trên và đọc như sau:
+//Nhân hai giá trị nếu cả hai giá trị đều có thể được phân tích từ chuỗi, nếu không, truyền lỗi cho người gọi.
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+    })
+}
+
+fn print(result: Result<i32, ParseIntError>) {
+    match result {
+        Ok(n)  => println!("n is {}", n),
+        Err(e) => println!("Error: {}", e),
     }
-	//trả về kết quả là 6
-    let r2 = divide(10.0, 2.0).map(|x|x*3.0);
-    match r2 {
-        Ok(vl) => println!("Ket qua phep chia {}", vl),
-        Err(er) => println!("Loi phep chia {}", er),
-    }
+}
+
+fn main() {
+    // Kết quả trả về vẫn là một câu trả lời hợp lý.
+    let twenty = multiply("10", "2");
+    print(twenty);
+
+ // Sau đó, chương trình sẽ trả về thông báo lỗi hữu ích hơn.
+    let tt = multiply("t", "2");
+    print(tt);
 }
