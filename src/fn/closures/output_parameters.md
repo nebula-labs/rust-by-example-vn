@@ -1,9 +1,7 @@
 # Sử dụng closure dưới dạng tham số đầu ra (output parameters)
 
-Không những ta có thể sử dụng closure dưới dạng tham số để truyền vào hàm hoặc phương thức,
-mà còn có thể sử dụng closure dưới dạng kết quả trả về của một hàm. Mặc dù lý thuyết là vậy, nhưng
-bởi vì theo định nghĩa kiểu của closure là unknown nên ta phải dùng cú pháp `impl Trait` thì mới có thể
-trả nó về dưới dạng kết quả của một hàm.
+Không những closure có thể sử dụng dưới dạng tham số truyền vào, mà còn có thể sử dụng closure dưới dạng kết quả trả về của một hàm.
+Tuy nhiên, các kiểu closure ẩn danh theo định nghĩa là không xác định nên ta phải dùng cú pháp `impl Trait` để return closure.
 
 Các trait hợp lệ có thể được dùng để khai báo kiểu trả về là closure là:
 
@@ -11,10 +9,8 @@ Các trait hợp lệ có thể được dùng để khai báo kiểu trả về
 - `FnMut`
 - `FnOnce`
 
-Ngoài ra, ta phải dùng thêm từ khoá `move` trong trường hợp này để thông báo cho compiler hiểu rằng
-các biến được bắt giữ bởi những closure này đều bằng tham trị. Đây là điều cần thiết vì nếu không làm vậy,
-các biến được sử dụng dưới dạng tham chiếu bên trong closure trả về sẽ bị huỷ
-và xoá khỏi bộ nhớ một khi hàm trả về closure thực thi xong, dẫn đến các lỗi về tham chiếu không hợp lệ trong closure.
+Hơn nữa, từ khóa `move` phải được sử dụng để chỉ ra rằng tất cả các giá trị được capture đều bằng tham trị. Điều này là bắt buộc vì
+bất kỳ việc capture giá trị nào theo tham chiếu sẽ bị loại bỏ ngay khi hàm thoát ra, dẫn đến các lỗi về tham chiếu không hợp lệ trong closure.
 
 ```rust,editable
 fn create_fn() -> impl Fn() {
@@ -46,9 +42,9 @@ fn main() {
 }
 ```
 
-### See also:
+### Đọc thêm:
 
-[`Fn`][fn], [`FnMut`][fnmut], [Generics][generics] and [impl Trait][impltrait].
+[`Fn`][fn], [`FnMut`][fnmut], [Generics][generics] và [impl Trait][impltrait].
 
 [fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
