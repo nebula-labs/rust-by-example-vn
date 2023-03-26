@@ -1,5 +1,5 @@
 # Traits
-Tất nhiên `trait` cũng có thể  là generic. Ở đây chúng tôi định nghĩa một phương thức triển khai lại `Drop trait` như một phương thức generic để  `Drop` chính nó và input.
+Tất nhiên `trait` cũng có thể  là generic. Ở đây chúng ta định nghĩa một phương thức triển khai lại `Drop trait` như một phương thức generic để  `Drop` chính nó và input.
 
 ```rust
 // Các kiểu không thể coppy.
