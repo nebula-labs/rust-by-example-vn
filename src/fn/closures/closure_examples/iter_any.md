@@ -37,7 +37,7 @@ fn main() {
     let array1 = [1, 2, 3];
     let array2 = [4, 5, 6];
 
-    // Phương thức `iter()` cho mảng trẩ về kiểu `&i32`.
+    // Phương thức `iter()` cho mảng trả về kiểu `&i32`.
     println!("2 in array1: {}", array1.iter()     .any(|&x| x == 2));
     // Phương thức `into_iter()` cho mảng trả về kiểu `i32`.
     println!("2 in array2: {}", array2.into_iter().any(|x| x == 2));
