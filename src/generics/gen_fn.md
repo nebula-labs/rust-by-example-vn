@@ -6,7 +6,7 @@ Việc sử dụng generic function đôi khi yêu cầu kiểu dữ liệu cụ
 Một hàm với kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A, B, ...>()`.
 
 ```rust
-struct A;          // Concrete type `A`.
+struct A;          // Kiểu cụ thể `A`.
 struct S(A);       // Concrete type `S`.
 struct SGen<T>(T); // Kiểu Generic `SGen`.
 
