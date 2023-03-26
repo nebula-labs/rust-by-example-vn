@@ -9,6 +9,11 @@ Một hàm với kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A,
 struct A;          // Kiểu cụ thể `A`.
 struct S(A);       // Kiểu cụ thể `S`.
 struct SGen<T>(T); // Kiểu Generic `SGen`.
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin
 // Tất cả các function dưới đây sẽ take ownership của biến được truyền vào và
 // ngay lập tức thoát khỏi scope, giải phóng variable. 
 // Định nghĩa function `reg_fn` với tham số ``_s` có kiểu `S`
