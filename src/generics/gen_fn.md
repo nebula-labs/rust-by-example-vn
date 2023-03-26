@@ -7,7 +7,7 @@ Một hàm với kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A,
 
 ```rust
 struct A;          // Kiểu cụ thể `A`.
-struct S(A);       // Concrete type `S`.
+struct S(A);       // Kiểu cụ thể `S`.
 struct SGen<T>(T); // Kiểu Generic `SGen`.
 
 
