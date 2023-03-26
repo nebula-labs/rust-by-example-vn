@@ -14,7 +14,6 @@ macro_rules! calculate {
         }
     };
 
-    // Decompose multiple `eval`s recursively
     // Phân rã nhiều `eval` bằng cách đệ quy.
     (eval $e:expr, $(eval $es:expr),+) => {{
         calculate! { eval $e }
