@@ -8,7 +8,7 @@ thử các toán tử `+=`, `*=` và `-=` trên `Vec<T>`:
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
-    // `tt` (token tree) được sử dụng cho toán từ và token.
+    // `tt` (token tree) designator được sử dụng cho toán tử và token.
     ($a:expr, $b:expr, $func:ident, $op:tt) => {
         assert!($a.len() == $b.len(),
                 "{:?}: dimension mismatch: {:?} {:?} {:?}",
