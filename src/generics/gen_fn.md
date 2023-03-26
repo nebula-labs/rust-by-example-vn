@@ -11,7 +11,7 @@ struct S(A);       // Kiểu cụ thể `S`.
 struct SGen<T>(T); // Kiểu Generic `SGen`.
 
 
-// Tất cả các function dưới đây sẽ take ownership của variable và
+// Tất cả các function dưới đây sẽ take ownership của biến được truyền vào và
 // ngay lập tức thoát khỏi scope, giải phóng variable. 
 
 // Định nghĩa function `reg_fn` với tham số ``_s` có kiểu `S`
