@@ -19,7 +19,7 @@ struct SGen<T>(T); // Kiểu Generic `SGen`.
 fn reg_fn(_s: S) {}
 
 // Định nghĩa function `gen_spec_t` với một tham số `_s` có kiểu `SGen<T>`.
-// Hàm này đã chỉ rõ type parameter là `A`, nhưng bời vì `A` không được 
+// Hàm này đã chỉ rõ kiểu tham số là `A`, nhưng bời vì `A` không được 
 // chỉ định như một generic type parameter cho `gen_spec_t` nên đây không phải là generic.
 fn gen_spec_t(_s: SGen<A>) {}
 
