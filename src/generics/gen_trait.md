@@ -9,7 +9,7 @@ struct Null;
 // Một trait generic `T`.
 trait DoubleDrop<T> {
 
-    // Định nghĩa một phương thức trên type hiện tại, method nhận một giá trị khác
+    // Định nghĩa một method trên type hiện tại, method nhận một giá trị khác
     // cũng có kiểu `T` và không làm gì với nó.
     fn double_drop(self, _: T);
 }
@@ -18,15 +18,9 @@ trait DoubleDrop<T> {
 // caller `U`.
 impl<T, U> DoubleDrop<T> for U {
     // Method này sẽ take ownership của cả 2 tham số, 
-    // sau đó giải phóng bộ nhớ cho cả 2, do ra khỏi scope mà không làm gì cả.
+    // sau đó giải phóng bộ nhớ cho cả 2, do thoats ra khỏi scope mà không làm gì cả.
     fn double_drop(self, _: T) {}
 }
-
-fn main() {
-    let empty = Empty;
-    let null  = Null;
-
-    // Deallocate `empty` and `null`.
     empty.double_drop(null);
 
     //empty;

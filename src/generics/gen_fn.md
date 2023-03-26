@@ -1,9 +1,9 @@
 # Functions
-Cùng một bộ quy tắc có thể  được áp dụng cho các function: Một kiểu `T` trở thành generic khi khai báo generic type '<T>' sau tên function.
+Một bộ quy tắc có thể được áp dụng cho các function: Một kiểu `T` trở thành generic khi khai báo generic type '<T>' sau tên function.
 
-Việc sử dụng generic function đôi khi yêu cầu kiểu dữ liệu tường minh cho tham số đó. Đây có thể là trường hợp nếu hàm được gọi khi kiểu trả về là generic, hoặc nếu trình biên dịch không đủ thông tin để suy ra các type parameter cần thiết.
+Việc sử dụng generic function đôi khi yêu cầu kiểu dữ liệu cụ thể cho tham số . Đây có thể là trường hợp nếu hàm được gọi khi kiểu trả về là generic, hoặc nếu trình biên dịch không đủ thông tin để suy ra các type parameter cần thiết.
 
-Một hàm với chỉ định kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A, B, ...>()`.
+Một hàm với kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A, B, ...>()`.
 
 ```rust
 struct A;          // Concrete type `A`.
@@ -15,11 +15,11 @@ struct SGen<T>(T); // Kiểu Generic `SGen`.
 // ngay lập tức thoát khỏi scope, giải phóng variable. 
 
 // Định nghĩa function `reg_fn` với tham số ``_s` có kiểu `S`
-// Không có `<T>` nên đây không phải làm hàm generic function.
+// Không có `<T>` nên đây không phải là generic function.
 fn reg_fn(_s: S) {}
 
 // Định nghĩa function `gen_spec_t` với một tham số `_s` có kiểu `SGen<T>`.
-// Hàm này đã chỉ rõ kiểu tham số là `A` cho S, nhưng bời vì `A` không được 
+// Hàm này đã chỉ rõ type parameter là `A`, nhưng bời vì `A` không được 
 // chỉ định như một generic type parameter cho `gen_spec_t` nên đây không phải là generic.
 fn gen_spec_t(_s: SGen<A>) {}
 
