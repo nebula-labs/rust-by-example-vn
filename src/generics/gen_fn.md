@@ -25,7 +25,7 @@ fn gen_spec_t(_s: SGen<A>) {}
 
 // Định nghĩa một hàm `gen_spec_i32` với tham số là `_s` có kiểu `SGen<i32`>.
 // Hàm này chỉ rõ kiểu tham số là `i32`. 
-// Bởi vì `i32` không phải là một generic type, nên hàm này cũng không phải là generic function.
+// Bởi vì `i32` không phải là một kiểu generic, nên hàm này cũng không phải là generic function.
 fn gen_spec_i32(_s: SGen<i32>) {}
 
 // Định nghĩa một `generic` function với tham số '_s' có kiểu 'SGen<T>'.
