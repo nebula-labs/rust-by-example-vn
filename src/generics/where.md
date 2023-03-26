@@ -5,7 +5,7 @@ Ngoài ra, các mệnh đề `where` có thể áp dụng bound cho các kiểu 
 
 Việc sử dụng mệnh đề `where` sẽ hữu dụng khi rơi vào những trường hợp sau:
 
-- Khi muốn rõ ràng hơn bằng cách tách phần chỉ định các kiểu generic ra riêng và chỉ định bound ra riên
+- Khi chỉ định rõ các kiểu dữ liệu generic và bound của chúng một cách riêng biệt.
 
 ```rust,ignore
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}

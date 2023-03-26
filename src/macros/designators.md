@@ -1,12 +1,12 @@
 # Định danh (designators)
 
-Các đối số của một macro sẽ được đánh dấu tiền tố bằng dấu đô la `$` và được gán kiểu với một định danh (designator).
+Các đối số của một macro sẽ được đánh dấu bằng tiền tố dấu đô la `$` và chú thích với kiểu bằng designator.
 
 ```rust,editable
 macro_rules! create_function {
-    // Macro nay nhận đối số với định danh là `ident` và
+    // Macro này nhận đối số với designator là `ident` và
     // tạo ra một hàm có tên là `$func_name`
-    // Định danh `ident` được dùng cho tên của biến hoặc là tên của hàm
+    // Designator `ident` được dùng cho tên của biến hoặc là tên của hàm
     ($func_name:ident) => {
         fn $func_name() {
             // Macro `stringify!` chuyển đổi một biến với định danh là `ident` thành chuỗi string.
@@ -21,7 +21,7 @@ create_function!(bar);
 macro_rules! print_result {
     // Macro này sẽ nhận vào một biểu thức (expression) với kiểu là `expr` và sẽ in
     // biểu thức đó ra dưới dạng chuỗi string và kèm theo đó là kết quả của nó
-    // Định danh `expr` được dùng cho các biểu thức (expressions)
+    // Designator `expr` được dùng cho các biểu thức (expressions)
     ($expression:expr) => {
         // Macro `stringify!` sẽ chuyển biểu thức (expression) thành chuỗi string
         println!("{:?} = {:?}",
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-Dưới đây là một vài định danh có sẵn:
+Dưới đây là một vài Designator có sẵn:
 
 - `block`
 - `expr` được dùng cho các biểu thức (expressions)
@@ -55,6 +55,6 @@ Dưới đây là một vài định danh có sẵn:
 - `ty` (_type_)
 - `vis` (_visibility qualifier_)
 
-Nếu muốn coi một danh sách đầy đủ của các định danh, hãy xem ở đây [Rust Reference]
+Nếu muốn coi một danh sách đầy đủ của các Designator, hãy xem ở đây [Rust Reference]
 
 [rust reference]: https://doc.rust-lang.org/reference/macros-by-example.html
