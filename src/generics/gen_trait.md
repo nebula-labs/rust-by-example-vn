@@ -21,6 +21,11 @@ impl<T, U> DoubleDrop<T> for U {
     // sau đó giải phóng bộ nhớ cho cả 2.
     fn double_drop(self, _: T) {}
 }
+fn main() {
+    let empty = Empty;
+    let null  = Null;
+
+    // Giải phóng `empty` and `null`.
     empty.double_drop(null);
 
     //empty;
