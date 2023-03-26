@@ -1,7 +1,7 @@
 # Functions
 Một bộ quy tắc có thể được áp dụng cho các function: Một kiểu `T` trở thành generic khi khai báo generic type '<T>' sau tên function.
 
-Việc sử dụng generic function đôi khi yêu cầu kiểu dữ liệu cụ thể cho tham số . Đây có thể là trường hợp nếu hàm được gọi khi kiểu trả về là generic, hoặc nếu trình biên dịch không đủ thông tin để suy ra các type parameter cần thiết.
+Việc sử dụng generic function đôi khi yêu cầu kiểu dữ liệu cụ thể cho tham số . Điều này xảy ra nếu hàm được gọi trong trường hợp kiểu trả về là generic, hoặc nếu trình biên dịch không đủ thông tin để suy ra các kiểu của tham số cần thiết.
 
 Một hàm với kiểu dữ liệu cụ thể có cú pháp như sau: `fun::<A, B, ...>()`.
 
