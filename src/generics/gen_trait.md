@@ -18,7 +18,7 @@ trait DoubleDrop<T> {
 // caller `U`.
 impl<T, U> DoubleDrop<T> for U {
     // Method này sẽ take ownership của cả 2 tham số, 
-    // sau đó giải phóng bộ nhớ cho cả 2, do thoats ra khỏi scope mà không làm gì cả.
+    // sau đó giải phóng bộ nhớ cho cả 2.
     fn double_drop(self, _: T) {}
 }
     empty.double_drop(null);
