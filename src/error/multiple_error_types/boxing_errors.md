@@ -1,1 +1,61 @@
-# Boxing errors
+# `Box`ing lỗi
+
+[`Box`][box] là một cách để viết đoạn mã đơn giản mà vẫn bảo toàn được những lỗi ban đầu. Nhược điểm của cách làm này là kiểu dữ liệu lỗi bên trong chỉ có thể được xác định tại thời gian thực thi và không được[xác định tĩnh][dynamic_dispatch] (statically determined).
+(Dịch giả: Điều này có nghĩa là khi sử dụng các kiểu lỗi động (dynamic error types) như Box trong Rust, kiểu lỗi cụ thể mà chương trình có thể gặp phải sẽ không được xác định tại thời điểm biên dịch (compile time), mà chỉ được biết đến khi chạy chương trình.)
+
+Thư viện stdlib hỗ trợ boxing các lỗi của chúng ta bằng cách triển khai `Box` và chuyển đổi bất cứ kiểu dữ liệu nào có trait `Error` trở thành trait object `Box<Error>` thông qua trait [`From`][from].
+
+```rust,editable
+use std::error;
+use std::fmt;
+
+// Thay đổi alias thành `Box<error::Error>`.
+type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
+
+#[derive(Debug, Clone)]
+struct EmptyVec;
+
+impl fmt::Display for EmptyVec {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "phần tử đầu tiên không hợp lệ để có thể nhân đôi")
+    }
+}
+
+impl error::Error for EmptyVec {}
+
+fn double_first(vec: Vec<&str>) -> Result<i32> {
+    vec.first()
+        .ok_or_else(|| EmptyVec.into()) // Converts to Box
+        .and_then(|s| {
+            s.parse::<i32>()
+                .map_err(|e| e.into()) // Converts to Box
+                .map(|i| 2 * i)
+        })
+}
+
+fn print(result: Result<i32>) {
+    match result {
+        Ok(n) => println!("Phần tử đầu tiên được nhân đôi bằng {}", n),
+        Err(e) => println!("Lỗi: {}", e),
+    }
+}
+
+fn main() {
+    let numbers = vec!["42", "93", "18"];
+    let empty = vec![];
+    let strings = vec!["tofu", "93", "18"];
+
+    print(double_first(numbers));
+    print(double_first(empty));
+    print(double_first(strings));
+}
+```
+
+### Tham khảo thêm:
+
+[Dynamic dispatch][dynamic_dispatch] và [`Error` trait][error]
+
+[box]: https://doc.rust-lang.org/std/boxed/struct.Box.html
+[dynamic_dispatch]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch
+[error]: https://doc.rust-lang.org/std/error/trait.Error.html
+[from]: https://doc.rust-lang.org/std/convert/trait.From.html
