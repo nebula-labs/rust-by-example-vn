@@ -10,10 +10,10 @@ Theo mức độ thứ tự giảm dần của mức độ hạn chế các trai
 - `FnMut`: closure sử dụng các giá trị mà nó capture được dưới dạng tham chiếu có thể thay đổi được (&mut T).
 - `FnOnce`: closure sử dụng các giá trị mà nó capture được dưới dạng tham trị (T).
 
-Trên cơ sở từng biến một, rust compiler sẽ bắt giữ các biến theo cách ít hạn chế nhất có thể.
+Trên cơ sở từng biến một, rust compiler sẽ capture các biến theo cách ít hạn chế nhất có thể.
 
-Giả sử một tham số closure được khai báo với kiểu là `FnOnce`, điều này có nghĩa là closure đó có thể bắt giữ (capture)[^†] các biến bằng tham chiếu `&T`, tham chiếu thay đổi được `&mut T` và tham trị `T`,
-nhưng compiler sẽ lựa chọn cách bắt giữ các biến dựa vào cách mà các captured variables được sử dụng trong closure đó.
+Giả sử một tham số closure được khai báo với kiểu là `FnOnce`, điều này có nghĩa là closure đó có thể capture[^†] các biến bằng tham chiếu `&T`, tham chiếu thay đổi được `&mut T` và tham trị `T`,
+nhưng compiler sẽ lựa chọn cách capture các biến dựa vào cách mà các captured variables được sử dụng trong closure đó.
 
 Điều này có thể xảy ra bởi vì một khi ta có thể di chuyển (move) một biến thì ta cũng có thể thực hiện các loại vay mượn (borrow) khác đối với biến đó,
 tuy nhiên điều ngược lại sẽ không đúng. Nếu một tham số được khai báo là `Fn` thì việc capture biến bằng tham chiếu thay đổi được `&mut T` hoặc tham trị `T` là không thể.
@@ -48,20 +48,20 @@ fn main() {
     // Phương thức `to_owned` tạo dữ liệu được sở hữu bởi biến farewell từ dữ liệu được mượn
     let mut farewell = "goodbye".to_owned();
 
-    // Bắt giữ 2 biến: `greeting` theo tham chiếu và
+    // Capture 2 biến: `greeting` theo tham chiếu và
     // `farewell` theo tham trị.
     let diary = || {
-        // `greeting` được bắt theo tham chiếu trong closure này nên yêu cầu khai báo bằng `Fn`.
+        // `greeting` được capture theo tham chiếu trong closure này nên yêu cầu khai báo bằng `Fn`.
         println!("I said {}.", greeting);
 
         // Ở đây có sự thay đổi giá trị của captured variable `farewell`,
-        // nên `farewell` được closure này bắt theo tham chiếu thay đổi được.
+        // nên `farewell` được closure này capture theo tham chiếu thay đổi được.
         // Do đó closure phải được khai báo bằng `FnMut`.
         farewell.push_str("!!!");
         println!("Then I screamed {}.", farewell);
         println!("Now I can sleep. zzzzz");
 
-        // Gọi hàm drop để bắt buộc closure này bắt biến `farewell`
+        // Gọi hàm drop để bắt buộc closure này capture biến `farewell`
         // bằng tham trị. Do đó closure phải được khai báo bằng `FnOnce`.
         mem::drop(farewell);
     };
@@ -88,5 +88,5 @@ fn main() {
 [where]: ../../generics/where.md
 
 [^†]:
-    Chú thích của người dịch: "Việc bắt giữ một biến trong closure là một cách để lưu trữ giá trị của một biến trong phạm vi mà closure được khai báo
-    và sử dụng biến đó. Khi closure được gọi, nó sẽ truy cập và sử dụng các giá trị được bắt giữ."
+    Chú thích của người dịch: "Việc capture một biến trong closure là một cách để lưu trữ giá trị của một biến trong phạm vi mà closure được khai báo
+    và sử dụng biến đó. Khi closure được gọi, nó sẽ truy cập và sử dụng các giá trị được capture."

@@ -3,7 +3,7 @@
 Không những closure có thể sử dụng dưới dạng tham số truyền vào, mà còn có thể sử dụng closure dưới dạng kết quả trả về của một hàm.
 Tuy nhiên, các kiểu closure ẩn danh theo định nghĩa là không xác định nên ta phải dùng cú pháp `impl Trait` để return closure.
 
-Các trait hợp lệ có thể được dùng để khai báo kiểu trả về là closure là:
+Các trait hợp lệ có thể được dùng để khai báo kiểu trả về là một closure là:
 
 - `Fn`
 - `FnMut`
