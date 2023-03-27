@@ -1,1 +1,24 @@
 # Mutability
+
+Tính biến đổi của dữ liệu có thể thay đổi khi quyền sở hữu được chuyển giao.
+
+```rust,editable
+fn main() {
+    let immutable_box = Box::new(5u32);
+
+    println!("immutable_box chứa {}", immutable_box);
+
+    // Lỗi biến đổi
+    //*immutable_box = 4;
+
+    // *Di chuyển* hộp, thay đổi quyền sở hữu (và khả năng biến đổi)
+    let mut mutable_box = immutable_box;
+
+    println!("mutable_box chứa {}", mutable_box);
+
+    // Sửa đổi nội dung của hộp
+    *mutable_box = 4;
+
+    println!("mutable_box bây giờ chứa {}", mutable_box);
+}
+```
