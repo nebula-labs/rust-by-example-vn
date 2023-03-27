@@ -1,9 +1,6 @@
 # Aliasing
 
-Data can be immutably borrowed any number of times, but while immutably
-borrowed, the original data can't be mutably borrowed. On the other hand, only
-*one* mutable borrow is allowed at a time. The original data can be borrowed
-again only *after* the mutable reference has been used for the last time.
+Trong Rust, dữ liệu có thể mượn theo kiểu không thể thay đổi bao nhiêu lần tùy thích, nhưng với kiểu mượn dữ liệu có thể thay đổi, dữ liệu gốc không thể mượn kiểu dữ liệu không thể thay đổi. Mặc khác, chỉ cho phép mượn dữ liệu không thể thay đổi tại 1 thời điểm. Dữ liệu gốc chỉ có thể được mượn lại sau khi tham chiếu có thể thay đổi được đã được sử dụng lần cuối trong mã.
 
 ```rust,editable
 struct Point { x: i32, y: i32, z: i32 }
@@ -14,43 +11,41 @@ fn main() {
     let borrowed_point = &point;
     let another_borrow = &point;
 
-    // Data can be accessed via the references and the original owner
+    // Dữ liệu có thể được truy cập thông qua các tham chiếu và chủ sở hữu gốc
     println!("Point has coordinates: ({}, {}, {})",
                 borrowed_point.x, another_borrow.y, point.z);
 
-    // Error! Can't borrow `point` as mutable because it's currently
-    // borrowed as immutable.
+    // Lỗi! Không thể mượn `point` theo kiểu có thể thay đổi bởi vì hiện tại nó đã được mượn theo kiểu không thể thay đổi 
     // let mutable_borrow = &mut point;
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Thử uncommenting dòng phía trên
 
-    // The borrowed values are used again here
+    // Các giá trị được mượn được sử dụng lại ở đây
     println!("Point has coordinates: ({}, {}, {})",
                 borrowed_point.x, another_borrow.y, point.z);
 
-    // The immutable references are no longer used for the rest of the code so
-    // it is possible to reborrow with a mutable reference.
+    // Các tham chiếu không thể thay đổi không được sử dụng trong phần còn lại của mã nên có thể mượn lại với một tham chiếu có thể thay đổi.
     let mutable_borrow = &mut point;
 
-    // Change data via mutable reference
+    // Thay đổi dữ liệu thông qua tham chiếu có thể thay đổi
     mutable_borrow.x = 5;
     mutable_borrow.y = 2;
     mutable_borrow.z = 1;
 
-    // Error! Can't borrow `point` as immutable because it's currently
-    // borrowed as mutable.
+    // Lỗi! Không thể mượn `point` theo kiểu không thể thay đổi bởi vì 
+    //  hiện tại nó đã được mượn theo kiểu có thể thay đổi 
     // let y = &point.y;
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Thử uncommenting dòng phía trên
 
-    // Error! Can't print because `println!` takes an immutable reference.
+    // Lỗi! Không thể in ra màn hình bởi vì `println!` yêu cầu một tham chiếu không thể thay đổi tới `point`
     // println!("Point Z coordinate is {}", point.z);
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Thử uncommenting dòng phía trên
 
-    // Ok! Mutable references can be passed as immutable to `println!`
+    // Ok! Tham chiếu có thể thay đổi có thể được truyền như là không thể thay đổi cho `println!`
     println!("Point has coordinates: ({}, {}, {})",
                 mutable_borrow.x, mutable_borrow.y, mutable_borrow.z);
 
-    // The mutable reference is no longer used for the rest of the code so it
-    // is possible to reborrow
+    // Tham có thể thay đổi không được sử dụng trong phần còn lại của mã 
+    // nên có thể mượn lại được
     let new_borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
              new_borrowed_point.x, new_borrowed_point.y, new_borrowed_point.z);

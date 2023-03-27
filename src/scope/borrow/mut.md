@@ -1,33 +1,30 @@
 # Mutability
 
-Mutable data can be mutably borrowed using `&mut T`. This is called 
-a *mutable reference* and gives read/write access to the borrower.
-In contrast, `&T` borrows the data via an immutable reference, and 
-the borrower can read the data but not modify it:
+Kiểu dữ liệu có thể thay đổi có thể được mượn có thể thay đổi bằng cách sử dụng `&mut T`. Điều này được gọi là *mutable reference*(tham thiếu có thể thay đổi) và được cung cấp quyền truy cập đọc/ghi cho borrower. Ngược lại, `&T` mượn dữ liệu thông qua *immutable reference*tham chiếu không thể thay đổi và borrower chỉ có thể đọc dữ liệu nhưng không thể sửa đổi nó:
 
 ```rust,editable,ignore,mdbook-runnable
 #[allow(dead_code)]
 #[derive(Clone, Copy)]
 struct Book {
-    // `&'static str` is a reference to a string allocated in read only memory
+    // &'static str là một tham chiếu đến một chuỗi được cấp phát trong bộ nhớ chỉ đọc.
     author: &'static str,
     title: &'static str,
     year: u32,
 }
 
-// This function takes a reference to a book
+// Hàm này lấy một tham chiếu tới một book
 fn borrow_book(book: &Book) {
     println!("I immutably borrowed {} - {} edition", book.title, book.year);
 }
 
-// This function takes a reference to a mutable book and changes `year` to 2014
+// Hàm này lấy tham chiếu tới một book có thể thay đổi và thay đổi `year` thành 2014
 fn new_edition(book: &mut Book) {
     book.year = 2014;
     println!("I mutably borrowed {} - {} edition", book.title, book.year);
 }
 
 fn main() {
-    // Create an immutable Book named `immutabook`
+    // Tạo một đối tượng Book không thể thay đổi với tên `immutabook`
     let immutabook = Book {
         // string literals have type `&'static str`
         author: "Douglas Hofstadter",
@@ -35,21 +32,21 @@ fn main() {
         year: 1979,
     };
 
-    // Create a mutable copy of `immutabook` and call it `mutabook`
+    // Tạo một bản sao có khả năng thay đổi của `immutabook` và gọi nó là `mutabook`. 
     let mut mutabook = immutabook;
     
-    // Immutably borrow an immutable object
+    // Mượn một đối tượng không thể thay đổi bằng cách không thể thay đổi. 
     borrow_book(&immutabook);
 
-    // Immutably borrow a mutable object
+    // Mượn một đối tượng có khả năng thay đổi bằng không thể thay đổi.
     borrow_book(&mutabook);
     
-    // Borrow a mutable object as mutable
+    // Mượn một đối tượng có thể thay đổi bằng cách có thể thay đổi
     new_edition(&mut mutabook);
     
-    // Error! Cannot borrow an immutable object as mutable
+    // Lỗi! Không thể mượn một đối tượng không thể thay đổi bằng cách có thể thay đổi
     new_edition(&mut immutabook);
-    // FIXME ^ Comment out this line
+    // FIXME ^ Comment dòng phía trên
 }
 ```
 
