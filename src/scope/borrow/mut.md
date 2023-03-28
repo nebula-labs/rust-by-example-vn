@@ -1,6 +1,6 @@
 # Mutability
 
-Kiểu dữ liệu có thể thay đổi có thể được mượn theo kiểu có thể thay đổi bằng cách sử dụng `&mut T`. Điều này được gọi là *mutable reference*(tham chiếu có thể thay đổi) và được cung cấp quyền truy cập đọc/ghi cho borrower. Ngược lại, `&T` mượn dữ liệu thông qua *immutable reference*(tham chiếu không thể thay đổi) và borrower chỉ có thể đọc dữ liệu nhưng không thể sửa đổi nó:
+Kiểu dữ liệu có thể thay đổi có thể được mượn theo kiểu có thể thay đổi bằng cách sử dụng `&mut T`. Điều này được gọi là *mutable reference*(tham chiếu có thể thay đổi) và nó cung cấp quyền truy cập đọc/ghi cho borrower. Ngược lại, `&T` mượn dữ liệu thông qua *immutable reference*(tham chiếu không thể thay đổi) và borrower chỉ có thể đọc dữ liệu nhưng không thể sửa đổi nó:
 
 ```rust,editable,ignore,mdbook-runnable
 #[allow(dead_code)]
