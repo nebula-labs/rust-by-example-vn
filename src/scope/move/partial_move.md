@@ -5,7 +5,7 @@ Trong quá trình [destructuring] (giải cấu trúc) của một biến, cả 
 Điều này sẽ dẫn đến việc _di chuyển một phần_ của biến, có nghĩa
 là một số phần của biến sẽ được di chuyển trong khi các phần khác vẫn được giữ nguyên
 .Trong trường hợp đó, biến cha không thể được sử dụng sau đó như một
-toàn thể, tuy nhiên các phần chỉ được tham chiếu (và không được di chuyển) vẫn có thể được sử dụng.
+thể duy nhất, tuy nhiên các phần chỉ được tham chiếu (và không được di chuyển) vẫn có thể được sử dụng.
 
 ```rust,editable
 fn main() {
