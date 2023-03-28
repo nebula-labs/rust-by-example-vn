@@ -16,7 +16,7 @@ fn main() {
 
     println!("mutable_box chứa {}", mutable_box);
 
-    // Sửa đổi nội dung của hộp
+    // Sửa đổi nội dung của hộp (hợp lệ vì biến là mutable)
     *mutable_box = 4;
 
     println!("mutable_box bây giờ chứa {}", mutable_box);
