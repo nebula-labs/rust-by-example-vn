@@ -44,7 +44,7 @@ fn main() {
     println!("Point has coordinates: ({}, {}, {})",
                 mutable_borrow.x, mutable_borrow.y, mutable_borrow.z);
 
-    // Tham có thể thay đổi không được sử dụng trong phần còn lại của mã 
+    // Tham chiếu có thể thay đổi không được sử dụng trong phần còn lại của mã 
     // nên có thể mượn lại được
     let new_borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
