@@ -8,7 +8,7 @@ fn main() {
 
     println!("immutable_box chứa {}", immutable_box);
 
-    // Lỗi biến đổi
+    // Lỗi biến đổi (không thể thay đổi giá trị biến immutable)
     //*immutable_box = 4;
 
     // *Di chuyển* hộp, thay đổi quyền sở hữu (và khả năng biến đổi)
