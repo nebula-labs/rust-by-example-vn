@@ -11,7 +11,7 @@ fn main() {
     // Lỗi biến đổi (không thể thay đổi giá trị biến immutable)
     //*immutable_box = 4;
 
-    // *Di chuyển* hộp, thay đổi quyền sở hữu (và khả năng biến đổi)
+    // *Move* hộp, sẽ thay đổi quyền sở hữu (và khả năng biến đổi) của nó
     let mut mutable_box = immutable_box;
 
     println!("mutable_box chứa {}", mutable_box);
