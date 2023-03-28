@@ -1,6 +1,6 @@
 # Aliasing
 
-Trong Rust, dữ liệu có thể mượn theo kiểu không thể thay đổi bao nhiêu lần tùy thích, nhưng với kiểu mượn dữ liệu không thể thay đổi, dữ liệu gốc không thể mượn kiểu dữ liệu có thể thay đổi. Mặc khác, chỉ cho phép mượn dữ liệu có thể thay đổi tại 1 thời điểm. Dữ liệu gốc chỉ có thể được mượn lại sau khi tham chiếu có thể thay đổi được đã được sử dụng lần cuối trong mã.
+Trong Rust, dữ liệu có thể mượn theo kiểu không thể thay đổi (immutable) bao nhiêu lần tùy thích, nhưng trong khi nó đang được mượn theo kiểu này, dữ liệu gốc không thể được mượn theo cách có thể thay đổi (mutable). Mặt khác, chỉ cho phép mượn dữ liệu có thể thay đổi tại một thời điểm. Dữ liệu gốc chỉ có thể được mượn lại chỉ sau khi tham chiếu có thể thay đổi được được sử dụng lần cuối trong mã.
 
 ```rust,editable
 struct Point { x: i32, y: i32, z: i32 }
