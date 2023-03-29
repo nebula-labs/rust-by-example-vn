@@ -1,5 +1,5 @@
 # Borrowing
-Trong đa phần các trường hợp, chúng ta sẽ có thể muốn truy cập dữ liệu mà không cần phải quan tâm nhiều đến quyền sở hữu của nó. Để làm được điều này, Rust cung cấp cho chúng ta một cơ chế gọi là `borrowing` - Mượn trong tiếng Việt. Điều này có nghĩa là thay vì truyền vào giá trị `(T)`, ta chỉ cần truyền vào tham chiếu của nó `(&T)`. <br/>
+Trong đa phần các trường hợp, chúng ta sẽ có thể muốn truy cập dữ liệu mà không cần phải quan tâm nhiều đến quyền sở hữu của nó. Để làm được điều này, Rust cung cấp cho chúng ta một cơ chế gọi là `borrowing` - Mượn trong tiếng Việt. Điều này có nghĩa là thay vì truyền vào giá trị (`T`), ta chỉ cần truyền vào tham chiếu của nó (`&T`). <br/>
 Trình biên dịch sẽ đảm bảo chắc chắn (thông qua **trình kiểm tra mượn** - `borrow checker`) rằng các tham chiếu sẽ luôn được trỏ đến các đối tượng hợp lệ. Điều này có nghĩa là, trong khi các tham chiếu đến một đối tượng còn tồn tại, thì đối tượng đó không thể bị xóa bỏ. <br/>
 
 ```rust,editable
