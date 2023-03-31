@@ -1,6 +1,6 @@
 # aliases for `Result`
 Khi chúng ta muốn sử dụng lại một kiểu Result cụ thể nhiều lần thì làm sao?
-Hãy nhớ rằng Rust cho phép chúng ta tạo ơaliases][typealias]. Conveniently,
+Hãy nhớ rằng Rust cho phép chúng ta tạo [aliases][typealias]. Conveniently,
 Một cách tiện lợi, chúng ta có thể định nghĩa một bí danh cho kiểu Result cụ thể đó.
 
 Ở mức độ module, việc tạo bí danh có thể rất hữu ích. Các lỗi được tìm thấy trong một module cụ thể thường có cùng kiểu Err,
