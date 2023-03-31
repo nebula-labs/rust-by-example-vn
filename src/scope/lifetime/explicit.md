@@ -1,73 +1,66 @@
-# Explicit annotation
+# Chú thích lifetime rõ ràng
 
-The borrow checker uses explicit lifetime annotations to determine
-how long references should be valid. In cases where lifetimes are not
-elided[^1], Rust requires explicit annotations to determine what the
-lifetime of a reference should be. The syntax for explicitly annotating
-a lifetime uses an apostrophe character as follows:
+Trình kiểm tra mượn sử dụng chú thích lifetime rõ ràng để xác định thời gian tham chiếu có hiệu lực. Trong những trường hợp mà việc xác định lifetime không được bỏ qua[^1], Rust yêu cầu chú thích rõ ràng để xác định thời gian tham chiếu. Cú pháp để chú thích lifetime rõ ràng sử dụng ký tự nháy đơn như sau:
 
 ```rust,ignore
 foo<'a>
-// `foo` has a lifetime parameter `'a`
+// `foo` có tham số lifetime `'a`
 ```
 
-Similar to [closures][anonymity], using lifetimes requires generics.
-Additionally, this lifetime syntax indicates that the lifetime of `foo`
-may not exceed that of `'a`. Explicit annotation of a type has the form
-`&'a T` where `'a` has already been introduced.
+Tương tự như [closures][anonymity], việc sử dụng lifetime đòi hỏi sử dụng generics. Ngoài ra, cú pháp này cho biết lifetime của `foo` không thể vượt quá `'a`. Chú thích rõ ràng của một kiểu có dạng `&'a T` với `'a` đã được giới thiệu trước đó.
 
-In cases with multiple lifetimes, the syntax is similar:
+Trong những trường hợp với nhiều lifetime, cú pháp tương tự như sau:
 
 ```rust,ignore
 foo<'a, 'b>
-// `foo` has lifetime parameters `'a` and `'b`
+// `foo` có tham số lifetime là `'a` và `'b`
 ```
 
-In this case, the lifetime of `foo` cannot exceed that of either `'a` _or_ `'b`.
+Trong trường hợp này, lifetime của `foo` không thể vượt quá `'a` _hoặc_ `'b`.
 
-See the following example for explicit lifetime annotation in use:
+Xem ví dụ sau để thấy cách sử dụng chú thích lifetime rõ ràng:
 
 ```rust,editable,ignore,mdbook-runnable
-// `print_refs` takes two references to `i32` which have different
-// lifetimes `'a` and `'b`. These two lifetimes must both be at
-// least as long as the function `print_refs`.
+// `print_refs` nhận 2 tham chiếu đến biến kiểu `i32`
+// có lifetime khác nhau là `'a` và `'b`. Hai lifetime này phải có lifetime
+// ít nhất là bằng với lifetime của hàm `print_refs`.
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("x is {} and y is {}", x, y);
 }
 
-// A function which takes no arguments, but has a lifetime parameter `'a`.
+// Một hàm không có đối số, nhưng có tham số lifetime `'a`.
 fn failed_borrow<'a>() {
     let _x = 12;
 
-    // ERROR: `_x` does not live long enough
+    // ERROR: `_x` không có lifetime đủ dài
     let y: &'a i32 = &_x;
-    // Attempting to use the lifetime `'a` as an explicit type annotation
-    // inside the function will fail because the lifetime of `&_x` is shorter
-    // than that of `y`. A short lifetime cannot be coerced into a longer one.
+    // Cố sử dụng lifetime `'a` như là một chú thích rõ ràng
+    // bên trong hàm sẽ bị lỗi vì lifetime của `&_x` ngắn hơn
+    // so với `y`. Một lifetime ngắn không thể được ép thành một lifetime dài hơn.
 }
 
 fn main() {
-    // Create variables to be borrowed below.
+    // Tạo biến để có thể được mượn bên dưới.
     let (four, nine) = (4, 9);
 
-    // Borrows (`&`) of both variables are passed into the function.
+    // Mượn (`&`) cả hai biến và truyền chúng vào hàm `print_refs`.
     print_refs(&four, &nine);
-    // Any input which is borrowed must outlive the borrower.
-    // In other words, the lifetime of `four` and `nine` must
-    // be longer than that of `print_refs`.
+    // Bất cứ tham số đầu vào nào đuợc mượn phải có lifetime dài hơn thứ mượn nó (ở đây là `print_refs`)
+    // Nói cách khác, lifetime của `four` và `nine`
+    // phải dài hơn lifetime của `print_refs`.
 
     failed_borrow();
-    // `failed_borrow` contains no references to force `'a` to be
-    // longer than the lifetime of the function, but `'a` is longer.
-    // Because the lifetime is never constrained, it defaults to `'static`.
+    // Hàm `failed_borrow` không có tham chiếu nào để buộc `'a` phải
+    // có lifetime dài hơn lifetime của hàm, nhưng `'a` vẫn có lifetime dài hơn.
+    // Bởi vì lifetime không bị giới hạn, nó mặc định là `'static`.
 }
 ```
 
-[^1]: [elision] implicitly annotates lifetimes and so is different.
+[^1]: [elision] chú thích lifetime không rõ ràng và sự khác biệt.
 
-### See also:
+### Xem thêm:
 
-[generics][generics] and [closures][closures]
+[generics][generics] và [closures][closures]
 
 [anonymity]: ../../fn/closures/anonymity.md
 [closures]: ../../fn/closures.md
