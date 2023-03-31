@@ -1,87 +1,45 @@
-# Closures 
-Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ, closure nắm giữ biến x:
-
-|val| val + x
-
-Cú pháp và tính năng của closures khiến chúng rất thuận tiện cho việc sử dụng trực tiếp. Gọi một closure giống như gọi một hàm. Tuy nhiên, cả kiểu đầu vào và trả về đều có thể được suy ra và tên biến đầu vào phải được chỉ định.
-
-Các đặc điểm khác của closures bao gồm:
-
-	*sử dụng || thay vì () để bao quanh các biến đầu vào.
-	*phân cách cú pháp thân tùy chọn ({}) cho một biểu thức đơn (bắt buộc nếu không sử dụng).
-	*khả năng bắt giữ các biến môi trường bên ngoài.
-
-fn main() {
-	let outer_var = 42;
-
-	// Một hàm thông thường không thể truy cập được các biến trong môi trường bao quanh
-	// fn function(i: i32) -> i32 { i + outer_var }
-	// TODO: bỏ chú thích ở dòng trên và xem lỗi của trình biên dịch. Trình biên dịch
-	// đề xuất chúng ta nên định nghĩa một closure thay thế.
-
-	// Closures là vô danh, ở đây chúng tôi đang liên kết chúng với các tham chiếu
-	// Chú thích giống như chú thích hàm, nhưng không bắt buộc
-	// như là các `{}` bao quanh thân hàm. Những hàm vô danh này
-	// được gán cho các biến có tên phù hợp.
-	let closure_annotated = |i: i32| -> i32 { i + outer_var };
-	let closure_inferred  = |i     |          i + outer_var  ;
-
-	// Gọi các closures.
-	println!("closure_annotated: {}", closure_annotated(1));
-	println!("closure_inferred: {}", closure_inferred(1));
-	// Khi loại của closure đã được suy ra, nó không thể được suy ra lại với loại khác.
-	// println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
-	// TODO: bỏ chú thích ở dòng trên và xem lỗi của trình biên dịch.
-
-	// Một closure không có tham số và trả về một `i32`.
-	// Loại trả về được suy ra.
-	let one = || 1;
-	println!("closure returning one: {}", one());
-}
 # Closures
 
-Closures are functions that can capture the enclosing environment. For
-example, a closure that captures the `x` variable:
+Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ, closure nắm giữ biến `x`:
 
 ```Rust
 |val| val + x
 ```
 
-The syntax and capabilities of closures make them very convenient for
-on the fly usage. Calling a closure is exactly like calling a function.
-However, both input and return types *can* be inferred and input
-variable names *must* be specified.
+Cú pháp và khả năng của closures làm cho chúng rất tiện lợi cho việc sử dụng ngay lập tức.
+Gọi một closure hoàn toàn giống như gọi một hàm..
+Tuy nhiên, cả kiểu dữ liệu đầu vào và đầu ra *can* được suy luận và tên biến đầu vào *must* được chỉ định.
 
-Other characteristics of closures include:
-* using `||` instead of `()` around input variables.
-* optional body delimination (`{}`) for a single expression (mandatory otherwise).
-* the ability to capture the outer environment variables.
+Một số đặc điểm khác của closures bao gồm:
+* Sử dụng `||` thay vì `()` để bao quanh biến đầu vào..
+* Tùy chọn việc đặt dấu mở ngoặc nhọn (`{}`) cho một biểu thức đơn (bắt buộc nếu không phải là biểu thức đơn).
+* Khả năng bắt được các biến môi trường bên ngoài (outer environment variables).
 
 ```rust,editable
 fn main() {
     let outer_var = 42;
     
-    // A regular function can't refer to variables in the enclosing environment
+    // Một hàm thông thường không thể tham chiếu đến các biến trong môi trường bao quanh nó.
     //fn function(i: i32) -> i32 { i + outer_var }
-    // TODO: uncomment the line above and see the compiler error. The compiler
-    // suggests that we define a closure instead.
+    // TODO:  xóa comment trên và xem lỗi biên dịch. Trình biên dịch
+    // gợi ý chúng ta nên định nghĩa một closure thay vì.
 
-    // Closures are anonymous, here we are binding them to references
-    // Annotation is identical to function annotation but is optional
-    // as are the `{}` wrapping the body. These nameless functions
-    // are assigned to appropriately named variables.
+    // Closures là vô danh, ở đây chúng ta đang liên kết chúng với các tham chiếu.
+    // Chú thích giống với chú thích của hàm, nhưng là tùy chọn
+    // giống như các dấu ngoặc nhọn `{}` bao quanh thân hàm. Những hàm vô danh này
+    // được gán cho các biến được đặt tên phù hợp..
     let closure_annotated = |i: i32| -> i32 { i + outer_var };
     let closure_inferred  = |i     |          i + outer_var  ;
 
-    // Call the closures.
+    // Gọi các closures.
     println!("closure_annotated: {}", closure_annotated(1));
     println!("closure_inferred: {}", closure_inferred(1));
-    // Once closure's type has been inferred, it cannot be inferred again with another type.
+    // Một khi kiểu dữ liệu của closure đã được suy luận, thì nó không thể được suy luận lại với một kiểu dữ liệu khác.
     //println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
-    // TODO: uncomment the line above and see the compiler error.
+    // TODO: bỏ ghi chú dòng trên và xem lỗi trình biên dịch
 
-    // A closure taking no arguments which returns an `i32`.
-    // The return type is inferred.
+    // Một closure không có đối số, trả về một `i32`.
+    // Kiểu dữ liệu trả về được suy luận tự động.
     let one = || 1;
     println!("closure returning one: {}", one());
 
