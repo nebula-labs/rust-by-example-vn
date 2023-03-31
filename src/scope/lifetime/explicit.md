@@ -1,13 +1,13 @@
 # Chú thích lifetime rõ ràng
 
-Trình kiểm tra mượn sử dụng chú thích lifetime rõ ràng để xác định thời gian tham chiếu có hiệu lực. Trong những trường hợp mà việc xác định lifetime không được bỏ qua[^1], Rust yêu cầu chú thích rõ ràng để xác định thời gian tham chiếu. Cú pháp để chú thích lifetime rõ ràng sử dụng ký tự nháy đơn như sau:
+Trình kiểm tra mượn sử dụng chú thích lifetime rõ ràng để xác định thời gian tham chiếu có hiệu lực. Trong những trường hợp mà việc xác định lifetime không được bỏ qua[^1], Rust yêu cầu chú thích rõ ràng để xác định thời gian tồn tại của tham chiếu. Cú pháp để chú thích lifetime rõ ràng sử dụng ký tự nháy đơn như sau:
 
 ```rust,ignore
 foo<'a>
 // `foo` có tham số lifetime `'a`
 ```
 
-Tương tự như [closures][anonymity], việc sử dụng lifetime đòi hỏi sử dụng generics. Ngoài ra, cú pháp này cho biết lifetime của `foo` không thể vượt quá `'a`. Chú thích rõ ràng của một kiểu có dạng `&'a T` với `'a` đã được giới thiệu trước đó.
+Tương tự như [closures][anonymity], việc sử dụng lifetime yêu cầu sử dụng generics. Ngoài ra, cú pháp này cho biết lifetime của `foo` không thể vượt quá `'a`. Chú thích rõ ràng của một kiểu có dạng `&'a T` với `'a` đã được giới thiệu trước đó.
 
 Trong những trường hợp với nhiều lifetime, cú pháp tương tự như sau:
 
@@ -22,7 +22,7 @@ Xem ví dụ sau để thấy cách sử dụng chú thích lifetime rõ ràng:
 
 ```rust,editable,ignore,mdbook-runnable
 // `print_refs` nhận 2 tham chiếu đến biến kiểu `i32`
-// có lifetime khác nhau là `'a` và `'b`. Hai lifetime này phải có lifetime
+// có các lifetime khác nhau là `'a` và `'b`. Hai lifetime này phải có lifetime
 // ít nhất là bằng với lifetime của hàm `print_refs`.
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("x is {} and y is {}", x, y);
