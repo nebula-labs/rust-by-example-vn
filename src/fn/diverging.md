@@ -1,57 +1,6 @@
 # Diverging functions
-Hàm diverging (Diverging functions) không bao giờ trả về giá trị. Chúng được đánh dấu bằng !, một kiểu dữ liệu rỗng.
 
-Ví dụ, hàm này sẽ không bao giờ trả về:
-
-fn foo() -> ! {
-    panic!("This call never returns.");
-}
-Khác với tất cả các kiểu dữ liệu khác, kiểu này không thể được khởi tạo, bởi vì tập hợp tất cả các giá trị có thể của kiểu này là rỗng. Lưu ý rằng, nó khác với kiểu dữ liệu () (cũng được gọi là empty tuple) - một kiểu dữ liệu với đúng một giá trị có thể.
-
-Ví dụ, hàm này trả về như bình thường, mặc dù không có thông tin nào trong giá trị trả về:
-
-fn some_fn() {
-    ()
-}
-
-fn main() {
-    let _a: () = some_fn();
-    println!("This function returns and you can see this line.");
-}
-Ngược lại, hàm này sẽ không bao giờ trả lại điều khiển cho người gọi:
-
-#![feature(never_type)]
-
-fn main() {
-    let x: ! = panic!("This call never returns.");
-    println!("You will never see this line!");
-}
-Mặc dù điều này có vẻ như một khái niệm trừu tượng, nhưng nó thực sự rất hữu ích và thường được sử dụng. Lợi ích chính của kiểu dữ liệu này là nó có thể được chuyển đổi sang bất kỳ kiểu dữ liệu nào khác và do đó được sử dụng ở những nơi cần một kiểu chính xác, ví dụ như các mảnh trong câu lệnh match. Điều này cho phép chúng ta viết mã như thế này:
-
-fn main() {
-    fn sum_odd_numbers(up_to: u32) -> u32 {
-    let mut acc = 0;
-    for i in 0..up_to {
-    // Chú ý rằng kiểu trả về của biểu thức "match" phải là u32,
-    // vì kiểu của biến "addition" là u32.
-        let addition: u32 = match i%2 == 1 {
-        // Biến "i" có kiểu u32, điều này hoàn toàn đúng.
-        true => i,
-        // Ngược lại, biểu thức "continue" không trả về u32, nhưng vẫn hợp lệ,
-        // vì nó không trả về và do đó không vi phạm yêu cầu kiểu dữ liệu của biểu thức "match".
-        false => continue,
-        };
-     acc += addition;
-    }
-    acc
-   }
-        println!("Sum of odd numbers up to 9 (excluding): {}", sum_odd_numbers(9));
-}
-It is also the return type of functions that loop forever (e.g. loop {}) like network servers or functions that terminate the process (e.g. exit()).
-
-# Diverging functions
-
-Diverging functions never return. They are marked using `!`, which is an empty type.
+Các hàm "Diverging" (không kết thúc) không bao giờ trả về giá trị. Chúng được đánh dấu bằng `!`, đây là một kiểu dữ liệu rỗng.
 
 ```rust
 fn foo() -> ! {
@@ -59,12 +8,11 @@ fn foo() -> ! {
 }
 ```
 
-As opposed to all the other types, this one cannot be instantiated, because the
-set of all possible values this type can have is empty. Note that, it is
-different from the `()` type, which has exactly one possible value.
+Khác với tất cả các kiểu dữ liệu khác, kiểu dữ liệu này không thể được khởi tạo, 
+vì tập hợp tất cả các giá trị có thể của kiểu dữ liệu này là rỗng. 
+Lưu ý rằng, điều này khác với kiểu `()` (kiểu unit), mà có đúng một giá trị có thể.
 
-For example, this function returns as usual, although there is no information
-in the return value.
+Ví dụ, hàm này trả về như bình thường, mặc dù không có thông tin nào trong giá trị trả về.
 
 ```rust
 fn some_fn() {
@@ -77,7 +25,7 @@ fn main() {
 }
 ```
 
-As opposed to this function, which will never return the control back to the caller.
+Khác với hàm này, hàm này sẽ không bao giờ trả lại quyền điều khiển cho người gọi.
 
 ```rust,ignore
 #![feature(never_type)]
@@ -88,24 +36,25 @@ fn main() {
 }
 ```
 
-Although this might seem like an abstract concept, it is in fact very useful and
-often handy. The main advantage of this type is that it can be cast to any other
-one and therefore used at places where an exact type is required, for instance
-in `match` branches. This allows us to write code like this:
+Mặc dù điều này có vẻ như một khái niệm trừu tượng, thực tế nó rất hữu ích và thường tiện dụng.
+Ưu điểm chính của kiểu dữ liệu này là nó có thể được chuyển đổi sang bất kỳ kiểu dữ liệu nào khác 
+và do đó được sử dụng ở những nơi cần đúng kiểu dữ liệu, ví dụ như trong các khối `match`.
+Điều này cho phép chúng ta viết mã như thế này:
+
 
 ```rust
 fn main() {
     fn sum_odd_numbers(up_to: u32) -> u32 {
         let mut acc = 0;
         for i in 0..up_to {
-            // Notice that the return type of this match expression must be u32
-            // because of the type of the "addition" variable.
+            // Lưu ý rằng kiểu trả về của biểu thức match này phải là u32
+            // vì kiểu của biến "addition" là kiểu dữ liệu u32.
             let addition: u32 = match i%2 == 1 {
-                // The "i" variable is of type u32, which is perfectly fine.
+                // Biến "i" có kiểu dữ liệu là u32, điều này hoàn toàn hợp lệ.
                 true => i,
-                // On the other hand, the "continue" expression does not return
-                // u32, but it is still fine, because it never returns and therefore
-                // does not violate the type requirements of the match expression.
+                // Mặt khác, biểu thức "continue" không trả về giá trị kiểu u32
+                // nhưng vẫn không sao cả, vì nó không bao giờ trả về và do đó
+                // không vi phạm yêu cầu kiểu dữ liệu của biểu thức match.
                 false => continue,
             };
             acc += addition;
@@ -116,5 +65,5 @@ fn main() {
 }
 ```
 
-It is also the return type of functions that loop forever (e.g. `loop {}`) like
-network servers or functions that terminate the process (e.g. `exit()`).
+Đây cũng là kiểu trả về của các hàm lặp mãi mãi (e.g. `loop {}`) 
+ như các máy chủ mạng hoặc các hàm kết thúc quá trình thực thi (e.g. `exit()`).
