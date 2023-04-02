@@ -2,7 +2,7 @@
 
 Một *variadic* interface có số lượng đối số tùy ý. Ví dụ `println!` có thể  nhận số lượng đối số tùy ý, như được xác định bởi định dạng string.
 
-Chúng tôi có thể mở rộng macro `calculate!` từ phần trước thành variadic.
+Chúng ta có thể mở rộng macro `calculate!` từ phần trước thành variadic.
 
 ```rust
 macro_rules! calculate {
