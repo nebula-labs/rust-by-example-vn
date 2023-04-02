@@ -1,4 +1,4 @@
-# Variadics
+# Variadic Interfaces
 
 Một *variadic* interface có số lượng đối số tùy ý. Ví dụ `println!` có thể  nhận số lượng đối số tùy ý, như được xác định bởi định dạng string.
 
