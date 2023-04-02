@@ -1,11 +1,11 @@
 # aliases for `Result`
-Khi chúng ta muốn sử dụng lại một kiểu Result cụ thể nhiều lần thì làm sao?
-Hãy nhớ rằng Rust cho phép chúng ta tạo [aliases][typealias]. Conveniently,
+Khi chúng ta muốn tái sử dụng một kiểu `Result` cụ thể nhiều lần thì làm như thế nào?
+Hãy nhớ rằng Rust cho phép chúng ta tạo [aliases][typealias].
 Một cách tiện lợi, chúng ta có thể định nghĩa một bí danh cho kiểu Result cụ thể đó.
 
-Ở mức độ module, việc tạo bí danh có thể rất hữu ích. Các lỗi được tìm thấy trong một module cụ thể thường có cùng kiểu Err,
-do đó một bí danh duy nhất có thể ngắn gọn định nghĩa tất cả các Result liên quan. 
-Việc này rất hữu ích đến mức thư viện std cung cấp sẵn một bí danh cho việc này: [`io::Result`][io_result]!
+Ở mức độ module, việc tạo bí danh có thể rất hữu ích. Các lỗi được tìm thấy trong một module cụ thể thường có cùng kiểu `Err`,
+do đó một bí danh duy nhất có thể ngắn gọn định nghĩa tất cả các `Result` liên quan. 
+Việc này rất hữu ích đến mức thư viện `std` cung cấp sẵn một bí danh cho việc này: [`io::Result`][io_result]!
 
 Đây là một ví dụ nhanh để minh họa cú pháp:
 
