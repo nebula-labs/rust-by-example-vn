@@ -6,7 +6,7 @@ Một lifetime dài hơn có thể được ép kiểu thành một lifetime ng�
 và cũng thông qua việc khai báo sự khác biệt về lifetime:
 
 ```rust,editable
-// Ở đâu, Rust sẽ tự suy ra một lifetime ngắn nhất có thể.
+// Ở đây, Rust sẽ tự suy ra một lifetime ngắn nhất có thể.
 // Hai tham chiếu này sau đó sẽ bị ép kiểu thành lifetime đó.
 fn multiply<'a>(first: &'a i32, second: &'a i32) -> i32 {
     first * second
