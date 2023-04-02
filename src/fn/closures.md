@@ -34,7 +34,7 @@ fn main() {
     // Gọi các closures.
     println!("closure_annotated: {}", closure_annotated(1));
     println!("closure_inferred: {}", closure_inferred(1));
-    // Một khi kiểu dữ liệu của closure đã được suy luận, thì nó không thể được suy luận lại với một kiểu dữ liệu khác.
+    // Một khi kiểu dữ liệu của closure đã được suy ra, thì nó không thể được suy ra lại với một kiểu dữ liệu khác.
     //println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
     // TODO: bỏ ghi chú dòng trên và xem lỗi trình biên dịch
 
