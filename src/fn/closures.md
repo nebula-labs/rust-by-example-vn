@@ -7,13 +7,13 @@ Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ,
 ```
 
 Cú pháp và khả năng của closures làm cho chúng rất tiện lợi cho việc sử dụng ngay lập tức.
-Gọi một closure hoàn toàn giống như gọi một hàm..
+Gọi một closure hoàn toàn giống như gọi một hàm.
 Tuy nhiên, cả kiểu dữ liệu đầu vào và đầu ra *can* được suy luận và tên biến đầu vào *must* được chỉ định.
 
 Một số đặc điểm khác của closures bao gồm:
-* Sử dụng `||` thay vì `()` để bao quanh biến đầu vào..
+* Sử dụng `||` thay vì `()` để bao quanh biến đầu vào.
 * Tùy chọn việc đặt dấu mở ngoặc nhọn (`{}`) cho một biểu thức đơn (bắt buộc nếu không phải là biểu thức đơn).
-* Khả năng bắt được các biến môi trường bên ngoài (outer environment variables).
+* Khả năng capture được các biến môi trường bên ngoài (outer environment variables).
 
 ```rust,editable
 fn main() {
@@ -27,7 +27,7 @@ fn main() {
     // Closures là vô danh, ở đây chúng ta đang liên kết chúng với các tham chiếu.
     // Chú thích giống với chú thích của hàm, nhưng là tùy chọn
     // giống như các dấu ngoặc nhọn `{}` bao quanh thân hàm. Những hàm vô danh này
-    // được gán cho các biến được đặt tên phù hợp..
+    // được gán cho các biến được đặt tên phù hợp.
     let closure_annotated = |i: i32| -> i32 { i + outer_var };
     let closure_inferred  = |i     |          i + outer_var  ;
 
