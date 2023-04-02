@@ -55,4 +55,4 @@ fn main() {
 [^†]:
     Lời người dịch:
     Đây là một ràng buộc về lifetime trong Rust, được áp dụng cho một kiểu T và một lifetime 'a.
-    Nó đảm bảo rằng nếu T chứa bất kỳ tham chiếu nào, thì tham chiếu đó phải tồn tại trong thời gian sống của 'a.
+    Nó đảm bảo rằng nếu T chứa bất kỳ tham chiếu nào, thì tham chiếu đó phải tồn tại trong lifetime của 'a.
