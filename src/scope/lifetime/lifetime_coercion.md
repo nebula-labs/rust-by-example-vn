@@ -12,7 +12,7 @@ fn multiply<'a>(first: &'a i32, second: &'a i32) -> i32 {
     first * second
 }
 
-// `<'a: 'b, 'b>` được đọc như sau: lifetime `'a` tối thiểu dài ngang lifetime `'a`.
+// `<'a: 'b, 'b>` được đọc như sau: lifetime `'a` tối thiểu dài ngang lifetime `'b`.
 // Ở đây, chúng ta nhận vào một `&'a i32` và trả về a `&'b i32` như là một kết quả của sự ép kiểu.
 fn choose_first<'a: 'b, 'b>(first: &'a i32, _: &'b i32) -> &'b i32 {
     first
