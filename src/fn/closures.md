@@ -1,6 +1,6 @@
 # Closures
 
-Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ, closure nắm giữ biến `x`:
+Closures là các hàm có thể capture môi trường bao quanh. Ví dụ, closure capture biến `x`:
 
 ```Rust
 |val| val + x
@@ -8,7 +8,7 @@ Closures là các hàm có thể nắm giữ môi trường bao quanh. Ví dụ,
 
 Cú pháp và khả năng của closures làm cho chúng rất tiện lợi cho việc sử dụng ngay lập tức.
 Gọi một closure hoàn toàn giống như gọi một hàm.
-Tuy nhiên, cả kiểu dữ liệu đầu vào và đầu ra *can* được suy luận và tên biến đầu vào *must* được chỉ định.
+Tuy nhiên, cả kiểu dữ liệu đầu vào và đầu ra có thể được suy luận và tên biến đầu vào phải được chỉ định.
 
 Một số đặc điểm khác của closures bao gồm:
 * Sử dụng `||` thay vì `()` để bao quanh biến đầu vào.

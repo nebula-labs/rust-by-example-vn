@@ -15,7 +15,7 @@ use std::num::ParseIntError;
 // Định nghĩa một bí danh chung cho `Result` với kiểu lỗi `ParseIntError`.
 type AliasedResult<T> = Result<T, ParseIntError>;
 
-// Sử dụng bí danh trên để tham chiếu đến kiểu Result cụ thể của chúng ta.
+// Sử dụng bí danh trên để tham chiếu đến kiểu `Result` cụ thể của chúng ta.
 fn multiply(first_number_str: &str, second_number_str: &str) -> AliasedResult<i32> {
     first_number_str.parse::<i32>().and_then(|first_number| {
         second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
