@@ -3,7 +3,7 @@
 Một lifetime dài hơn có thể được ép kiểu thành một lifetime ngắn hơn
 để nó có thể được dùng trong phạm vi mà nó thường không thể được sử dụng.
 Điều này được thực hiện thông qua quá trình ép kiểu tự suy luận bởi trình biên dịch Rust,
-và cũng thông qua việc khai báo sự khác biệt về lifetime:
+và cũng có thể được khai báo thông qua sự khác biệt về lifetime:
 
 ```rust,editable
 // Ở đây, Rust sẽ tự suy ra một lifetime ngắn nhất có thể.
