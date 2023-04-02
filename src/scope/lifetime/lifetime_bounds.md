@@ -7,7 +7,7 @@ Chú ý cách đọc của các cú pháp dưới đây như sau:
 1. `T: 'a`: _Tất cả_ các tham chiếu trong `T` phải tồn tại lâu hơn lifetime `'a`[^†].
 2. `T: Trait + 'a`: Kiểu `T` phải implement trait `Trait` và _tất cả_ các tham chiếu trong `T` phải phải tồn tại lâu hơn lifetime `'a`.
 
-Ví dụ dưới đây sẽ áp dụng biểu diễn cách các cú pháp phía trên ở sau từ khoá `where`
+Ví dụ dưới đây sẽ áp dụng biểu diễn cách các cú pháp phía trên được sử dụng ở sau từ khoá `where`
 
 ```rust,editable
 use std::fmt::Debug; // Trait dùng để bound.
