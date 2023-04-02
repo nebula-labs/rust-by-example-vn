@@ -12,7 +12,7 @@ Việc này rất hữu ích đến mức thư viện `std` cung cấp sẵn m�
 ```rust,editable
 use std::num::ParseIntError;
 
-// Định nghĩa một bí danh chung cho Result với kiểu lỗi ParseIntError.
+// Định nghĩa một bí danh chung cho `Result` với kiểu lỗi `ParseIntError`.
 type AliasedResult<T> = Result<T, ParseIntError>;
 
 // Sử dụng bí danh trên để tham chiếu đến kiểu Result cụ thể của chúng ta.
