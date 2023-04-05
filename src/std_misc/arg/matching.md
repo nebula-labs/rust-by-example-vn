@@ -1,6 +1,6 @@
 # Argument parsing
 
-Matching (`match`) có thể được sử dụng để phân giải (parse) các tham số đơn giản (simple arguments) <br/>
+Matching (`match`) có thể được sử dụng để phân tích cú pháp (parse) các tham số đơn giản (simple arguments) <br/>
 
 ```rust,editable
 use std::env;
