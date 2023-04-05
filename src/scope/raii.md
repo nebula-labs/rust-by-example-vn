@@ -63,7 +63,7 @@ Không có lỗi rò rỉ tài nguyên nào!
 
 ## Destructor
 
-Khái niệm về destructor trong Rust được cung cấp thông qua trait [Drop].
+Khái niệm về destructor trong Rust được cung cấp thông qua trait [`Drop`].
 Destructor được gọi khi tài nguyên ra khỏi phạm vi. Trait này không nhất thiết phải
 được implement cho tất cả các kiểu mà chỉ cần implement cho kiểu của bạn khi bạn cần
 thực hiện một logic riêng với destructor của kiểu đó.
