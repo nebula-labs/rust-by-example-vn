@@ -2,7 +2,7 @@
 
 Trong khi vector lưu trữ giá trị bằng các chỉ mục số nguyên, thì `HashMap` lưu trữ giá trị bằng key. Key của `HashMap` có thể là booleans, integers, strings, hoặc bất kì kiểu dữ liệu nào khác mà được triển khai trait `Eq` và `Hash`. Chi tiết hơn về điều này sẽ được đề cập ở phần tiếp theo.
 
-Tương tự như vector, `HashMap` có thể mở rộng được, nhưng HashMaps cũng có thể thu nhỏ chính chúng khi chúng có quá nhiều không gian lưu trữ dư thừa. Bạn có thể tạo một HashMap với một dung lượng ban đầu nhất định bằng cách sử dụng `HashMap::with_capacity(uint)`, hoặc sử dụng `HashMap::new()` để tạo một HashMap với dung lượng khởi tạo mặc định(được đề xuất).
+Tương tự như vector, `HashMap` có thể mở rộng được, nhưng HashMaps cũng có thể thu nhỏ chính chúng khi chúng có quá nhiều không gian lưu trữ dư thừa. Bạn có thể tạo một HashMap với một dung lượng ban đầu nhất định bằng cách sử dụng `HashMap::with_capacity(uint)`, hoặc sử dụng `HashMap::new()` để tạo một HashMap với dung lượng khởi tạo mặc định(cách này được khuyến khích dùng).
 
 ```rust,editable
 use std::collections::HashMap;
@@ -42,7 +42,7 @@ fn main() {
 
     contacts.remove(&"Ashley"); 
 
-    // `HashMap::iter()` trả về một bộ lặp đưa ra các cặp 
+    // `HashMap::iter()` trả về một bộ lặp (iterator) cho phép lấy ra từng cặp 
     // (&'a key, &'a value) theo thứ tự bất kỳ.
     for (contact, &number) in contacts.iter() {
         println!("Calling {}: {}", contact, call(number)); 

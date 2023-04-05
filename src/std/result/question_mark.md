@@ -1,6 +1,6 @@
 # `?`
 
-Chuỗi các kết quả sử dụng match có thể làm cho đoạn mã của bạn trở nên khá lộn xộn và khó đọc; may mắn là, có thể sử dụng toán tử `?` có thể để làm cho mọi thứ trở nên đẹp đẽ và dễ đọc hơn. `?` được sử dụng ở cuối một biểu thức trả về là một `Result`, và nó tương đương với một biểu thức match, trong đó nhánh `Err(err)` mở rộng thành một `return Err(From::from(err))`, và nhánh `Ok(ok)` mở rộng thành một biểu thức `ok`.
+Việc xử lý một chuỗi các kết quả sử dụng match có thể làm cho đoạn mã của bạn trở nên khá lộn xộn và khó đọc; may mắn là, toán tử `?` có thể để làm cho mọi thứ trở nên đẹp đẽ và dễ đọc hơn. `?` được sử dụng ở cuối một biểu thức trả về là một `Result`, và nó tương đương với một biểu thức match, trong đó nhánh `Err(err)` mở rộng thành một `return Err(From::from(err))`, và nhánh `Ok(ok)` mở rộng thành một biểu thức `ok`.
 
 ```rust,editable,ignore,mdbook-runnable
 mod checked {
