@@ -1,15 +1,8 @@
 # HashMap
 
-Where vectors store values by an integer index, `HashMap`s store values by key. 
-`HashMap` keys can be booleans, integers, strings, 
-or any other type that implements the `Eq` and `Hash` traits. 
-More on this in the next section.
+Trong khi vector lưu trữ giá trị bằng các chỉ mục số nguyên, thì `HashMap` lưu trữ giá trị bằng key. Key của `HashMap` có thể là booleans, integers, strings, hoặc bất kì kiểu dữ liệu nào khác mà được triển khai trait `Eq` và `Hash`. Chi tiết hơn về điều này sẽ được đề cập ở phần tiếp theo.
 
-Like vectors, `HashMap`s are growable, but HashMaps can also shrink themselves 
-when they have excess space. 
-You can create a HashMap with a certain starting capacity using 
-`HashMap::with_capacity(uint)`, or use `HashMap::new()` to get a HashMap 
-with a default initial capacity (recommended).
+Tương tự như vector, `HashMap` có thể mở rộng được, nhưng HashMaps cũng có thể thu nhỏ chính chúng khi chúng có quá nhiều không gian lưu trữ dư thừa. Bạn có thể tạo một HashMap với một dung lượng ban đầu nhất định bằng cách sử dụng `HashMap::with_capacity(uint)`, hoặc sử dụng `HashMap::new()` để tạo một HashMap với dung lượng khởi tạo mặc định(được đề xuất).
 
 ```rust,editable
 use std::collections::HashMap;
@@ -32,14 +25,14 @@ fn main() {
     contacts.insert("Katie", "435-8291");
     contacts.insert("Robert", "956-1745");
 
-    // Takes a reference and returns Option<&V>
+    // Lấy một tham chiếu và trả về Option<&V>
     match contacts.get(&"Daniel") {
         Some(&number) => println!("Calling Daniel: {}", call(number)),
         _ => println!("Don't have Daniel's number."),
     }
 
-    // `HashMap::insert()` returns `None`
-    // if the inserted value is new, `Some(value)` otherwise
+    // `HashMap::insert()` trả về `None`
+    // nếu giá trị được thêm là mới, ngược lại trả về là `Some(value)`
     contacts.insert("Daniel", "164-6743");
 
     match contacts.get(&"Ashley") {
@@ -49,16 +42,14 @@ fn main() {
 
     contacts.remove(&"Ashley"); 
 
-    // `HashMap::iter()` returns an iterator that yields 
-    // (&'a key, &'a value) pairs in arbitrary order.
+    // `HashMap::iter()` trả về một bộ lặp đưa ra các cặp 
+    // (&'a key, &'a value) theo thứ tự bất kỳ.
     for (contact, &number) in contacts.iter() {
         println!("Calling {}: {}", contact, call(number)); 
     }
 }
 ```
 
-For more information on how hashing and hash maps 
-(sometimes called hash tables) work, have a look at 
-[Hash Table Wikipedia][wiki-hash]
+Để biết thêm thông tin về hashing và hash maps (đôi khi được gọi là hash tables), hãy xem [Hash Table Wikipedia][wiki-hash]
 
 [wiki-hash]: https://en.wikipedia.org/wiki/Hash_table

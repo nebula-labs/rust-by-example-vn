@@ -1,10 +1,6 @@
 # `?`
 
-Chaining results using match can get pretty untidy; luckily, the `?` operator
-can be used to make things pretty again. `?` is used at the end of an expression
-returning a `Result`, and is equivalent to a match expression, where the 
-`Err(err)` branch expands to an early `return Err(From::from(err))`, and the `Ok(ok)`
-branch expands to an `ok` expression.
+Chuỗi các kết quả sử dụng match có thể làm cho đoạn mã của bạn trở nên khá lộn xộn và khó đọc; may mắn là, có thể sử dụng toán tử `?` có thể để làm cho mọi thứ trở nên đẹp đẽ và dễ đọc hơn. `?` được sử dụng ở cuối một biểu thức trả về là một `Result`, và nó tương đương với một biểu thức match, trong đó nhánh `Err(err)` mở rộng thành một `return Err(From::from(err))`, và nhánh `Ok(ok)` mở rộng thành một biểu thức `ok`.
 
 ```rust,editable,ignore,mdbook-runnable
 mod checked {
@@ -41,12 +37,12 @@ mod checked {
         }
     }
 
-    // Intermediate function
+    // Hàm trung gian
     fn op_(x: f64, y: f64) -> MathResult {
-        // if `div` "fails", then `DivisionByZero` will be `return`ed
+        // nếu `div` "lỗi", `DivisionByZero` sẽ được trả về
         let ratio = div(x, y)?;
 
-        // if `ln` "fails", then `NonPositiveLogarithm` will be `return`ed
+        // nếu `ln` "lỗi", `NonPositiveLogarithm` sẽ được trả về
         let ln = ln(ratio)?;
 
         sqrt(ln)
@@ -72,7 +68,6 @@ fn main() {
 }
 ```
 
-Be sure to check the [documentation][docs],
-as there are many methods to map/compose `Result`.
+Đảm bảo rằng bạn sẽ kiểm tra [documentation][docs], vì có nhiều phương pháp để map/compose `Result`.
 
 [docs]: https://doc.rust-lang.org/std/result/index.html
