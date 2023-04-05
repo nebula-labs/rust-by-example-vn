@@ -57,5 +57,5 @@ fn main() {
 
 [references]: ../flow_control/match/destructuring/destructure_pointers.md
 
-[^†] Lời người dịch:
+[^†]: Lời người dịch:
 Tài nguyên (resource) được đề cập trong ngữ cảnh của Rust có thể là các giá trị như một đối tượng heap-allocated (có nghĩa là giá trị được cấp phát động và quản lý bởi hệ điều hành), file handle, socket, hoặc bất cứ thứ gì khác mà ứng dụng của bạn cần phải cấp phát, sử dụng và giải phóng khi không cần thiết nữa để giải phóng tài nguyên và tránh lãng phí bộ nhớ hoặc tài nguyên hệ thống.
