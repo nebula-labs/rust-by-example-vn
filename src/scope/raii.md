@@ -69,7 +69,7 @@ Destructor được gọi khi tài nguyên ra khỏi phạm vi. Trait này khôn
 thực hiện một logic riêng với destructor của kiểu đó.
 
 Hãy chạy ví dụ dưới đây để xem cách mà trait [`Drop`] hoạt động. Bất cứ khi nào biến trong hàm
-`main` ra khỏi scope của hàm thì destructor mà được đã tuỳ chỉnh sẽ được gọi.
+`main` ra khỏi scope của hàm thì destructor mà đã tuỳ chỉnh sẽ được gọi.
 
 ```rust,editable
 struct ToDrop;
