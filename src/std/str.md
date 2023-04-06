@@ -1,49 +1,48 @@
-# Strings
+# Chuỗi
 
-Có 2 kiểu strings trong rust: `String` và `&str`.
+Có 2 kiểu chuỗi trong rust: `String` và `&str`.
 
 1 biến `String` sẽ được lưu trữ như là 1 vector dưới định dạng bytes (`Vec<u8>`), luôn theo chuẩn UTF-8. `String` được phân bổ theo vùng nhớ heap, có thể phát triển và có thể là null.
 
-`&str` là một dajng (`&[u8]`) luôn trỏ đến một chuỗi UTF-8 hợp lệ và có thể được sử dụng để xem thành `Chuỗi`, giống như `&[T]` là chế độ xem thành ` Vec<T>`.
-`&str` is a slice (`&[u8]`) that always points to a valid UTF-8 sequence, and
-can be used to view into a `String`, just like `&[T]` is a view into `Vec<T>`.
+`&str` là một dạng (`&[u8]`) luôn trỏ đến một chuỗi UTF-8 hợp lệ và có thể được sử dụng để xem như 1 `String`, giống như `&[T]` được coi như ` Vec<T>`.
+
 
 ```rust,editable
 fn main() {
-    // (all the type annotations are superfluous)
-    // A reference to a string allocated in read only memory
+    // (tất cả các kiểu chú thích đều là thừa)
+    // Tham chiếu đến một string được cấp trong bộ nhớ chỉ đọc
     let pangram: &'static str = "the quick brown fox jumps over the lazy dog";
     println!("Pangram: {}", pangram);
 
-    // Iterate over words in reverse, no new string is allocated
+    // Lặp lại các từ theo thứ tự ngược lại, không tạo thêm chuỗi mới
     println!("Words in reverse");
     for word in pangram.split_whitespace().rev() {
         println!("> {}", word);
     }
 
-    // Copy chars into a vector, sort and remove duplicates
+
+
     let mut chars: Vec<char> = pangram.chars().collect();
     chars.sort();
     chars.dedup();
 
-    // Create an empty and growable `String`
+    // Tạo 1 `String` mới
     let mut string = String::new();
     for c in chars {
-        // Insert a char at the end of string
+        // Thêm 1 char vào cuối chuỗi string
         string.push(c);
-        // Insert a string at the end of string
+        // Thêm 1 string vào cuối chuỗi string
         string.push_str(", ");
     }
 
-    // The trimmed string is a slice to the original string, hence no new
-    // allocation is performed
+    // Chuỗi đã cắt là một cắt lát của chuỗi ban đầu, do đó không có cấp phát mới nào được thực hiện
     let chars_to_trim: &[char] = &[' ', ','];
     let trimmed_str: &str = string.trim_matches(chars_to_trim);
     println!("Used characters: {}", trimmed_str);
 
-    // Heap allocate a string
+    // Heap cấp phát một chuỗi
     let alice = String::from("I like dogs");
-    // Allocate new memory and store the modified string there
+    // Cấp phát bộ nhớ mới và lưu trữ chuỗi đã sửa đổi ở đó
     let bob: String = alice.replace("dog", "cat");
 
     println!("Alice says: {}", alice);
@@ -51,32 +50,26 @@ fn main() {
 }
 ```
 
-More `str`/`String` methods can be found under the
-[std::str][str] and
+Có thể tìm thấy các phương thức `str`/`String` khác trong
+[std::str][str] và
 [std::string][string]
 modules
 
-## Literals and escapes
+## Ký tự và chuỗi thoát
 
-There are multiple ways to write string literals with special characters in them.
-All result in a similar `&str` so it's best to use the form that is the most
-convenient to write. Similarly there are multiple ways to write byte string literals,
-which all result in `&[u8; N]`.
+Có nhiều cách để viết chuỗi ký tự có ký tự đặc biệt trong đó. Tất cả đều dẫn đến một `&str` giống nhau, vì vậy tốt nhất bạn nên sử dụng biểu mẫu thuận tiện nhất để viết. Tương tự, có nhiều cách để viết các ký tự chuỗi byte, tất cả đều có kết quả là `&[u8; N]`.
 
-Generally special characters are escaped with a backslash character: `\`.
-This way you can add any character to your string, even unprintable ones
-and ones that you don't know how to type. If you want a literal backslash,
-escape it with another one: `\\`
+Nói chung, các ký tự đặc biệt được thoát bằng ký tự gạch chéo ngược: `\`. Bằng cách này, bạn có thể thêm bất kỳ ký tự nào vào chuỗi của mình, kể cả những ký tự không in được và những ký tự mà bạn không biết cách nhập. Nếu bạn muốn có dấu gạch chéo ngược theo nghĩa đen, hãy thoát nó bằng một dấu gạch chéo ngược khác: `\\`
 
-String or character literal delimiters occurring within a literal must be escaped: `"\""`, `'\''`.
+Các dấu phân cách bằng chữ của chuỗi hoặc ký tự xuất hiện trong một chữ phải được thoát ra: `"\""`, `'\''`.
 
 ```rust,editable
 fn main() {
-    // You can use escapes to write bytes by their hexadecimal values...
+    // Bạn có thể sử dụng các dấu thoát để ghi byte theo giá trị thập lục phân của chúng...
     let byte_escape = "I'm writing \x52\x75\x73\x74!";
     println!("What are you doing\x3F (\\x3F means ?) {}", byte_escape);
 
-    // ...or Unicode code points.
+    // ...hoặc điểm mã Unicode.
     let unicode_codepoint = "\u{211D}";
     let character_name = "\"DOUBLE-STRUCK CAPITAL R\"";
 
@@ -92,50 +85,49 @@ fn main() {
 }
 ```
 
-Sometimes there are just too many characters that need to be escaped or it's just
-much more convenient to write a string out as-is. This is where raw string literals come into play.
+Đôi khi có quá nhiều ký tự cần được thoát hoặc việc viết một chuỗi nguyên trạng sẽ thuận tiện hơn nhiều. Đây là nơi các chuỗi ký tự thô phát huy tác dụng.
 
 ```rust, editable
 fn main() {
     let raw_str = r"Escapes don't work here: \x3F \u{211D}";
     println!("{}", raw_str);
 
-    // If you need quotes in a raw string, add a pair of #s
+    // Nếu bạn cần trích dẫn trong một chuỗi dạng thô, hãy thêm một cặp #
     let quotes = r#"And then I said: "There is no escape!""#;
     println!("{}", quotes);
 
-    // If you need "# in your string, just use more #s in the delimiter.
-    // You can use up to 65535 #s.
+    // Nếu bạn cần "# trong chuỗi của mình, chỉ cần sử dụng nhiều # hơn trong dấu phân cách.
+    // Bạn có thể sử dụng tối đa 65535 #.
     let longer_delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", longer_delimiter);
 }
 ```
 
-Want a string that's not UTF-8? (Remember, `str` and `String` must be valid UTF-8).
-Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!
+Bạn muốn một chuỗi không phải UTF-8? (Hãy nhớ rằng `str` và `String` phải là UTF-8 hợp lệ).
+Hoặc có thể bạn muốn một mảng byte chủ yếu là văn bản? Chuỗi byte để giải cứu!
 
 ```rust, editable
 use std::str;
 
 fn main() {
-    // Note that this is not actually a `&str`
+    // Lưu ý rằng đây không thực sự là `&str`
     let bytestring: &[u8; 21] = b"this is a byte string";
 
-    // Byte arrays don't have the `Display` trait, so printing them is a bit limited
+    // Mảng byte không có thuộc tính `Display` nên việc in chúng hơi bị hạn chế
     println!("A byte string: {:?}", bytestring);
 
-    // Byte strings can have byte escapes...
+    // Chuỗi byte có thể có byte thoát...
     let escaped = b"\x52\x75\x73\x74 as bytes";
-    // ...but no unicode escapes
+    // ...nhưng không thoát unicode
     // let escaped = b"\u{211D} is not allowed";
     println!("Some escaped bytes: {:?}", escaped);
 
 
-    // Raw byte strings work just like raw strings
+    // Chuỗi byte thô hoạt động giống như chuỗi thô
     let raw_bytestring = br"\u{211D} is not escaped here";
     println!("{:?}", raw_bytestring);
 
-    // Converting a byte array to `str` can fail
+    // Chuyển đổi một mảng byte thành `str` có thể thất bại
     if let Ok(my_str) = str::from_utf8(raw_bytestring) {
         println!("And the same as text: '{}'", my_str);
     }
@@ -143,10 +135,10 @@ fn main() {
     let _quotes = br#"You can also use "fancier" formatting, \
                     like with normal raw strings"#;
 
-    // Byte strings don't have to be UTF-8
+    // Chuỗi byte không nhất thiết phải là UTF-8
     let shift_jis = b"\x82\xe6\x82\xa8\x82\xb1\x82\xbb"; // "ようこそ" in SHIFT-JIS
 
-    // But then they can't always be converted to `str`
+    // Nhưng không phải lúc nào chúng cũng có thể được chuyển thành `str`
     match str::from_utf8(shift_jis) {
         Ok(my_str) => println!("Conversion successful: '{}'", my_str),
         Err(e) => println!("Conversion failed: {:?}", e),
@@ -154,10 +146,10 @@ fn main() {
 }
 ```
 
-For conversions between character encodings check out the [encoding][encoding-crate] crate.
+Để chuyển đổi giữa các mã hóa ký tự, hãy xem [encoding][encoding-crate].
 
-A more detailed listing of the ways to write string literals and escape characters
-is given in the ['Tokens' chapter][tokens] of the Rust Reference.
+Một danh sách chi tiết hơn về cách viết chuỗi ký tự và ký tự thoát
+được đưa ra trong chương ['Tokens'][tokens] của Rust Reference.
 
 [str]: https://doc.rust-lang.org/std/str/
 [string]: https://doc.rust-lang.org/std/string/
