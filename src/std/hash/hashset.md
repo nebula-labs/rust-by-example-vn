@@ -5,7 +5,7 @@ Hãy coi `HashSet` là một `HashMap` nơi chúng ta chỉ quan tâm đến cá
 
 Tính năng độc đáo của `HashSet` là nó đảm bảo không có các phần tử trùng lặp. Đó là hợp đồng mà bất kì một collection set nào cũng đáp ứng.`HashSet` chỉ là một triển khai. (Xem thêm: [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html))
 
-Nếu bạn chèn một giá trị đã có trong `HashSet`, (Nghĩa là giá trị mới bằng với giá trị hiện tại và cả hai đều có cùng hàm hash), thì giá trị mới sẽ thay thế giá trị cũ.
+Nếu bạn thêm vào một giá trị đã có trong `HashSet`, (Nghĩa là giá trị mới bằng với giá trị hiện tại và cả hai đều có cùng hàm hash), thì giá trị mới sẽ thay thế giá trị cũ.
 
 Điều này thật hữu ích khi bạn không bao giờ muốn nhiều hơn một thứ gì đó hoặc khi bạn muốn biết liệu bạn đã có thứ gì đó chưa.
 
