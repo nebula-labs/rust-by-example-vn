@@ -1,7 +1,7 @@
 # HashSet
 Hãy coi `HashSet` là một `HashMap` nơi chúng ta chỉ quan tâm đến các key( `HashSet<T>` thực tế chỉ là một wrapper(bao bọc) xung quanh `HashMap<T,()>`).
 
-"Ý nghĩa của việc đó là gì?" bạn hỏi. "Tổi chỉ có thể lưu trữ các key trong `Vec`".
+"Ý nghĩa của việc đó là gì?" bạn hỏi. "Tôi chỉ cần lưu trữ các key trong Vec".
 
 Tính năng độc đáo của `HashSet` là nó đảm bảo không có các phần tử trùng lặp. Đó là hợp đồng mà bất kì một collection set nào cũng đáp ứng.`HashSet` chỉ là một triển khai. (Xem thêm: [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html))
 
