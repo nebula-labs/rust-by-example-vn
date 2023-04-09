@@ -9,7 +9,7 @@ Nếu bạn thêm vào một giá trị đã tồn tại trong `HashSet`, (Nghĩ
 
 Điều này thật hữu ích khi bạn không muốn có nhiều hơn một thứ gì đó hoặc khi bạn muốn biết liệu bạn đã có thứ gì đó chưa.
 
-Nhưng các set nó có thể làm nhiều hơn thế.
+Nhưng các set còn có thể làm nhiều hơn thế.
 Các Set có 4 thao tác chính( tất cả các lệnh gọi sau đây đều trả về một iterator):
 
 - `union`: lấy tất cả các phần tử  chỉ xuất hiện một lần trong cả hai tập.
