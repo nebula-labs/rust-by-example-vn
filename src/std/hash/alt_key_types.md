@@ -1,5 +1,5 @@
 # Alternate/custom key types
-Bất kì kiểu nào triển khai trait của `Eq` và `Hash` đều có thể là một key trong `HashMap`. Điều này bao gồm:
+Bất kì kiểu nào triển khai các trait `Eq` và `Hash` đều có thể là một key trong `HashMap`. Bao gồm:
 - `bool` (Mặc dù không hữu ích lằm vì chỉ có thể có hai key)
 - `int`, `uint` và tất cả các biến thể của chúng.
 - `String` và `&str` (protip: bạn có thể có HashMap được khóa bằng `String` và gọi `.get()` bằng `&str`)
