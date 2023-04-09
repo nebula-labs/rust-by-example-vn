@@ -1,5 +1,5 @@
 # HashSet
-Hãy coi `HashSet` là một `HashMap` nơi chúng ta chỉ quan tâm đến các key( `HashSet<T>` thực tế chỉ là một wrapper(bao bọc) xung quanh `HashMap<T,()>`).
+`HashSet` được coi như là một `HashMap` nếu chúng ta chỉ quan tâm đến các key( `HashSet<T>` thực tế chỉ là một wrapper(bao bọc) xung quanh `HashMap<T,()>`).
 
 "Ý nghĩa của việc đó là gì?" bạn hỏi. "Tôi chỉ cần lưu trữ các key trong Vec".
 
