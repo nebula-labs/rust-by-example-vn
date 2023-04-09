@@ -11,7 +11,7 @@ Tất cả các lớp collection sẽ triển khai `Eq` và `Hash` nếu kiểu 
 
 Bạn có thể dễ dàng triển khai `Eq` và `Hash` cho một loại tùy chỉnh chỉ với một dòng: `#[derive(PartialEq, Eq, Hash)]`
 
-Trình biên dịch sẽ làm phần còn lại. Nếu bạn muốn kiểm soát nhiều hơn các chi tiết, bạn có thể tự triển khai `Eq` và/hoặc `Hash`. Hướng dẫn này không đề cập đến các chi tiết cụ thể của việc triển khai `Hash`.
+Trình biên dịch sẽ làm phần còn lại. Nếu bạn muốn kiểm soát cụ thể hơn, bạn có thể tự triển khai `Eq` và/hoặc `Hash`. Hướng dẫn này không đề cập đến các chi tiết cụ thể của việc triển khai `Hash`.
 
 Để hiểu hơn về cách `struct` được sử dụng trong `HashMap`, hãy thử tạo một hệ thống đăng nhập đơn giản:
 
