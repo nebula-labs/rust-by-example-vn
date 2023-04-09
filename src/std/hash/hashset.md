@@ -57,6 +57,7 @@ fn main() {
              a.symmetric_difference(&b).collect::<Vec<&i32>>());
 }
 ```
+(Các ví dụ đã được điều chỉnh theo [documentation](https://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference).)
 
 
 
