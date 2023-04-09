@@ -1,7 +1,7 @@
 # Wait
 
 Nếu bạn muốn đợi một `process::Child` kết thúc, thì phải gọi
-`Child::wait`, sẽ trả về một `process::ExitStatus`.
+`Child::wait`, nó sẽ trả về một `process::ExitStatus`.
 
 ```rust,ignore
 use std::process::Command;
