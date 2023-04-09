@@ -1,6 +1,6 @@
-# Integration testing (test tích hợp)
+# Kiểm thử tích hợp (Integration testing)
 
-Các bài [Unit tests][unit] thường test từng module một tách biệt nhau: chúng thường nhỏ và có thể test
+Các bài [Unit tests][unit] thường kiểm thử từng module một tách biệt nhau: chúng thường nhỏ và có thể kiểm thử
 các đoạn private code[^†]. Các bài integration tests thực hiện bên ngoài crate của bạn và chỉ sử dụng
 các public interface của crate đó như bất kỳ mã nguồn nào khác. Mục đích của chúng là
 kiểm tra xem nhiều phần của thư viện của bạn có hoạt động đúng cách với nhau hay không.

@@ -1,8 +1,8 @@
-# Unit testing (Bài test đơn vị)
+# Kiểm thử đơn vị (Unit testing)
 
 Các bài tests trong Rust là các hàm để kiểm tra xem các đoạn code chức năng có hoạt động
 giống như mong đợi hay không. Phần thân của các hàm test thường sẽ thực hiên một vài cài đặt,
-thực thi đoạn code mà chúng ta muốn test, sau đó khẳng định xem kết quả thực thi có giống như chúng ta
+thực thi đoạn code mà chúng ta muốn kiểm thử, sau đó khẳng định xem kết quả thực thi có giống như chúng ta
 mong đợi hay không.
 
 Hầu hết các bài unit tests thường sẽ đặt trong `tests` [mod][mod] với `#[cfg(test)]` [attribute][attribute].
