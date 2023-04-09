@@ -1,6 +1,6 @@
 # `Rc`
 
-Khi việc có nhiều ownership là cần thiết, `Rc` (Reference Counting - đếm tham chiếu) có thể được sử dụng. `Rc` sẽ theo dõi số lượng các tham chiếu, có nghĩa là số lượng các owners của một giá trị sẽ được chứa bên trong một `Rc`.
+Khi ta cần có nhiều ownership, `Rc` (Reference Counting - bộ đếm tham chiếu) có thể được sử dụng. `Rc` sẽ theo dõi số lượng các tham chiếu, có nghĩa là số lượng các owners của một giá trị sẽ được chứa bên trong một `Rc`.
 
 Số lượng tham chiếu của một `Rc` sẽ tăng lên 1 bất cứ khi nào `Rc` đó bị sao chép (cloned), và giảm đi 1 khi có một bản sao của `Rc` bị ra khỏi scope. Tại thời điểm mà số lượng tham chiếu của `Rc` trở về 0 (nghĩa là không còn owners nào), cả `Rc` và giá trị được tham chiếu sẽ bị huỷ.
 
