@@ -14,7 +14,7 @@ fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
         // Việc thất bại khi thực thi được biểu diễn bằng kiểu `None`
         None
     } else {
-        // Kết quả được bọc bên trong kiểu `Some`    
+        // Kết quả được bọc bên trong biến thể `Some`    
         Some(dividend / divisor)
     }
 }
