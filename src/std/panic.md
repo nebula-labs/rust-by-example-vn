@@ -1,6 +1,6 @@
 # `panic!`
 
-`panic!` có thể được sử dụng để gây ra sự kết thúc của trương trình và bắt đầu quá trình giải phóng stack. Trong quá trình giải phóng, bộ thực thi sẽ giải phóng tất cả tài nguyên đang được sử dụng trong luồng bằng cách gọi hàm hủy tất cả các đối tượng của nó.
+Macro `panic!` có thể được sử dụng để gây ra tình huống panic và bắt đầu giải phóng stack của nó. Trong quá trình giải phóng, bộ thực thi sẽ chịu trách nhiệm giải phóng tất cả tài nguyên thuộc sở hữu của luồng bằng cách gọi hàm hủy (destructor) tất cả các đối tượng của nó.
 
 Vì chúng ta đang xử lý các chương trình chỉ có một luồng, `panic!` sẽ khiến chương trình in ra một thông báo kết thúc chương trình và dừng hoạt động.
 
