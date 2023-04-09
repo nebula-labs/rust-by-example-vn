@@ -7,7 +7,7 @@ Bất kì kiểu nào triển khai các trait `Eq` và `Hash` đều có thể l
 Lưu ý rằng `f32` và `f64` không triển khai `Hash`, bời vì rất có thể  [Lỗi về độ chính xác trong dấu phẩy động](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems)
 sẽ khiến việc sử dụng chúng làm các key hashmap rất dễ xảy ra lỗi.
 
-Tất cả các lớp collection sẽ triển khai `Eq` và `Hash` nếu loại được chứa bên trong cũng được triển khai tương ứng `Eq` và `Hash`. Ví dụ, Vec<T> sẽ triển khai `Hash` nếu T triển khai `Hash`.
+Tất cả các lớp collection sẽ triển khai `Eq` và `Hash` nếu kiểu được chứa bên trong cũng được triển khai tương ứng `Eq` và `Hash`. Ví dụ, Vec<T> sẽ triển khai `Hash` nếu T triển khai `Hash`.
 
 Bạn có thể dễ dàng triển khai `Eq` và `Hash` cho một loại tùy chỉnh chỉ với một dòng: `#[derive(PartialEq, Eq, Hash)]`
 
