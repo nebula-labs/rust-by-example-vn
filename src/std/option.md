@@ -43,7 +43,7 @@ fn main() {
     // Unwrap biến thể `Some` sẽ trích xuất ra giá trị được bọc bên trong
     println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
 
-    // Truy xuất giá trị bên trong kiểu `None` sẽ gây ra `panic!`
+    // Unwrap biến thể `None` sẽ gây ra `panic!`
     println!("{:?} unwraps to {:?}", none, none.unwrap());
 }
 ```
