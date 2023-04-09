@@ -2,7 +2,7 @@
 
 Đôi lúc, chúng ta muốn xử lý lỗi của một phần trong chương trình thay vì gọi `panic!`; điều này có thể được thực hiện bằng cách sử dụng `Option`.
 
-`Option<T>` có thể mang hai kiểu:
+`Option<T>` có thể mang hai biến thể:
 
 * `None`, biểu hiện cho việc thất bại khi thực thi hoặc không có giá trị và
 * `Some(value)`, một kiểu tuple bọc ngoài giá trị `value` với kiểu dữ liệu là `T`.
