@@ -7,7 +7,7 @@ Bạn sẽ hỏi "Ý nghĩa của việc này là gì?". "Tôi có thể đơn g
 
 Nếu bạn thêm vào một giá trị đã tồn tại trong `HashSet`, (Nghĩa là giá trị mới bằng với cũ và cả hai đều có cùng hàm hash), thì giá trị mới sẽ thay thế giá trị cũ.
 
-Điều này thật hữu ích khi bạn không bao giờ muốn nhiều hơn một thứ gì đó hoặc khi bạn muốn biết liệu bạn đã có thứ gì đó chưa.
+Điều này thật hữu ích khi bạn không muốn có nhiều hơn một thứ gì đó hoặc khi bạn muốn biết liệu bạn đã có thứ gì đó chưa.
 
 Nhưng các set nó có thể làm nhiều hơn thế.
 Các Set có 4 thao tác chính( tất cả các lệnh gọi sau đây đều trả về một iterator):
