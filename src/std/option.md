@@ -21,7 +21,7 @@ fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
 
 // Hàm này có thể không thực hiện thành công phép chia
 fn try_division(dividend: i32, divisor: i32) {
-    // Giá trị của `Option` có thể được bắt tương tự như kiểu enum
+    // Giá trị của `Option` có thể được phân tích cú pháp theo match, tương tự như kiểu enum
     match checked_division(dividend, divisor) {
         None => println!("{} / {} failed!", dividend, divisor),
         Some(quotient) => {
