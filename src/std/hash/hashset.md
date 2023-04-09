@@ -12,7 +12,7 @@ Nếu bạn thêm vào một giá trị đã tồn tại trong `HashSet`, (Nghĩ
 Nhưng các set còn có thể làm nhiều hơn thế.
 Các Set có 4 thao tác chính( tất cả các lệnh gọi sau đây đều trả về một iterator):
 
-- `union`: lấy tất cả các phần tử  chỉ xuất hiện một lần trong cả hai tập.
+- `union`: lấy tất cả các phần tử chỉ xuất hiện một lần trong cả hai tập.
 - `difference`: lấy tất cả các phần tử có trong tập đầu tiên nhưng không có trong tập thứ hai.
 - `intersection`: lấy tất cả các phần tử chỉ xuất hiện trong cả hai tập.
 - `symmetric_difference`: lấy tất cả các phần tử chỉ xuất hiện trong tập này nhưng không xuất hiện trong tập kia. 
