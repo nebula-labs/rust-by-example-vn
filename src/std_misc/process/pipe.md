@@ -1,7 +1,7 @@
 # Pipes
 
 `std::Child` struct đại diện cho một tiến trình con đang chạy, và đưa ra các điều khiển
-`stdin`, `stdout` và `stderr` để tưởng tác với tiến trình thông qua pipes.
+`stdin`, `stdout` và `stderr` để tương tác với tiến trình thông qua pipes.
 
 ```rust,ignore
 use std::io::prelude::*;
