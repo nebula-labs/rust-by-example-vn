@@ -15,7 +15,7 @@ Các Set có 4 thao tác chính( tất cả các lệnh gọi sau đây đều t
 - `union`: lấy tất cả các phần tử  chỉ xuất hiện một lần trong cả hai tập.
 - `difference`: lấy tất cả các phần tử có trong tập đầu tiên nhưng không có trong tập thứ hai.
 - `intersection`: lấy tất cả các phần tử chỉ xuất hiện trong cả hai tập.
-- `symmetric_difference`: lấy tất cả các phần tử  chỉ xuất hiện trong tập này nhưng không xuất hiện trong tập kia. 
+- `symmetric_difference`: lấy tất cả các phần tử chỉ xuất hiện trong tập này nhưng không xuất hiện trong tập kia. 
 
 Hãy thử tất cả những thao tác đó trong ví dụ sau:
 
