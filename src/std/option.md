@@ -40,7 +40,7 @@ fn main() {
 
     let optional_float = Some(0f32);
 
-    // Truy xuất giá trị bên trong kiểu `Some`.
+    // Unwrap biến thể `Some` sẽ trích xuất ra giá trị được bọc bên trong
     println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
 
     // Truy xuất giá trị bên trong kiểu `None` sẽ gây ra `panic!`
