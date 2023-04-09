@@ -23,7 +23,7 @@ fn main() {
     // Truyền một chuỗi vào `stdin` của `wc`.
     //
     // `stdin` có kiểu là `Option<ChildStdin>`, nhưng vì chúng ta biết chắc rằng có một thể hiện của stdin
-    // must have one, we can directly `unwrap` it.
+    // tồn tại trong process, nên chúng ta có thể `unwrap` nó một cách trực tiếp.
     match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
         Err(why) => panic!("couldn't write to wc stdin: {}", why),
         Ok(_) => println!("sent pangram to wc"),
