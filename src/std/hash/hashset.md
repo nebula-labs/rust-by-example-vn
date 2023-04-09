@@ -46,7 +46,7 @@ fn main() {
 
     println!("Union: {:?}", a.union(&b).collect::<Vec<&i32>>());
 
-    // Điều này sẽ in [1]
+    // Chỗ này sẽ in ra [1]
     println!("Difference: {:?}", a.difference(&b).collect::<Vec<&i32>>());
 
     // In [2, 3, 4] theo thứ tự tùy ý.
