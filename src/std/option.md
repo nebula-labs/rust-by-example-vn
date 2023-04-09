@@ -8,7 +8,7 @@
 * `Some(value)`, một kiểu tuple bọc ngoài giá trị `value` với kiểu dữ liệu là `T`.
 
 ```rust,editable,ignore,mdbook-runnable
-// Một phép chia số nguyện không gây `panic!`
+// Một phép chia số nguyên không gây `panic!`
 fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {
         // Việc thất bại khi thực thi được biểu diễn bằng kiểu `None`
