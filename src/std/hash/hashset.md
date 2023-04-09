@@ -3,7 +3,7 @@
 
 Bạn sẽ hỏi "Ý nghĩa của việc này là gì?". "Tôi có thể đơn giản là lưu trữ các key trong Vec".
 
-Tính năng độc đáo của `HashSet` là nó đảm bảo không có các phần tử trùng lặp. Đó là hợp đồng mà bất kì một collection set nào cũng đáp ứng.`HashSet` chỉ là một triển khai. (Xem thêm: [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html))
+Điểm đặc biệt của `HashSet` là nó đảm bảo không có các phần tử trùng lặp. Đó là điều mà bất kì một collection set nào cũng đáp ứng.`HashSet` chỉ là một triển khai của nó (collection). (Xem thêm: [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html))
 
 Nếu bạn thêm vào một giá trị đã có trong `HashSet`, (Nghĩa là giá trị mới bằng với giá trị hiện tại và cả hai đều có cùng hàm hash), thì giá trị mới sẽ thay thế giá trị cũ.
 
