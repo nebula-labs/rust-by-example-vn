@@ -29,7 +29,7 @@ use std::fs::read_to_string;
 fn read_lines(filename: &str) -> Vec<String> {
     read_to_string(filename) 
         .unwrap()  // panic khi có lỗi đọc tệp có thể xảy ra.
-        .lines()  // chia chuỗi thành một terator of string slices 
+        .lines()  // chia chuỗi thành một bộ lặp của các dòng
         .map(String::from)  // chuyển mỗi phần của chuỗi thành một chuỗi mới
         .collect()  // tập hợp chúng lại thành một vector
 }
@@ -41,7 +41,7 @@ Lưu ý rằng trong cả hai ví dụ trên, chúng ta phải chuyển đổi t
 
 ## Một cách tiếp cận hiệu quả hơn
 
-Ở đây chúng ta truyền sở hữu của `File` đã mở vào một ` struct. ` BufReader. 
+Ở đây chúng ta truyền sở hữu của `File` đã mở vào một struct `BufReader`. 
 `BufReader` sử dụng bộ đệm nội bộ để giảm thiểu các phân bổ trung gian.
 Chúng ta cũng cập nhật `read_lines` để trả về một bộ lặp thay vì 
 phân bổ các đối tượng `String` mới trong bộ nhớ cho mỗi dòng.
@@ -80,8 +80,8 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-(Lưu ý rằng vì `File::open` mong đợi một AsRef<Path> chung như đối số, chúng ta xác định 
-phương thức `read_lines()` chung của mình với cùng một ràng buộc chung, sử dụng từ khóa `where`.)
+(Lưu ý rằng vì `File::open` mong đợi một generic AsRef<Path> như đối số, chúng ta xác định 
+phương thức generic `read_lines()` với cùng một ràng buộc generic, sử dụng từ khóa `where`.)
 Quá trình này hiệu quả hơn việc tạo `String` trong bộ nhớ với tất cả nội dung của tập tin. 
 Điều này đặc biệt có thể gây ra vấn đề hiệu suất khi làm việc với các tập tin lớn hơn.
 

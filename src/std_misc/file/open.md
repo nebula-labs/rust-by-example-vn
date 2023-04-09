@@ -2,7 +2,7 @@
 
 Hàm `open` có thể được sử dụng để mở một tập tin ở chế độ chỉ được đọc.
 
-Môt `File` sở hữu một tài nguyên, đó là mô tả tập tin và sẽ tự động đóng khi không còn (sử dụng) `drop`.
+Một `File` sở hữu một tài nguyên, đó là mô tả tập tin và sẽ tự động đóng khi không còn (sử dụng) `drop`.
 
 ```rust,editable,ignore
 use std::fs::File;
@@ -41,5 +41,5 @@ hello.txt contains:
 Hello World!
 ```
 
-(Bạn được khuyến khích thử nghiệm ví dụ trước đó trong các điều kiện thất bại 
+(Khuyến khích bạn nên thử nghiệm ví dụ trên trong các điều kiện có thể xảy ra lỗi  
 khác nhau: hello.txt không tồn tại, hoặc hello.txt không đọc được, vv.)
