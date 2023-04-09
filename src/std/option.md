@@ -11,7 +11,7 @@
 // Một phép chia số nguyên không gây `panic!`
 fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {
-        // Việc thất bại khi thực thi được biểu diễn bằng kiểu `None`
+        // Việc thất bại khi thực thi được biểu diễn bằng biến thể `None`
         None
     } else {
         // Kết quả được bọc bên trong biến thể `Some`    
