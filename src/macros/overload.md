@@ -7,7 +7,7 @@ Khi đó, `macro_rules!` hoạt động tương tự như là một khối `matc
 // theo những cách khác nhau tùy thuộc vào cách bạn gọi nó:
 macro_rules! test {
     // Các đối số không nhất thiết phải được tách ra bằng dấu phẩy
-    // Có thể sử dụng bất cứ kiểu nào cũng được
+    // Có thể sử dụng bất cứ mẫu nào cũng được
     ($left:expr; and $right:expr) => {
         println!("{:?} and {:?} is {:?}",
                  stringify!($left),
