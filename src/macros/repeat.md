@@ -11,7 +11,7 @@ Lưu ý rằng dấu chấm phẩy (;) là tùy chọn cho trường hợp cuố
 ```rust,editable
 // `find_min!` sẽ tìm ra giá trị nhỏ nhất trong dãy đối số.
 macro_rules! find_min {
-    // Base case:
+    // Trường hợp cơ bản:
     ($x:expr) => ($x);
     // `$x` theo sau bởi ít nhất một `$y,`
     ($x:expr, $($y:expr),+) => (
