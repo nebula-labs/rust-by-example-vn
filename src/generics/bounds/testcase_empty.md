@@ -16,7 +16,7 @@ trait Blue {}
 impl Red for Cardinal {}
 impl Blue for BlueJay {}
 
-// Những hàm này chỉ có giá trị với các kiểu dữ liệu đã triển khai các trait naỳ.
+// Những hàm này chỉ hợp hệ với các kiểu dữ liệu đã triển khai các trait này.
 // Thực tế là dù trait không có bất kì hàm nào cũng chẳng sao.
 fn red<T: Red>(_: &T)   -> &'static str { "red" }
 fn blue<T: Blue>(_: &T) -> &'static str { "blue" }
