@@ -1,7 +1,7 @@
 # Testcase: empty bounds
 # Bộ kiểm thử: ràng buộc rỗng
 
-Một hệ quả của cách các ràng buộc (bounds) hoạt động là ngay cả khi một `trait` 
+Theo cách các ràng buộc (bounds) hoạt động thì là ngay cả khi một `trait` 
 không bao gồm bất cứ hàm nào, ta vẫn có thể sử dụng nó như một ràng buộc. 
 `Eq` và `Copy` là những ví dụ của các `trait` như vậy từ thư viện `std`.
 
