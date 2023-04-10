@@ -2,7 +2,7 @@
 
 Hàm `open` có thể được sử dụng để mở một tập tin ở chế độ chỉ được đọc.
 
-Một `File` sở hữu một tài nguyên, đó là mô tả tập tin và sẽ tự động đóng khi không còn (sử dụng) `drop`.
+Một `File` sở hữu một tài nguyên, đó là mô tả tập tin và đảm bảo file được đóng lại khi tài nguyên đó được giải phóng `drop`.
 
 ```rust,editable,ignore
 use std::fs::File;
