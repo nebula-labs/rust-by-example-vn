@@ -1,6 +1,5 @@
 # Filesystem Operations
 
-The `std::fs` module contains several functions that deal with the filesystem.
 Module std::fs chứa một số hàm liên quan đến hệ thống tập tin.
 
 ```rust,ignore
@@ -140,7 +139,7 @@ fn cat(path: &Path) -> io::Result<String> {
 }
 ```
 
-### See also:
+### Xem thêm:
 
 [`cfg!`][cfg]
 
