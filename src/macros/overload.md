@@ -1,6 +1,6 @@
 # Overload
 Macros có thể được nạp chồng để chấp nhận những kiểu kết hợp khác nhau của các đối số.
-Khi đó, `macro_rules!` hoạt động tương tự như là một đoạn mã khớp mẫu (a `match` block):
+Khi đó, `macro_rules!` hoạt động tương tự như là một khối `match`:
 
 ```rust,editable
 // `test!` sẽ so sánh `$left` and `$right`
