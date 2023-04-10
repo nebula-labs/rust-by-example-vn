@@ -38,7 +38,7 @@ enum Mm {}
 #[derive(Debug, Clone, Copy)]
 struct Length<Unit>(f64, PhantomData<Unit>);
 
-/// Trait `Add` trait định nghĩa hành vi (behavior) của phép tính `+`.
+/// Trait `Add` định nghĩa hành vi (behavior) của phép tính `+`.
 impl<Unit> Add for Length<Unit> {
     type Output = Length<Unit>;
 
