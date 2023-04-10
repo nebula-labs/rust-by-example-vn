@@ -66,7 +66,7 @@ fn main() {
     println!("one foot + one_foot = {:?} in", two_feet.0);
     println!("one meter + one_meter = {:?} mm", two_meters.0);
 
-    // Một ví dụ cho việc phép tính vô lý sẽ thất bại như là một điều hiển nhiên:
+    // Các phép tính vô lý sẽ thất bại như là một điều hiển nhiên:
     // Lỗi tại thời điểm biên dịch: không phù hợp kiểu dữ liệu.
     // let one_feter = one_foot + one_meter;
 }
