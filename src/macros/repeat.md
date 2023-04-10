@@ -15,7 +15,7 @@ macro_rules! find_min {
     ($x:expr) => ($x);
     // `$x` theo sau bởi ít nhất một `$y,`
     ($x:expr, $($y:expr),+) => (
-        // Call `find_min!` on the tail `$y`
+        // Gọi `find_min!` trên các đối số còn lại `$y`
         std::cmp::min($x, find_min!($($y),+))
     )
 }
