@@ -1,6 +1,6 @@
 # Filesystem Operations
 
-Module std::fs chứa một số hàm liên quan đến hệ thống tập tin.
+Module `std::fs` chứa một số hàm liên quan đến hệ thống tập tin.
 
 ```rust,ignore
 use std::fs;
