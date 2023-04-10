@@ -3,7 +3,7 @@
 Các bài [Unit tests][unit] thường kiểm thử từng module một tách biệt nhau: chúng thường nhỏ và có thể kiểm thử
 các đoạn private code[^†]. Các bài integration tests thực hiện bên ngoài crate của bạn và chỉ sử dụng
 các public interface của crate đó như bất kỳ mã nguồn nào khác. Mục đích của chúng là
-kiểm tra xem nhiều phần của thư viện của bạn có hoạt động đúng cách với nhau hay không.
+kiểm tra xem các phần trong thư viện của bạn có hoạt động đúng cách với nhau hay không.
 
 Cargo sẽ tìm những bài integration tests ở thư mục `tests` gần bên cạnh thư mục `src`.
 
@@ -48,7 +48,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 Mỗi file Rust bên trong thư mục `tests` sẽ được biên dịch y như hệt một crate riêng biệt. Để mà có thể
-chia sẽ các đoạn code giữa các bài integration tests ta có thể tạo ra một module với các hàm public,
+chia sẻ các đoạn code giữa các bài integration tests ta có thể tạo ra một module với các hàm public,
 import và sử dụng các hàm đó bên trong các bài tests.
 
 File `tests/common/mod.rs`:

@@ -102,7 +102,7 @@ mod tests {
 
 Để kiểm tra các hàm nên panic trong một số trường hợp nhất định, sử dụng thuộc tính
 `#[should_panic]`. Thuộc tính này chấp nhận đối số tùy chọn `expected = ` với giá trị là
-văn bản của thông điệp khi panic. Nếu hàm của bạn có thể panic theo nhiều cách khác nhau, điều này giúp
+thông điệp khi panic. Nếu hàm của bạn có thể panic theo nhiều cách khác nhau, điều này giúp
 đảm bảo rằng bài test đang kiểm thử chính xác lỗi panic.
 
 ```rust,ignore

@@ -3,14 +3,14 @@
 Cách cơ bản nhất để tài liệu hoá một dự án Rust là thông qua việc chú thích ngay trên mã nguồn.
 Các chú thích tài liệu được viết theo chuẩn [CommonMark Markdown specification][commonmark] và có hỗ trợ các khối code
 bên trong những chú thích đó. Rust sẽ quan tâm đến tính đúng đắn, do đó những khối code này sẽ được biên dịch và sử dụng như
-các bài kiểm thử tài liệu (documentation tests)
+các bài kiểm thử đối với tài liệu (documentation tests)
 
 ````rust,ignore
 /// Dòng đầu tiên là tóm tắt ngắn mô tả hàm.
 ///
 /// Những dòng tiếp theo trình bày tài liệu chi tiết. Các khối code thường bắt đầu với
-/// ba dấu nháy ngược và sẽ tồn tài mặc định một cách không tường minh hàm `fn main()` bên trong
-/// và `extern crate <cratename>`. Giả sử là chúng ta đang kiểm thử crate `doccomments`:
+/// ba dấu nháy ngược (```) và sẽ tồn tại mặc định một cách không tường minh hàm `fn main()` bên trong
+/// và `extern crate <cratename>`. Giả sử là chúng ta đang test crate `doccomments`:
 ///
 /// ```
 /// let result = doccomments::add(2, 3);
@@ -36,7 +36,7 @@ pub fn add(a: i32, b: i32) -> i32 {
 /// Hàm sẽ panic nếu đối số thứ hai là 0
 ///
 /// ```rust,should_panic
-/// // panics on division by zero
+/// // panic xảy ra khi chia cho số 0
 /// doccomments::div(10, 0);
 /// ```
 pub fn div(a: i32, b: i32) -> i32 {
@@ -69,7 +69,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Động lực đằng sau các bài documentation tests
 
-Mục đích chủ yếu của documentation tests là phục vụ như là các ví dụ để thực hiện
+Mục đích chủ yếu của documentation tests là phục vụ như là các ví dụ minh họa cho
 chức năng, đó là một trong những nguyên tắc quan trọng nhất
 [guidelines][question-instead-of-unwrap]. Điều này cho phép sử dụng các ví dụ đưa ra từ trong docs
 như là một đoạn code hoàn chỉnh. Tuy nhiên việc sử dụng `?` khiến cho việc biên dịch bị lỗi vì `main`
