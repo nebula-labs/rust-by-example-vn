@@ -8,7 +8,7 @@ trait Person {
 }
 
 // Person là một supertrait của Student.
-// Thực hiển triển khai Student yêu cầu bạn cũng phải triển khai(impl) Person.
+// Thực hiện triển khai Student yêu cầu bạn cũng phải triển khai(impl) Person.
 trait Student: Person {
     fn university(&self) -> String;
 }
