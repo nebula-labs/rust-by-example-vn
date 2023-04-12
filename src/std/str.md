@@ -144,7 +144,7 @@ fn main() {
 }
 ```
 
-Để chuyển đổi giữa các mã hóa ký tự, hãy xem [encoding][encoding-crate].
+Để chuyển đổi giữa các ký tự mã hóa, hãy xem [encoding][encoding-crate].
 
 Một danh sách chi tiết hơn về cách viết chuỗi ký tự và ký tự thoát
 được đưa ra trong chương ['Tokens'][tokens] của Rust Reference.
