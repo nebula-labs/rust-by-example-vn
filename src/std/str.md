@@ -102,7 +102,7 @@ fn main() {
 ```
 
 Bạn muốn một chuỗi không phải UTF-8? (Hãy nhớ rằng `str` và `String` phải là UTF-8 hợp lệ).
-Hoặc có thể bạn muốn một mảng byte chủ yếu là văn bản? Chuỗi byte để giải cứu!
+Hoặc có thể bạn muốn một mảng byte chứa chủ yếu là văn bản? Lúc đó chuỗi byte sẽ giúp ích!
 
 ```rust, editable
 use std::str;
