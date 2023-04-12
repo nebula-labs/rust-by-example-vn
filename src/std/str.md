@@ -24,7 +24,7 @@ fn main() {
     chars.sort();
     chars.dedup();
 
-    // Tạo 1 `String` mới
+    // Tạo 1 `String` mới có thể mở rộng được
     let mut string = String::new();
     for c in chars {
         // Thêm 1 char vào cuối chuỗi string
