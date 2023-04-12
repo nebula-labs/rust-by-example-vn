@@ -90,7 +90,7 @@ fn main() {
     let raw_str = r"Escapes don't work here: \x3F \u{211D}";
     println!("{}", raw_str);
 
-    // Nếu bạn cần trích dẫn trong một chuỗi dạng thô, hãy thêm một cặp #
+    // Nếu bạn cần trích dẫn trong một chuỗi dạng nguyên trạng, hãy thêm một cặp #
     let quotes = r#"And then I said: "There is no escape!""#;
     println!("{}", quotes);
 
