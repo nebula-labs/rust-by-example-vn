@@ -10,7 +10,7 @@ Một `String` sẽ được lưu trữ như là 1 vector dưới định dạng
 ```rust,editable
 fn main() {
     // (tất cả các kiểu chú thích đều là thừa)
-    // Tham chiếu đến một string được cấp trong bộ nhớ chỉ đọc
+    // Tham chiếu đến một string được cấp phát trong bộ nhớ chỉ đọc
     let pangram: &'static str = "the quick brown fox jumps over the lazy dog";
     println!("Pangram: {}", pangram);
 
