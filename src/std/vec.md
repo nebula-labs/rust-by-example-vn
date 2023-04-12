@@ -1,6 +1,6 @@
 # Vectors
 
-Các vectơ là các mảng có thể thay đổi kích thước. Giống như các lát cắt, kích thước của chúng không được biết tại thời điểm biên dịch, nhưng chúng có thể lớn lên hoặc thu nhỏ lại bất cứ lúc nào. Một vectơ được biểu diễn bằng 3 tham số:
+Các vectơ là các mảng có thể thay đổi kích thước. Giống như các lát cắt, kích thước của chúng không được biết tại thời điểm biên dịch, nhưng chúng có thể tăng hoặc giảm kích thước bất cứ lúc nào. Một vectơ được biểu diễn bằng 3 tham số:
 - con trỏ đến dữ liệu
 - chiều dài
 - dung lượng
