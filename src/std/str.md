@@ -20,7 +20,6 @@ fn main() {
         println!("> {}", word);
     }
 
-
     let mut chars: Vec<char> = pangram.chars().collect();
     chars.sort();
     chars.dedup();
