@@ -83,7 +83,7 @@ fn main() {
 }
 ```
 
-Đôi khi có quá nhiều ký tự cần được thoát hoặc việc viết một chuỗi nguyên trạng sẽ thuận tiện hơn nhiều. Đây là nơi các chuỗi ký tự thô phát huy tác dụng.
+Đôi khi có quá nhiều ký tự cần được thoát hoặc việc viết một chuỗi nguyên trạng sẽ thuận tiện hơn nhiều. Đây là nơi các chuỗi nguyên trạng phát huy tác dụng.
 
 ```rust, editable
 fn main() {
