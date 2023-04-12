@@ -5,7 +5,7 @@ Các vectơ là các mảng có thể thay đổi kích thước. Giống như c
 - chiều dài
 - dung lượng
 
-Dung lượng cho biết dung lượng bộ nhớ được dành riêng cho vectơ. Vectơ có thể phát triển miễn là chiều dài nhỏ hơn dung lượng. Khi cần vượt qua ngưỡng này, vectơ được phân bổ lại với dung lượng lớn hơn.
+Dung lượng cho biết dung lượng bộ nhớ được dành riêng cho vectơ. Vectơ có thể phát triển miễn là chiều dài nhỏ hơn dung lượng. Khi cần vượt qua ngưỡng này, vectơ được cấp phát lại với dung lượng lớn hơn.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
