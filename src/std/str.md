@@ -57,7 +57,7 @@ modules
 
 Có nhiều cách để viết chuỗi ký tự có ký tự đặc biệt trong đó. Tất cả đều dẫn đến một `&str` giống nhau, vì vậy tốt nhất bạn nên sử dụng biểu mẫu thuận tiện nhất để viết. Tương tự, có nhiều cách để viết các ký tự chuỗi byte, tất cả đều có kết quả là `&[u8; N]`.
 
-Nói chung, các ký tự đặc biệt được thoát bằng ký tự gạch chéo ngược: `\`. Bằng cách này, bạn có thể thêm bất kỳ ký tự nào vào chuỗi của mình, kể cả những ký tự không in được và những ký tự mà bạn không biết cách nhập. Nếu bạn muốn có dấu gạch chéo ngược theo nghĩa đen, hãy thoát nó bằng một dấu gạch chéo ngược khác: `\\`
+Nói chung, các ký tự đặc biệt được thoát bằng ký tự gạch chéo ngược: `\`. Bằng cách này, bạn có thể thêm bất kỳ ký tự nào vào chuỗi của mình, kể cả những ký tự không in được và những ký tự mà bạn không biết cách nhập. Nếu bạn muốn có dấu gạch chéo ngược đứng độc lập, hãy thoát(escape) nó bằng một dấu gạch chéo ngược khác: `\\`
 
 Các dấu phân cách bằng chữ của chuỗi hoặc ký tự xuất hiện trong một chữ phải được thoát ra: `"\""`, `'\''`.
 
