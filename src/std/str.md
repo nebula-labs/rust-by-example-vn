@@ -94,7 +94,7 @@ fn main() {
     let quotes = r#"And then I said: "There is no escape!""#;
     println!("{}", quotes);
 
-    // Nếu bạn cần "# trong chuỗi của mình, chỉ cần sử dụng nhiều # hơn trong dấu phân cách.
+    // Nếu bạn cần sử dụng "# trong chuỗi của mình, chỉ cần sử dụng nhiều kí tự # hơn trong dấu phân cách.
     // Bạn có thể sử dụng tối đa 65535 #.
     let longer_delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", longer_delimiter);
