@@ -21,7 +21,6 @@ fn main() {
     }
 
 
-
     let mut chars: Vec<char> = pangram.chars().collect();
     chars.sort();
     chars.dedup();
