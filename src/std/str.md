@@ -121,7 +121,7 @@ fn main() {
     println!("Some escaped bytes: {:?}", escaped);
 
 
-    // Chuỗi byte thô hoạt động giống như chuỗi thô
+    // Chuỗi byte nguyên trạng hoạt động giống như chuỗi nguyên trạng
     let raw_bytestring = br"\u{211D} is not escaped here";
     println!("{:?}", raw_bytestring);
 
