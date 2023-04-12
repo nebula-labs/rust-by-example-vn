@@ -2,7 +2,7 @@
 
 Có 2 kiểu chuỗi trong rust: `String` và `&str`.
 
-1 biến `String` sẽ được lưu trữ như là 1 vector dưới định dạng bytes (`Vec<u8>`), luôn theo chuẩn UTF-8. `String` được phân bổ theo vùng nhớ heap, có thể phát triển và có thể là null.
+Một `String` sẽ được lưu trữ như là 1 vector dưới định dạng bytes (`Vec<u8>`), luôn theo chuẩn UTF-8. `String` được phân bổ theo vùng nhớ heap, có thể mở rộng và kết thúc không phải là kí tự null.
 
 `&str` là một dạng (`&[u8]`) luôn trỏ đến một chuỗi UTF-8 hợp lệ và có thể được sử dụng để xem như 1 `String`, giống như `&[T]` được coi như ` Vec<T>`.
 
