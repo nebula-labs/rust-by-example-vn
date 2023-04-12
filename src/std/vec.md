@@ -61,6 +61,6 @@ fn main() {
 ```
 
 Có thể tìm thấy nhiều phương thức `Vec` hơn trong module
-[std::vec][vec] module
+[std::vec][vec]
 
 [vec]: https://doc.rust-lang.org/std/vec/
