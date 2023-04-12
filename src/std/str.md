@@ -95,7 +95,7 @@ fn main() {
     println!("{}", quotes);
 
     // Nếu bạn cần sử dụng "# trong chuỗi của mình, chỉ cần sử dụng nhiều kí tự # hơn trong dấu phân cách.
-    // Bạn có thể sử dụng tối đa 65535 #.
+    // Bạn có thể sử dụng tối đa 65535 kí tự #.
     let longer_delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", longer_delimiter);
 }
