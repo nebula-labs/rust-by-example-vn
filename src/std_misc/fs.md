@@ -98,7 +98,7 @@ fn main() {
 
 ```
 
-Dưới đây là kết quả thành công mong đợi:
+Dưới đây là kết quả thành công như mong đợi:
 
 ```shell
 $ rustc fs.rs && ./fs
@@ -128,7 +128,7 @@ a
 1 directory, 2 files
 ```
 
-Một cách thay thế để định nghĩa hàm `cat` là sử dụng ký hiệu `?`:
+Một cách khác để định nghĩa hàm `cat` là sử dụng ký hiệu `?`:
 
 ```rust,ignore
 fn cat(path: &Path) -> io::Result<String> {
