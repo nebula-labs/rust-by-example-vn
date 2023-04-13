@@ -34,7 +34,7 @@ fn main() {
     }
 }
 ```
-Tùy vào trường hợp cụ thể, hãy chắc chắn rằng đã kiểm tra các phương thức khác của Path (`posix::Path` hoặc `windows::Path` - thuộc vào hệ điều hành) và cấu trúc Metadata - một đối tượng cung cấp thông tin khác ngoài nội dung của file hoặc thư mục của một file hoặc thư mục. <br/>
+Tùy vào trường hợp cụ thể, hãy chắc chắn rằng đã kiểm tra các phương thức khác của Path (`posix::Path` hoặc `windows::Path` - thuộc vào hệ điều hành) và cấu trúc Metadata - một đối tượng cung cấp thông tin khác ngoài nội dung của file hoặc thư mục. <br/>
 
 ## Xem thêm:
 
