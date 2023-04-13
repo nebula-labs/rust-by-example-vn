@@ -1,1 +1,29 @@
 # Threads
+
+Rust cung cấp một cơ chế để sinh ra các luồng hệ điều hành gốc thông qua hàm `spawn`, đối số của hàm này là một bao đóng di động.
+
+```rust,editable
+use std::thread;
+
+const NTHREADS: u32 = 10;
+
+// Đây là chủ đề `chính`
+fn main() {
+    // Tạo một vectơ children
+    let mut children = vec![];
+
+    for i in 0..NTHREADS {
+        // Tạo ra 1 luồng khác
+        children.push(thread::spawn(move || {
+            println!("this is thread number {}", i);
+        }));
+    }
+
+    for child in children {
+        // Chờ một luồng kết thúc để trả về kết quả.
+        let _ = child.join();
+    }
+}
+```
+
+Các chủ đề này sẽ được lên lịch bởi hệ điều hành.
