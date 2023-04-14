@@ -26,4 +26,4 @@ fn main() {
 }
 ```
 
-Các chủ đề này sẽ được lên lịch bởi hệ điều hành.
+Các luồng này sẽ được lên lịch bởi hệ điều hành.
