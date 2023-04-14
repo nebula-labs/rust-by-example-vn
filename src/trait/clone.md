@@ -1,6 +1,6 @@
 # Clone
 
-Khi xử lý tài nguyên, hành vi mặc định trong  chuyển chúng trong quá trình gán hoặc gọi hàm. Tuy nhiên, đôi khi chúng ta cũng cần phải tạo một bản sao của tài nguyên.
+Khi làm việc với các tài nguyên, hành vi mặc định là chuyển chúng trong quá trình gán hoặc gọi hàm. Tuy nhiên, đôi khi chúng ta cũng cần phải tạo một bản sao của tài nguyên.
 
 Trait [`Clone`][clone] giúp chúng ta thực hiện được điều này. Thông thường, chúng ta có thể sử dụng phương thức `.clone()` được xác định bởi trait `Clone`.
 
