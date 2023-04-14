@@ -5,7 +5,7 @@ Khi xử lý tài nguyên, hành vi mặc định trong  chuyển chúng trong q
 Trait [`Clone`][clone] giúp chúng ta thực hiện được điều này. Thông thường, chúng ta có thể sử dụng phương thức `.clone()` được xác định bởi trait `Clone`.
 
 ```rust,editable
-// Một cấu trúc đơn vị không có tài nguyên
+// Một cấu trúc Unit không có tài nguyên
 #[derive(Debug, Clone, Copy)]
 struct Unit;
 
