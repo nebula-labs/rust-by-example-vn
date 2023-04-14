@@ -9,7 +9,7 @@ Trait [`Clone`][clone] giúp chúng ta thực hiện được điều này. Thô
 #[derive(Debug, Clone, Copy)]
 struct Unit;
 
-// Cấu trúc tuple với các tài nguyên triển khai đặc tính của `Clone`
+// Cấu trúc tuple với các tài nguyên triển khai trait `Clone`
 #[derive(Clone, Debug)]
 struct Pair(Box<i32>, Box<i32>);
 
