@@ -9,7 +9,7 @@ const NTHREADS: u32 = 10;
 
 // Đây là chủ đề `chính`
 fn main() {
-    // Tạo một vectơ children
+    // Tạo một vectơ để lưu trữ các luồng con được tạo ra
     let mut children = vec![];
 
     for i in 0..NTHREADS {
