@@ -27,7 +27,7 @@ fn main() {
     let pair = Pair(Box::new(1), Box::new(2));
     println!("original: {:?}", pair);
 
-    // Chuyển `pair` thành `moved_pair`, di chuyển tài nguyên
+    // Chuyển `pair` vào `moved_pair`, đồng thời cũng di chuyển tài nguyên của nó
     let moved_pair = pair;
     println!("moved: {:?}", moved_pair);
 
