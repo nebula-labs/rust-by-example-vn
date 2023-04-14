@@ -16,7 +16,7 @@ struct Pair(Box<i32>, Box<i32>);
 fn main() {
     // Khởi tạo `Unit`
     let unit = Unit;
-    // Sao chép `Đơn vị`, không có tài nguyên nào để di chuyển
+    // Sao chép `Unit`, không có tài nguyên nào để di chuyển
     let copied_unit = unit;
 
     // Cả hai `Unit` đều có thể được sử dụng độc lập
