@@ -37,7 +37,7 @@ fn main() {
 
     // Sao chép `moved_pair` vào `cloned_pair` (bao gồm tài nguyên)
     let cloned_pair = moved_pair.clone();
-    // Xóa cặp ban đầu bằng cách sử dụng std::mem::drop
+    // Xóa pair gốc bằng cách sử dụng std::mem::drop
     drop(moved_pair);
 
     // Lỗi! `moved_pair` đã bị loại bỏ
