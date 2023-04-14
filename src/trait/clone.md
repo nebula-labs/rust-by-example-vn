@@ -31,7 +31,7 @@ fn main() {
     let moved_pair = pair;
     println!("moved: {:?}", moved_pair);
 
-    // Lỗi! `pair` đã mất dữ liệu
+    // Lỗi! `pair` đã mất tài nguyên của nó do bị move
     //println!("original: {:?}", pair);
     // TODO ^ Hãy thử chạy dòng lệnh trên
 
