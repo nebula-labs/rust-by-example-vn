@@ -1,6 +1,6 @@
 # Threads
 
-Rust cung cấp một cơ chế để sinh ra các luồng hệ điều hành gốc thông qua hàm `spawn`, đối số của hàm này là một bao đóng di động.
+Rust cung cấp một cơ chế để sinh ra các luồng của hệ điều hành gốc thông qua hàm `spawn`, đối số của hàm này là một bao đóng di động.
 
 ```rust,editable
 use std::thread;
