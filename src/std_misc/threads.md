@@ -7,7 +7,7 @@ use std::thread;
 
 const NTHREADS: u32 = 10;
 
-// Đây là chủ đề `chính`
+// Đây là luồng `main`
 fn main() {
     // Tạo một vectơ để lưu trữ các luồng con được tạo ra
     let mut children = vec![];
