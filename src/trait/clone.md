@@ -19,7 +19,7 @@ fn main() {
     // Sao chép `Đơn vị`, không có tài nguyên nào để di chuyển
     let copied_unit = unit;
 
-    // Cả hai `Đơn vị` đều có thể được sử dụng độc lập
+    // Cả hai `Unit` đều có thể được sử dụng độc lập
     println!("original: {:?}", unit);
     println!("copy: {:?}", copied_unit);
 
