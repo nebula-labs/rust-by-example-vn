@@ -2,7 +2,7 @@
 
 Khi xử lý tài nguyên, hành vi mặc định trong  chuyển chúng trong quá trình gán hoặc gọi hàm. Tuy nhiên, đôi khi chúng ta cũng cần phải tạo một bản sao của tài nguyên.
 
-[`Clone`][clone] giúp chúng ta thực hiện được điều này. Thông thường, chúng ta có thể sử dụng phương thức `.clone()` được xác định bởi đặc tính của `Clone`.
+Trait [`Clone`][clone] giúp chúng ta thực hiện được điều này. Thông thường, chúng ta có thể sử dụng phương thức `.clone()` được xác định bởi trait `Clone`.
 
 ```rust,editable
 // Một cấu trúc đơn vị không có tài nguyên
