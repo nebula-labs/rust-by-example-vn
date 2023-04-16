@@ -3,7 +3,7 @@
 Rust khiến cho việc xử lý dữ liệu đa luồng trở nên rất dễ dàng mà không đối mặt với
 nhiều vấn đề thường gặp.
 
-Thư viện tiêu chuẩn cung cấp các nguyên tắc luồng tuyệt. Kết hợp với khái niệm Sở hữu và quy tắc
+Thư viện tiêu chuẩn cung cấp các nguyên mẫu đa luồng tuyệt vời sẵn có. Kết hợp với khái niệm Sở hữu và quy tắc
 định danh của Rust, hiện tượng cạnh tranh dữ liệu sẽ tự động được ngăn chặn.
 
 Các quy tắc định danh (một tham chiếu có thể ghi (writable reference) XOR nhiều tham chiếu chỉ đọc (readable references))
