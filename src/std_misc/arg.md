@@ -31,6 +31,6 @@ Tôi nhận được 3 đối số: ["1", "2", "3"].
 
 Một cách khác là sử dụng các crate để cung cấp các chức năng phụ trợ hơn khi tạo ứng dụng dòng lệnh.
 [Rust Cookbook] trình bày các quy tắc tốt nhất về cách sử dụng một trong những crate
-đối số dòng lệnh phổ biến, `clap`.
+đối số dòng lệnh phổ biến nhất, là `clap`.
 
 [Rust Cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/cli/arguments.html
