@@ -22,7 +22,7 @@ impl Iterator for Fibonacci {
     // Chúng ta có thể chỉ đến loại này bằng cách dùng Self::Item
     type Item = u32;
 
-    // Tại đây, chúng ta xác định thứ tự bằng cách cùng `.curr` và `.next`.
+    // Tại đây, chúng ta xác định thứ tự bằng cách dùng `.curr` và `.next`.
     // Kiểu trả về là `Option<T>`:
     //     * Khi `Iterator` kết thúc, biến thể `None` được trả về.
     //     * Ngược lại, giá trị tiếp theo sẽ được bọc trong biến thể `Some` và được trả về.
