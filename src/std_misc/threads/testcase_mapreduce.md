@@ -84,7 +84,7 @@ fn main() {
                         .chars()
                         // chuyển ký tự sang kiểu số
                         .map(|c| c.to_digit(10).expect("nên là chữ số"))
-                        //  .. và tính tổng
+                        //  .. và tính tổng các số
                         .sum();
 
             // println! khóa stdout, để không có tình trạng văn bản xen kẽ nhau xảy ra
