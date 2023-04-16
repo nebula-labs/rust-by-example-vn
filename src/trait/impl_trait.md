@@ -52,7 +52,7 @@ Lưu ý rằng sử dụng `impl Trait` như là một kiểu tham số có ngh�
 ## Dùng như một kiểu trả về
 
 Nếu hàm của bạn trả về một kiểu có cài `MyTrait`, bạn có thể viết kiểu trả về
-của nó lầ `-> impl MyTrait`. Điều này giúp đơn giản hóa kiểu trả về của bạn rất nhiều!
+của nó là `-> impl MyTrait`. Điều này giúp đơn giản hóa kiểu trả về của bạn rất nhiều!
 
 ```rust,editable
 use std::iter;
