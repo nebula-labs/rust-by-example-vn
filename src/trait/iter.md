@@ -68,7 +68,7 @@ fn main() {
         println!("> {}", i);
     }
 
-    // Phương thức `skip(n)` rút gọn `Iterator` bằng cách bỏ đi giá trị `n` đầu tiên của nó.
+    // Phương thức `skip(n)` giúp tạo `Iterator` rút gọn bằng cách bỏ qua `n` giá trị đầu tiên của nó.
     println!("The next four terms of the Fibonacci sequence are: ");
     for i in fibonacci().skip(4).take(4) {
         println!("> {}", i);
