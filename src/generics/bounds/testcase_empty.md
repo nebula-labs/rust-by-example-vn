@@ -26,7 +26,7 @@ fn main() {
     let blue_jay = BlueJay;
     let _turkey   = Turkey;
 
-    // Hàm `red()` không thể được sử dụng trên thực thể "giẻ cùi làm"
+    // Hàm `red()` không hoạt động với kiểu blue_jay
     // và ngược lại bởi các ràng buộc (bounds).
     println!("Chim hồng y giáo chủ có màu {}", red(&cardinal));
     println!("Chim giẻ cùi làm có màu {}", blue(&blue_jay));
