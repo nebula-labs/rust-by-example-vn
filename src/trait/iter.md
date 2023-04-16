@@ -1,6 +1,6 @@
 # Iterators
 
-[`Iterator`][iter] trait được dụng để cài vào các tập hợp như là các mảng.
+Trait [`Iterator`][iter] được dùng để triển khai bộ lặp vào các tập hợp như là các mảng.
 
 
 Trait chỉ yêu cầu một phương thức để xác định phần tử `next`,
