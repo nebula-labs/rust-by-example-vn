@@ -1,7 +1,7 @@
 # Testcase: map-reduce
 
 Rust khiến cho việc xử lý dữ liệu đa luồng trở nên rất dễ dàng mà không đối mặt với
-nhiều vấn đề thường gặp.
+các rắc rối thường gặp khi xử lý so với các ngôn ngữ khác.
 
 Thư viện tiêu chuẩn cung cấp các nguyên mẫu đa luồng tuyệt vời sẵn có. Kết hợp với khái niệm Sở hữu và quy tắc
 định danh của Rust, hiện tượng cạnh tranh dữ liệu sẽ tự động được ngăn chặn.
