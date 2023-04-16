@@ -107,7 +107,7 @@ fn main() {
 
 Bạn có thể dùng `impl Trait` để trả về một iterator sử dụng các closure `map` hoặc 
 `filter`! Điều này khiến việc dùng `map` và `filter` dễ hơn. Nhưng các kiểu closure
-không có tên, bạn không thể ghi ra chính xác kiểu trả về nếu hàm của bạn trả về 
+không có tên, bạn không thể ghi ra kiểu trả về một cách rõ ràng nếu hàm của bạn trả về một bộ lặp các closures 
 . Nhưng với  `impl Trait` bạn có thể làm điều này một cách dễ dàng:
 
 ```rust,editable
