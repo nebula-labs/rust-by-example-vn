@@ -48,7 +48,7 @@ fn main() {
         child.join().expect("oops! the child thread panicked");
     }
 
-    // Cho thấy thứ tự gửi đi của các message
+    // Hiển thị thứ tự gửi đi của các message
     println!("{:?}", ids);
 }
 ```
