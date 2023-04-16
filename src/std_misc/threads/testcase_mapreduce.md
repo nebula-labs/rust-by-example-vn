@@ -82,7 +82,7 @@ fn main() {
             let result = data_segment
                         // lặp qua các ký tự trong đoạn dữ liệu..
                         .chars()
-                        // lặp lại các ký tự trong đoạn dữ liệu..
+                        // chuyển ký tự sang kiểu số
                         .map(|c| c.to_digit(10).expect("nên là chữ số"))
                         //  .. và tính tổng
                         .sum();
