@@ -78,7 +78,7 @@ fn main() {
         //
         // TODO: thử xóa 'move' và xem điều gì sẽ xảy ra
         children.push(thread::spawn(move || -> u32 {
-            // Tính tổng giữa kết quả tạm thời của đoạn dữ liệu này:
+            // Tính tổng trung gian của đoạn dữ liệu này:
             let result = data_segment
                         // chạy qua các ký tự trong đoạn dữ liệu..
                         .chars()
