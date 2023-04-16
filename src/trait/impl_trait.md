@@ -67,7 +67,7 @@ fn combine_vecs_explicit_return_type(
     v.into_iter().chain(u.into_iter()).cycle()
 }
 
-// Đây là một hàm tương tựm , như kiểu trả về của nó sử dụng `impl Trait`.
+// Đây là một hàm tương tự, nhưng kiểu trả về của nó sử dụng `impl Trait`.
 // Hãy xem nó đơn giản hơn đến mức nào!
 fn combine_vecs(
     v: Vec<i32>,
