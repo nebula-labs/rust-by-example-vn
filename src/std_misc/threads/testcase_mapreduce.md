@@ -87,7 +87,7 @@ fn main() {
                         //  .. và tính tổng
                         .sum();
 
-            // println! khóa stdout, để không có tình trạng giao thoa văn bản xảy ra
+            // println! khóa stdout, để không có tình trạng văn bản xen kẽ nhau xảy ra
             println!("Đoạn dữ liệu {}, kết quả={}", i, result);
 
             // không cần "return", bởi vì Rust là một "ngôn ngữ biểu thức",
