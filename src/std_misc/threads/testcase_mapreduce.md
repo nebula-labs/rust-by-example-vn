@@ -1,6 +1,6 @@
 # Testcase: map-reduce
 
-Rust làm cho việc xử lý dữ liệu đa luồng trở nên rất dễ dàng mà không gặp phải
+Rust khiến cho việc xử lý dữ liệu đa luồng trở nên rất dễ dàng mà không đối mặt với
 nhiều vấn đề thường gặp.
 
 Thư viện tiêu chuẩn cung cấp các nguyên tắc luồng tuyệt. Kết hợp với khái niệm Sở hữu và quy tắc
