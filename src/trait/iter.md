@@ -62,7 +62,7 @@ fn main() {
         println!("> {}", i);
     }
 
-    // Phương thức `take(n)` rút gọn `Iterator` thành giá trị `n` đầu tiên của nó.
+    // Phương thức `take(n)` giúp tạo `Iterator` rút gọn với chỉ `n` đầu tiên của nó.
     println!("The first four terms of the Fibonacci sequence are: ");
     for i in fibonacci().take(4) {
         println!("> {}", i);
