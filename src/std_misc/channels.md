@@ -39,7 +39,7 @@ fn main() {
     let mut ids = Vec::with_capacity(NTHREADS as usize);
     for _ in 0..NTHREADS {
         // Phương thức `recv` nhận từng message từ channel
-        // `recv` will block the current thread if there are no messages available
+        // `recv` sẽ block thread hiện tại nếu không có mesage nào có thể nhận
         ids.push(rx.recv());
     }
     
