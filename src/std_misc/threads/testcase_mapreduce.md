@@ -58,7 +58,7 @@ fn main() {
     // Chạy qua các phân đoạn dữ liệu.
     // .enumerate() thêm chỉ mục (index) của vòng lặp hiện tại vào bất cứ điều gì được chạy qua
     // bộ đôi kết quả "(chỉ mục, phần tử)" sau đó được tự động
-    // "giải cấu trúc" thành hai biến, "i" và "data_segment" với một
+    // "destructured" thành hai biến, "i" và "data_segment" với một
     // "destructuring assignment"
     for (i, data_segment) in chunked_data.enumerate() {
         println!("Phân đoạn dữ liệu {} là \"{}\"", i, data_segment);
