@@ -110,7 +110,6 @@ Bạn có thể dùng `impl Trait` để trả về một iterator sử dụng c
 không có tên, bạn không thể ghi ra chính xác kiểu trả về nếu hàm của bạn trả về 
 You can also use `impl Trait` to return an iterator that uses `map` or `filter`
 closures! This makes using `map` and `filter` easier. Because closure types don't
-have names, you can't write out an explicit return type if your function returns
 . Nhưng với  `impl Trait` bạn có thể làm điều này một cách dễ dàng:
 
 ```rust,editable
