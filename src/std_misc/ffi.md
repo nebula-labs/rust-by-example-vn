@@ -10,7 +10,7 @@ use std::fmt;
 // khối extern này liên kết tới thư viện libm
 #[link(name = "m")]
 extern {
-    // đây là một hàm ngoại lai tính cnă bậc hai của một số phức
+    // đây là một hàm ngoại lai tính căn bậc hai của một số phức
     fn csqrtf(z: Complex) -> Complex;
 
     fn ccosf(z: Complex) -> Complex;
