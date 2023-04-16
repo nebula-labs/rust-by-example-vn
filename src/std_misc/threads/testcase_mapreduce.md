@@ -80,7 +80,7 @@ fn main() {
         children.push(thread::spawn(move || -> u32 {
             // Tính tổng trung gian của đoạn dữ liệu này:
             let result = data_segment
-                        // chạy qua các ký tự trong đoạn dữ liệu..
+                        // lặp qua các ký tự trong đoạn dữ liệu..
                         .chars()
                         // lặp lại các ký tự trong đoạn dữ liệu..
                         .map(|c| c.to_digit(10).expect("nên là chữ số"))
