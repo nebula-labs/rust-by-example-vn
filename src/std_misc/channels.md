@@ -43,7 +43,7 @@ fn main() {
         ids.push(rx.recv());
     }
     
-    // Đợi cho các thread hoàn thất tất cả công việc còn lại
+    // Đợi cho các thread hoàn thành tất cả công việc còn lại
     for child in children {
         child.join().expect("oops! the child thread panicked");
     }
