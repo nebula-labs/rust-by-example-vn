@@ -108,7 +108,7 @@ fn main() {
     //
     // chúng ta sử dụng "turbofish" ::<> để cung cấp cho sum() một gợi ý kiểu dữ liệu.
     //
-    // TODO: hãy thử không sử dụng turbofish, thay vì đó chỉ rõ kiểu của final_result
+    // TODO: hãy thử không sử dụng turbofish, thay vào đó chỉ rõ kiểu của final_result
     let final_result = children.into_iter().map(|c| c.join().unwrap()).sum::<u32>();
 
     println!("Kết quả tổng cuối cùng: {}", final_result);
