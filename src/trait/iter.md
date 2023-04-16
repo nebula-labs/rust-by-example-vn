@@ -46,7 +46,7 @@ fn fibonacci() -> Fibonacci {
 }
 
 fn main() {
-    // `0..3` là một `Iterator` thứ tạo ra: 0, 1, and 2.
+    // `0..3` là một `Iterator` mà tạo ra: 0, 1, and 2.
     let mut sequence = 0..3;
 
     println!("Four consecutive `next` calls on 0..3");
