@@ -25,7 +25,7 @@ impl Iterator for Fibonacci {
     // Tại đây, chúng ta xác định thứ tự bằng cách cùng `.curr` và `.next`.
     // Kiểu trả về là `Option<T>`:
     //     * Khi `Iterator` kết thúc, biến thể `None` được trả về.
-    //     * Ngượclại, giá trị tiếp theo sẽ được bọc trong biến thể `Some` and được trả về.
+    //     * Ngược lại, giá trị tiếp theo sẽ được bọc trong biến thể `Some` và được trả về.
     // Chúng ta dùng Self::Item là kiểu trả về , vì thế chúng ta có thể thay đổi 
     // kiểu mà không cần cập nhật phương thức.
     fn next(&mut self) -> Option<Self::Item> {
