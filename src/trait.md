@@ -40,7 +40,7 @@ impl Sheep {
 
 // Triển khai trait `Animal` cho `Sheep`.
 impl Animal for Sheep {
-    // `Self` là loại triển khai của `Sheep`.
+    // `Self` là kiểu được triển khai, ở đây là `Sheep`.
     fn new(name: &'static str) -> Sheep {
         Sheep { name: name, naked: false }
     }
