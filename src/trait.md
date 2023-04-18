@@ -1,6 +1,6 @@
 # Traits
 
-`trait` là tập hợp các phương thức được xác định cho một loại không xác định: `Self`. Họ có thể truy cập các phương thức khác được khai báo trong cùng một trait.
+`Trait` là tập hợp các phương thức được định nghĩa cho một loại không xác định: `Self`. Chúng có thể truy cập các phương thức khác được khai báo trong cùng một trait.
 
 Các trait có thể được triển khai cho bất kỳ loại dữ liệu nào. Trong ví dụ bên dưới, chúng tôi định nghĩa `Animal`, là một nhóm các trait. Sau đó, `Animal` `trait` được triển khai cho kiểu dữ liệu `Sheep`, cho phép sử dụng các phương thức từ `Animal` với dữ liệu `Sheep`.
 
