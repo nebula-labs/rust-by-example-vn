@@ -1,6 +1,6 @@
 # Những hoạt động không an toàn
 
-Có thể coi phần này như phần giới thiệu cho phần [tài liệu chính thức][unsafe], "hãy cố gắng giảm thiểu số lượng mã không an toàn trong khi viết mã." Với ý nghĩ đó, chúng ta hãy bắt đầu! Các chú thích không an toàn trong Rust được sử dụng để bỏ qua các biện pháp bảo vệ do trình biên dịch đưa ra; cụ thể, có bốn điều chính về code không an toàn:
+Như một lời giới thiệu cho phần này được mượn từ [tài liệu chính thức][unsafe], "hãy cố gắng giảm thiểu số lượng mã không an toàn trong khi viết mã." Với ý nghĩ đó, chúng ta hãy bắt đầu! Các chú thích không an toàn trong Rust được sử dụng để bỏ qua các biện pháp bảo vệ do trình biên dịch đưa ra; cụ thể, có bốn thao tác chính mà unsafe được sử dụng:
 
 * dereferencing con trỏ thô
 * gọi hàm hoặc phương thức `không an toàn` (bao gồm gọi hàm qua FFI, xem [chương trước](std_misc/ffi.md) của sách)
