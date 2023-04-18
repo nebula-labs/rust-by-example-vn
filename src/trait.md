@@ -8,7 +8,7 @@ Các trait có thể được triển khai cho bất kỳ loại dữ liệu nà
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {
-    // Chữ ký hàm liên kết; `Self` đề cập đến loại trình triển khai.
+    // Mô tả hàm liên kết; `Self` đề cập đến kiểu được triển khai.
     fn new(name: &'static str) -> Self;
 
     // Chữ ký phương thức; chúng sẽ trả về một chuỗi.
