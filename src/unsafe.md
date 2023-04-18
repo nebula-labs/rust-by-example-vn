@@ -40,7 +40,7 @@ fn main() {
 }
 ```
 
-Đối với `slice::from_raw_parts`, một trong những giả định *phải* được duy trì là con trỏ được chuyển trong các điểm tới bộ nhớ hợp lệ và bộ nhớ được trỏ tới là chính xác. Nếu những bất biến này không được duy trì thì hành vi của chương trình sẽ không được xác định và không biết điều gì sẽ xảy ra.
+Đối với `slice::from_raw_parts`, một trong những giả định *phải* được duy trì là con trỏ được truyền vào phải trỏ đến vùng nhớ hợp lệ và bộ nhớ được trỏ tới là đúng kiểu. Nếu những giả định này không được duy trì thì hành vi của chương trình sẽ không được xác định và không biết điều gì sẽ xảy ra.
 
 
 [unsafe]: https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html
