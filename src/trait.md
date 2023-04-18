@@ -38,7 +38,7 @@ impl Sheep {
     }
 }
 
-// Triển khai trait `Động vật` cho `Cừu`.
+// Triển khai trait `Animal` cho `Sheep`.
 impl Animal for Sheep {
     // `Self` là loại triển khai của `Sheep`.
     fn new(name: &'static str) -> Sheep {
