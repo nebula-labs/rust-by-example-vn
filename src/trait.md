@@ -28,7 +28,7 @@ impl Sheep {
 
     fn shear(&mut self) {
         if self.is_naked() {
-            // Các phương thức triển khai có thể sử dụng các phương thức trait của phương thức triển khai.
+            // Các phương thức của kiểu được triển khai có thể sử dụng các phương thức của trait mà nó triển khai.
             println!("{} is already naked...", self.name());
         } else {
             println!("{} gets a haircut!", self.name);
