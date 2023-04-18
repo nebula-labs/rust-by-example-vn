@@ -11,7 +11,7 @@ trait Animal {
     // Mô tả hàm liên kết; `Self` đề cập đến kiểu được triển khai.
     fn new(name: &'static str) -> Self;
 
-    // Chữ ký phương thức; chúng sẽ trả về một chuỗi.
+    // Mô tả phương thức; chúng sẽ trả về một chuỗi.
     fn name(&self) -> &'static str;
     fn noise(&self) -> &'static str;
 
