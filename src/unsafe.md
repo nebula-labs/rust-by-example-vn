@@ -21,7 +21,7 @@ fn main() {
 ```
 
 ### Gọi các hàm không an toàn
-Một số hàm có thể được khai báo là `không an toàn`, nghĩa là lập trình viên có trách nhiệm đảm bảo tính chính xác thay vì của trình biên dịch. Một ví dụ về điều này là [`std::slice::from_raw_parts`] sẽ tạo một lát cắt được cung cấp một con trỏ tới phần tử đầu tiên và độ dài của phần tử đó.
+Một số hàm có thể được khai báo là `không an toàn`, nghĩa là lập trình viên có trách nhiệm đảm bảo tính chính xác của nó thay vì của trình biên dịch. Một ví dụ về điều này là [`std::slice::from_raw_parts`] sẽ tạo một đoạn dữ liệu mà dựa trên con trỏ tới phần tử đầu tiên và độ dài mong muốn.
 
 ```rust,editable
 use std::slice;
