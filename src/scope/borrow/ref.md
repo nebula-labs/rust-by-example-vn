@@ -45,7 +45,7 @@ fn main() {
     let mut mutable_tuple = (Box::new(5u32), 3u32);
     
     {
-        // Truy xuất vào biến `mutable_tuple` để thay đổi giá trị của `last`.
+        // Destructure biến `mutable_tuple` để thay đổi giá trị của `last`.
         let (_, ref mut last) = mutable_tuple;
         *last = 2u32;
     }
