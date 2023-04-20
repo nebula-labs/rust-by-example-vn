@@ -4,7 +4,7 @@ Trường hợp các biến tồn tại suốt vòng đời (của một hàm) l
 
 Đoạn code dưới đây sễ đưa ra một vài ví dụ về cơ chế Elision. Để hiểu rõ hơn về cơ chế này, bạn có thể đọc tại [đây][lifetime ellision]: 
 ```rust,editable
-// `elided_input` và `annotated_input` có những đặc trưng giống nhau
+// `elided_input` và `annotated_input` có mô tả (function signatures) giống nhau
 // vì lifetime của `elided_input` được trình biên dịch xác định:
 fn elided_input(x: &i32) {
     println!("`elided_input`: {}", x);
