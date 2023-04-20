@@ -23,7 +23,7 @@ fn main() {
         // `ref_to_x` là một thể hiện của trường `x` bên trong biến `point`.
         let Point { x: ref ref_to_x, y: _ } = point;
 
-        // Trả về giá trị của trường `x` trong biến `point`.
+        // Trả về bản sao của trường `x` trong biến `point`.
         *ref_to_x
     };
 
