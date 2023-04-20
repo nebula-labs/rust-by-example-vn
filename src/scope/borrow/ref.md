@@ -31,7 +31,7 @@ fn main() {
     let mut mutable_point = point;
 
     {
-        // Từ khóa `ref` có thể đi cùng từ khóa `mut` để tạo ra một thể hiện có thể thay dổi giá trị.
+        // Từ khóa `ref` có thể đi cùng từ khóa `mut` để tạo ra một tham chiếu có thể thay đổi giá trị.
         let Point { x: _, y: ref mut mut_ref_to_y } = mutable_point;
 
         // Thay đổi trường `y` của `mutable_point` thông qua thể hiện có thể thay đổi giá trị (vừa được tạo ở trên).
