@@ -1,6 +1,6 @@
 # Elision
 
-Trường hợp các biến tồn tại suốt vòng đời (của một hàm) là rất phổ biến và vì thế hệ thống (borrow checker) cho phép bạn bỏ qua việc đánh dấu lifetime để tiết kiệm thời gian nhập và để dễ đọc hơn. Cơ chế Elision tồn tại trong Rust bởi vì các trường hợp như thế này quá phổ biến.
+Trường hợp các biến tồn tại suốt vòng đời (của một hàm) là rất phổ biến và vì thế trình kiểm tra mượn (borrow checker) cho phép bạn bỏ qua việc đánh dấu lifetime để tiết kiệm thời gian nhập và để dễ đọc hơn. Điều này được gọi là Elision. Cơ chế Elision tồn tại trong Rust bởi vì các trường hợp như thế này quá phổ biến.
 
 Đoạn code dưới đây sễ đưa ra một vài ví dụ về cơ chế Elision. Để hiểu rõ hơn về cơ chế này, bạn có thể đọc tại [đây][lifetime ellision]: 
 ```rust,editable
