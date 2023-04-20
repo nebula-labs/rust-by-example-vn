@@ -41,7 +41,7 @@ fn main() {
     println!("point is ({}, {})", point.x, point.y);
     println!("mutable_point is ({}, {})", mutable_point.x, mutable_point.y);
 
-    // Một biến tuple có thể thay đổi giá trị có giá trị là một Pointer (điểm)
+    // Một biến tuple có thể thay đổi giá trị chứa một Pointer (điểm)
     let mut mutable_tuple = (Box::new(5u32), 3u32);
     
     {
