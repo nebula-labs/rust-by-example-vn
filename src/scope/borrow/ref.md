@@ -20,7 +20,7 @@ fn main() {
 
     // `ref` cũng có thể được dùng trong trường hợp cần trích xuất giá trị từ biến kiểu struct 
     let _copy_of_x = {
-        // `ref_to_x` là một thể hiện của trường `x` bên trong biến `point`.
+        // `ref_to_x` là một tham chiếu đến trường `x` bên trong biến `point`.
         let Point { x: ref ref_to_x, y: _ } = point;
 
         // Trả về bản sao của trường `x` trong biến `point`.
