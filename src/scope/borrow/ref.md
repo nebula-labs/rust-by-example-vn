@@ -1,6 +1,6 @@
 # The ref pattern
 
-Khi thực hiện lệnh gán hoặc trích xuất giá trị (của một struct) thông qua lệnh  `let`, từ khóa `ref` có thể được sử dụng lấy ra thể hiện của các trường trong một biến kiểu struct/tuple. Ví dụ dưới đây là một vài tình huống có thể sử dụng kỹ thuật:
+Khi thực hiện matching hoặc destructuring thông qua `let`, từ khóa `ref` có thể được sử dụng lấy tham chiếu của các trường trong một biến kiểu struct/tuple. Ví dụ dưới đây là một vài tình huống có thể hữu ích:
 
 ```rust,editable
 #[derive(Clone, Copy)]
