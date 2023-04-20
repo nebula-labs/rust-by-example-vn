@@ -15,7 +15,7 @@ fn annotated_input<'a>(x: &'a i32) {
 }
 
 // Tương tự, `elided_pass` và `annotated_pass` cũng có những mô tả giống nhau
-// vì lifetime được tự động thêm vào `elided_pass`:
+// vì lifetime được ngầm định thêm vào `elided_pass`:
 fn elided_pass(x: &i32) -> &i32 { x }
 
 fn annotated_pass<'a>(x: &'a i32) -> &'a i32 { x }
