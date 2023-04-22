@@ -7,7 +7,7 @@ các thứ như:
 - Channels
 - File I/O
 
-Những kiểu này mở rộng chức năng hơn ngoài những gì các kiểu [primitives] cung cấp.
+Những kiểu này mở rộng chức năng hơn những gì các kiểu [primitives] cung cấp.
 
 ### Xem thêm:
 
