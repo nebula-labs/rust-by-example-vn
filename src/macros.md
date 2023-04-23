@@ -35,6 +35,6 @@ Vậy tại sao marco lại hữu dụng?
 2. Ngôn ngữ miền chuyên biệt. Macro cho phép bạn định nghĩa một cú pháp đặc biệt cho
    một mục đích chuyên biệt. (Điều này sẽ được bàn thêm sau)
 
-3. Phương thức trừu tượng bất định. Đôi lúc bạn muốn định nghĩa một phương thức trừu tượng có
+3. Các interface đa dạng. Đôi lúc bạn muốn định nghĩa một phương thức có
    số lượng tham số linh hoạt. Một ví dụ là `println!` có thể nhận bất kỳ số lượng tham số nào,
    tùy thuộc vào định dạng của chuỗi. (Điều này sẽ được bàn thêm sau)
