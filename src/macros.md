@@ -28,7 +28,7 @@ fn main() {
 
 Vậy tại sao marco lại hữu dụng?
 
-1. Không lặp lại chính mình. Có nhiều trường hợp bạn có thể cần những chức năng tương tự
+1. Tránh lặp lại các mã tương tự nhau. Có nhiều trường hợp bạn có thể cần những chức năng tương tự
    nhau tại nhiều nơi nhưng dưới các dạng khác nhau. Thông thường, viết
    macro là cách hữu dụng nhất để tránh lặp mã nguồn. (Điều này sẽ được bàn thêm sau)
 
