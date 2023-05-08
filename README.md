@@ -8,7 +8,7 @@ Dịch giả: Nguyễn Đức Chính - Nebula Labs <eyescryptoinsights@gmail.com
 ## Cách sử dụng 
 Nếu bạn muốn đọc online cuốn sách này, hãy ghé thăm [bản gốc tiếng Anh của nó tại đây][site-en].
 
-Tạm thời phiên bản tiếng Việt này chưa có website cho bạn ghé thăm, nên bạn có thể đọc bản tiếng Việt bằng cách [cài đặt Rust], rồi sau đó chạy các lệnh sau trong Terminal:
+Phiên bản Tiếng Việt có thể được đọc tại [rustvn.ezidev.tech](https://rustvn.ezidev.tech/), ngoài ra bạn có thể đọc bản tiếng Việt bằng cách [cài đặt Rust], rồi sau đó chạy các lệnh sau trong Terminal:
 
 ```bash
 $ git clone https://github.com/nebula-labs/rust-by-example-vn.git
